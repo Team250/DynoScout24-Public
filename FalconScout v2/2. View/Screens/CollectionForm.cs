@@ -8,6 +8,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using T250DynoScout_v2020;
+using T250DynoScout_v2023.Model.HiddenVariable;
 
 namespace T250DynoScout_v2023
 {
@@ -20,7 +21,7 @@ namespace T250DynoScout_v2023
         public static RobotState[] Robots = new RobotState[6];                            //Contains the state of each Scout's match tracking
         Controllers controllers = new Controllers();                        //Array of six Xbox controllers 
         Utilities utilities = new Utilities();                              //Instantiate the Utilities class
-
+        HiddenVariable hidden_variable = new HiddenVariable();              //Instantiate the HiddenVariable class
         //Lists for storing regional/qualifying events, teams attending and matches between teams       
         List<string> teamlist = new List<string>();                         //The list of teams for the event selected
         List<KeyValuePair<string, string>> event_list = new List<KeyValuePair<string, string>>();   //Contains the list of event codes and names
@@ -126,176 +127,148 @@ namespace T250DynoScout_v2023
                         activity_record.Mode = Robots[i].Current_Mode.ToString();
                         Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
                         activity_record.ScouterName = Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
-                        //activity_record.ScouterNameAlt = Robots[i].getScouterNameALT(RobotState.SCOUTER_NAME_ALT.Select_AltName).ToString();
                         activity_record.RecordType = "EndMatch";
-
                         activity_record.match_event = "-";
-
-                        activity_record.Mobility = 0;
-                        activity_record.AcqSub1 = 0;
-                        activity_record.AcqSub2 = 0;
-                        activity_record.AcqFComm = 0;
-                        activity_record.AcqFLoad = 0;
-                        activity_record.AcqFOther = 0;
-                        activity_record.AcqFOpps = 0;
-                        activity_record.DelTop = 0;
-                        activity_record.DelMid = 0;
-                        activity_record.DelBot = 0;
-                        activity_record.DelOut = 0;
-                        activity_record.DelCoop = 0;
-                        activity_record.DelDrop = 0;
-                        activity_record.Cone = 0;
-                        activity_record.Cube = 0;
-                        activity_record.GridPts = 0;
-                        activity_record.AutoPts = 0;
-
-                        //2023 Scoring
-                        if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Engaged)
+                        activity_record.Leave = Robots[i].Leave;
+                        activity_record.AcqLoc = "-";
+                        activity_record.AcqCenter = 0;
+                        activity_record.AcqDis = 0;
+                        activity_record.AcqDrp = 0;
+                        activity_record.DelMiss = 0;
+                        activity_record.DelOrig = "-";
+                        activity_record.DelDest = "-";
+                        activity_record.DriveSta = Robots[i].Drive_Sta;
+                        if (Robots[i].Robot_Set == RobotState.ROBOT_SET.Select)
                         {
-                            Robots[i].CPoints = Robots[i].CPoints + 10;
-                            activity_record.Engaged = 1;
-                            activity_record.Docked = 0;
-                            activity_record.Parked = 0;
-                            activity_record.Tried_And_Failed = 0;
-                            activity_record.No_Attempt = 0;
-                        }
-                        else if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Docked)
-                        {
-                            Robots[i].CPoints = Robots[i].CPoints + 6;
-                            activity_record.Engaged = 0;
-                            activity_record.Docked = 1;
-                            activity_record.Parked = 0;
-                            activity_record.Tried_And_Failed = 0;
-                            activity_record.No_Attempt = 0;
-                        }
-                        else if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Parked)
-                        {
-                            Robots[i].CPoints = Robots[i].CPoints + 2;
-                            activity_record.Engaged = 0;
-                            activity_record.Docked = 0;
-                            activity_record.Parked = 1;
-                            activity_record.Tried_And_Failed = 0;
-                            activity_record.No_Attempt = 0;
-                        }
-                        else if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Select)
-                        {
-                            activity_record.Engaged = 0;
-                            activity_record.Docked = 0;
-                            activity_record.Parked = 0;
-                            activity_record.Tried_And_Failed = 0;
-                            activity_record.No_Attempt = 0;
-                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
-                        }
-                        else if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.No_Attempt)
-                        {
-                            activity_record.Engaged = 0;
-                            activity_record.Docked = 0;
-                            activity_record.Parked = 0;
-                            activity_record.Tried_And_Failed = 0;
-                            activity_record.No_Attempt = 1;
-                        }
-                        else if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Tried_And_Failed)
-                        {
-                            activity_record.Engaged = 0;
-                            activity_record.Docked = 0;
-                            activity_record.Parked = 0;
-                            activity_record.Tried_And_Failed = 1;
-                            activity_record.No_Attempt = 0;
-                        }
-
-                        if (Robots[i].DefRate == RobotState.DEFRATE.D0)
-                        {
-                            activity_record.Defense = 0;
-                        }
-                        else if (Robots[i].DefRate == RobotState.DEFRATE.D1)
-                        {
-                            activity_record.Defense = 1;
-                        }
-                        else if (Robots[i].DefRate == RobotState.DEFRATE.D2)
-                        {
-                            activity_record.Defense = 2;
-                        }
-                        else if (Robots[i].DefRate == RobotState.DEFRATE.D3)
-                        {
-                            activity_record.Defense = 3;
-                        }
-                        else if (Robots[i].DefRate == RobotState.DEFRATE.D_)
-                        {
-                            activity_record.Defense = 9;
-                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
-                        }
-
-                        if (Robots[i].AvoRate == RobotState.AVORATE.A0)
-                        {
-                            activity_record.Avoidance = 0;
-                        }
-                        else if (Robots[i].AvoRate == RobotState.AVORATE.A1)
-                        {
-                            activity_record.Avoidance = 1;
-                        }
-                        else if (Robots[i].AvoRate == RobotState.AVORATE.A2)
-                        {
-                            activity_record.Avoidance = 2;
-                        }
-                        else if (Robots[i].AvoRate == RobotState.AVORATE.A3)
-                        {
-                            activity_record.Avoidance = 3;
-                        }
-                        else if (Robots[i].AvoRate == RobotState.AVORATE.A_)
-                        {
-                            activity_record.Avoidance = 9;
-                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
-                        }
-
-                        if (Robots[i].CSTeams == RobotState.CSTEAMS.T0)
-                        {
-                            activity_record.ChargePart = 0;
-                        }
-                        else if (Robots[i].CSTeams == RobotState.CSTEAMS.T1)
-                        {
-                            activity_record.ChargePart = 1;
-                        }
-                        else if (Robots[i].CSTeams == RobotState.CSTEAMS.T2)
-                        {
-                            activity_record.ChargePart = 2;
-                        }
-                        else if (Robots[i].CSTeams == RobotState.CSTEAMS.T_)
-                        {
-                            activity_record.ChargePart = 9;
-                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
-                        }
-
-                        if (Robots[i].Strategy == RobotState.STRATEGY.Select)
-                        {
-                            activity_record.Strategy = "Z";
+                            activity_record.RobotSta = "Z";
                         }
                         else
                         {
-                            activity_record.Strategy = Robots[i].Strategy.ToString()[0].ToString();
-
+                            activity_record.RobotSta = Robots[i].Robot_Set.ToString();
                         }
-
-                        if (Robots[i].EngageFail == RobotState.ENGAGEFAIL.Select)
+                        if (Robots[i].HP_Amp == RobotState.HP_AMP.Select)
                         {
-                            activity_record.EngageFail = "Z";
+                            activity_record.HPAmp = "Z";
                         }
                         else
                         {
-                            activity_record.EngageFail = Robots[i].EngageFail.ToString()[0].ToString();
+                            activity_record.HPAmp = Robots[i].HP_Amp.ToString();
                         }
 
-                        if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.No_Attempt || (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Parked && Robots[i].EngageFail == RobotState.ENGAGEFAIL.No_Fail))
+                        if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Select)
                         {
-                            activity_record.EngageT = 0;
+                            activity_record.StageStat = "Z";
                         }
                         else
                         {
-                            activity_record.EngageT = Robots[i].EngageTimeDouble;
+                            activity_record.StageStat = Robots[i].Stage_Stat.ToString();
                         }
 
-                        activity_record.ChargePts = Robots[i].CPoints;
-                        activity_record.GridPts = Robots[i].GPoints;
-                        activity_record.AutoPts = Robots[i].APoints;
+                        if (Robots[i].Stage_Loc == RobotState.STAGE_LOC.Select)
+                        {
+                            if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                            {
+                                activity_record.StageLoc = "A";
+                            }
+                            else
+                            {
+                                activity_record.StageLoc = "Z";
+                            }
+                        }
+                        else
+                        {
+                            activity_record.StageLoc = Robots[i].Stage_Loc.ToString();
+                        }
+
+                        if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Onstage)
+                        {
+                            activity_record.StageAtt = 1;
+                        }
+                        else if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park)
+                        {
+                            if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Select)
+                            {
+                                activity_record.StageAtt = 10;
+                            }
+                            else if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Y)
+                            {
+                                activity_record.StageAtt = -1;
+                            }
+                            else if (Robots[i].Stage_Att == RobotState.STAGE_ATT.N)
+                            {
+                                activity_record.StageAtt = 0;
+                            }
+                        }
+                        else if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                        {
+                            if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Select)
+                            {
+                                activity_record.StageAtt = 10;
+                            }
+                            else if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Y)
+                            {
+                                activity_record.StageAtt = -1;
+                            }
+                            else if (Robots[i].Stage_Att == RobotState.STAGE_ATT.N)
+                            {
+                                activity_record.StageAtt = 0;
+                            }
+                        }
+                        else if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Select)
+                        {
+                            activity_record.StageAtt = 10;
+                        }
+
+                        // Harmony
+                        if (Robots[i].Harm == 9)
+                        {
+                            activity_record.Harmony = 10;
+                        }
+                        else
+                        {
+                            activity_record.Harmony = Robots[i].Harm;
+                        }
+
+                        if (Robots[i].Lit == RobotState.LIT.Select)
+                        {
+                            activity_record.Spotlit = 10;
+                        }
+                        else if (Robots[i].Lit == RobotState.LIT.Y)
+                        {
+                            activity_record.Spotlit = 1;
+                        }
+                        else if (Robots[i].Lit == RobotState.LIT.N)
+                        {
+                            activity_record.Spotlit = 0;
+                        }
+
+                        Robots[i].ClimbTDouble = Robots[i].ClimbT_StopWatch.Elapsed.TotalSeconds;
+                        Robots[i].AllyTDouble = Robots[i].AllyT_StopWatch.Elapsed.TotalSeconds;
+                        Robots[i].OpptTDouble = Robots[i].OpptT_StopWatch.Elapsed.TotalSeconds;
+                        Robots[i].NeutTDouble = Robots[i].NeutT_StopWatch.Elapsed.TotalSeconds;
+                        activity_record.ClimbT = Robots[i].ClimbTDouble;
+                        activity_record.OZTime = Robots[i].OpptTDouble;
+                        activity_record.AZTime = Robots[i].AllyTDouble;
+                        activity_record.NZTime = Robots[i].NeutTDouble;
+                        activity_record.Mics = Robots[i].Mic;
+
+                        if (Robots[i].Def_Rat == 9)
+                        {
+                            activity_record.Defense = 10;
+                        }
+                        else
+                        {
+                            activity_record.Defense = Robots[i].Def_Rat;
+                        }
+
+                        if (Robots[i].Avo_Rat == 9)
+                        {
+                            activity_record.Avoidance = 10;
+                        }
+                        else
+                        {
+                            activity_record.Avoidance = Robots[i].Avo_Rat;
+                        }
 
                         activity_record.ScouterError = Robots[i].ScouterError;
 
@@ -336,363 +309,363 @@ namespace T250DynoScout_v2023
 
                             if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
                             {
-                                var cone_top_total = result.cone_top;
-                                cone_top_total = cone_top_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeTop.ToString());
-                                string Query = "UPDATE TeamSummaries SET cone_top = '" + cone_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var cone_top_total = result.cone_top;
+                                //cone_top_total = cone_top_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeTop.ToString());
+                                //string Query = "UPDATE TeamSummaries SET cone_top = '" + cone_top_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var cone_mid_total = result.cone_mid;
-                                cone_mid_total = cone_mid_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeMid.ToString());
-                                Query = "UPDATE TeamSummaries SET cone_mid = '" + cone_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var cone_mid_total = result.cone_mid;
+                                //cone_mid_total = cone_mid_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeMid.ToString());
+                                //Query = "UPDATE TeamSummaries SET cone_mid = '" + cone_mid_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var cone_hyb_total = result.cone_hyb;
-                                cone_hyb_total = cone_hyb_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeHyb.ToString());
-                                Query = "UPDATE TeamSummaries SET cone_hyb = '" + cone_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var cone_hyb_total = result.cone_hyb;
+                                //cone_hyb_total = cone_hyb_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeHyb.ToString());
+                                //Query = "UPDATE TeamSummaries SET cone_hyb = '" + cone_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var cube_top_total = result.cube_top;
-                                cube_top_total = cube_top_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeTop.ToString());
-                                Query = "UPDATE TeamSummaries SET cube_top = '" + cube_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var cube_top_total = result.cube_top;
+                                //cube_top_total = cube_top_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeTop.ToString());
+                                //Query = "UPDATE TeamSummaries SET cube_top = '" + cube_top_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var cube_mid_total = result.cube_mid;
-                                cube_mid_total = cube_mid_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeMid.ToString());
-                                Query = "UPDATE TeamSummaries SET cube_mid = '" + cube_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var cube_mid_total = result.cube_mid;
+                                //cube_mid_total = cube_mid_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeMid.ToString());
+                                //Query = "UPDATE TeamSummaries SET cube_mid = '" + cube_mid_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var cube_hyb_total = result.cube_hyb;
-                                cube_hyb_total = cube_hyb_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeHyb.ToString());
-                                Query = "UPDATE TeamSummaries SET cube_hyb = '" + cube_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var cube_hyb_total = result.cube_hyb;
+                                //cube_hyb_total = cube_hyb_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeHyb.ToString());
+                                //Query = "UPDATE TeamSummaries SET cube_hyb = '" + cube_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var grid_out_total = result.grid_out;
-                                if (Robots[i].TotDelOut > 18)
-                                {
-                                    grid_out_total = grid_out_total.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                }
-                                else
-                                {
-                                    grid_out_total = grid_out_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].enneadecimal[Robots[i].TotDelOut]);
-                                }
-                                Query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var grid_out_total = result.grid_out;
+                                //if (Robots[i].TotDelOut > 18)
+                                //{
+                                //    grid_out_total = grid_out_total.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
+                                //}
+                                //else
+                                //{
+                                //    grid_out_total = grid_out_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].enneadecimal[Robots[i].TotDelOut]);
+                                //}
+                                //Query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var grid_coop_total = result.grid_coop;
-                                grid_coop_total = grid_coop_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCoop.ToString());
-                                Query = "UPDATE TeamSummaries SET grid_coop = '" + grid_coop_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var grid_coop_total = result.grid_coop;
+                                //grid_coop_total = grid_coop_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCoop.ToString());
+                                //Query = "UPDATE TeamSummaries SET grid_coop = '" + grid_coop_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var auto_cones_total = result.auto_cones;
-                                auto_cones_total = auto_cones_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotAutoCone.ToString());
-                                Query = "UPDATE TeamSummaries SET auto_cones = '" + auto_cones_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var auto_cones_total = result.auto_cones;
+                                //auto_cones_total = auto_cones_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotAutoCone.ToString());
+                                //Query = "UPDATE TeamSummaries SET auto_cones = '" + auto_cones_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var auto_cubes_total = result.auto_cubes;
-                                auto_cubes_total = auto_cubes_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotAutoCube.ToString());
-                                Query = "UPDATE TeamSummaries SET auto_cubes = '" + auto_cubes_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var auto_cubes_total = result.auto_cubes;
+                                //auto_cubes_total = auto_cubes_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotAutoCube.ToString());
+                                //Query = "UPDATE TeamSummaries SET auto_cubes = '" + auto_cubes_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var auto_pts_total = result.auto_pts;
-                                int prevautopts = activityresult.AutoPts;
-                                auto_pts_total = auto_pts_total - prevautopts + Robots[i].APoints;
-                                Query = "UPDATE TeamSummaries SET auto_pts = '" + auto_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var auto_pts_total = result.auto_pts;
+                                //int prevautopts = activityresult.AutoPts;
+                                //auto_pts_total = auto_pts_total - prevautopts + Robots[i].APoints;
+                                //Query = "UPDATE TeamSummaries SET auto_pts = '" + auto_pts_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var grid_pts_total = result.grid_pts;
-                                int prevgridpts = activityresult.GridPts;
-                                grid_pts_total = grid_pts_total - prevgridpts + Robots[i].GPoints;
-                                Query = "UPDATE TeamSummaries SET grid_pts = '" + grid_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var grid_pts_total = result.grid_pts;
+                                //int prevgridpts = activityresult.GridPts;
+                                //grid_pts_total = grid_pts_total - prevgridpts + Robots[i].GPoints;
+                                //Query = "UPDATE TeamSummaries SET grid_pts = '" + grid_pts_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var charge_pts_total = result.charge_pts;
-                                int prevchargepts = activityresult.ChargePts;
-                                charge_pts_total = charge_pts_total - prevchargepts + Robots[i].CPoints;
-                                Query = "UPDATE TeamSummaries SET charge_pts = '" + charge_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var charge_pts_total = result.charge_pts;
+                                //int prevchargepts = activityresult.ChargePts;
+                                //charge_pts_total = charge_pts_total - prevchargepts + Robots[i].CPoints;
+                                //Query = "UPDATE TeamSummaries SET charge_pts = '" + charge_pts_total + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_setup = result.trend_setup;
-                                if (Robots[i].SetLoc == RobotState.SETLOC.Q_)
-                                {
-                                    trend_setup = trend_setup.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                }
-                                else
-                                {
-                                    trend_setup = trend_setup.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].SetLoc.ToString()[1].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_setup = '" + trend_setup + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_setup = result.trend_setup;
+                                //if (Robots[i].SetLoc == RobotState.SETLOC.Q_)
+                                //{
+                                //    trend_setup = trend_setup.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
+                                //}
+                                //else
+                                //{
+                                //    trend_setup = trend_setup.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].SetLoc.ToString()[1].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_setup = '" + trend_setup + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_csauto = result.trend_csauto;
-                                if (Robots[i].ChargeStatusAuto == RobotState.CHARGESTATUS.Select)
-                                {
-                                    //charge_pts_total = charge_pts_total + 9;
-                                    trend_csauto = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                }
-                                else
-                                {
-                                    trend_csauto = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].ChargeStatusAuto.ToString()[0].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_csauto = '" + trend_csauto + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_csauto = result.trend_csauto;
+                                //if (Robots[i].ChargeStatusAuto == RobotState.CHARGESTATUS.Select)
+                                //{
+                                //    //charge_pts_total = charge_pts_total + 9;
+                                //    trend_csauto = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
+                                //}
+                                //else
+                                //{
+                                //    trend_csauto = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].ChargeStatusAuto.ToString()[0].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_csauto = '" + trend_csauto + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_csend = result.trend_csend;
-                                if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Select)
-                                {
-                                    //charge_pts_total = charge_pts_total + 9;
-                                    trend_csend = trend_csend.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                }
-                                else
-                                {
-                                    trend_csend = trend_csend.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].ChargeStatus.ToString()[0].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_csend = '" + trend_csend + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_csend = result.trend_csend;
+                                //if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Select)
+                                //{
+                                //    //charge_pts_total = charge_pts_total + 9;
+                                //    trend_csend = trend_csend.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
+                                //}
+                                //else
+                                //{
+                                //    trend_csend = trend_csend.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].ChargeStatus.ToString()[0].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_csend = '" + trend_csend + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_cspartner = result.trend_cspartner;
-                                if (Robots[i].CSTeams == RobotState.CSTEAMS.T_)
-                                {
-                                    trend_cspartner = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                }
-                                else
-                                {
-                                    trend_cspartner = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].CSTeams.ToString()[1].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_cspartner = '" + trend_cspartner + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_cspartner = result.trend_cspartner;
+                                //if (Robots[i].CSTeams == RobotState.CSTEAMS.T_)
+                                //{
+                                //    trend_cspartner = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
+                                //}
+                                //else
+                                //{
+                                //    trend_cspartner = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].CSTeams.ToString()[1].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_cspartner = '" + trend_cspartner + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_csfails = result.trend_csfails;
-                                if (Robots[i].EngageFail == RobotState.ENGAGEFAIL.Select)
-                                {
-                                    trend_csfails = trend_csfails.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                }
-                                else
-                                {
-                                    trend_csfails = trend_csfails.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].EngageFail.ToString()[0].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_csfails = '" + trend_csfails + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_csfails = result.trend_csfails;
+                                //if (Robots[i].EngageFail == RobotState.ENGAGEFAIL.Select)
+                                //{
+                                //    trend_csfails = trend_csfails.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
+                                //}
+                                //else
+                                //{
+                                //    trend_csfails = trend_csfails.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].EngageFail.ToString()[0].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_csfails = '" + trend_csfails + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_defense = result.trend_defense;
-                                if (Robots[i].DefRate == RobotState.DEFRATE.D_)
-                                {
-                                    trend_defense = trend_defense.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                }
-                                else
-                                {
-                                    trend_defense = trend_defense.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].DefRate.ToString()[1].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_defense = '" + trend_defense + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_defense = result.trend_defense;
+                                //if (Robots[i].DefRate == RobotState.DEFRATE.D_)
+                                //{
+                                //    trend_defense = trend_defense.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
+                                //}
+                                //else
+                                //{
+                                //    trend_defense = trend_defense.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].DefRate.ToString()[1].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_defense = '" + trend_defense + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_avoidance = result.trend_avoidance;
-                                if (Robots[i].AvoRate == RobotState.AVORATE.A_)
-                                {
-                                    trend_avoidance = trend_avoidance.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                }
-                                else
-                                {
-                                    trend_avoidance = trend_avoidance.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].AvoRate.ToString()[1].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_avoidance = '" + trend_avoidance + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_avoidance = result.trend_avoidance;
+                                //if (Robots[i].AvoRate == RobotState.AVORATE.A_)
+                                //{
+                                //    trend_avoidance = trend_avoidance.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
+                                //}
+                                //else
+                                //{
+                                //    trend_avoidance = trend_avoidance.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].AvoRate.ToString()[1].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_avoidance = '" + trend_avoidance + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
 
-                                var trend_appstrat = result.trend_appstrat;
-                                if (Robots[i].Strategy == RobotState.STRATEGY.Select)
-                                {
-                                    trend_appstrat = trend_appstrat.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                }
-                                else
-                                {
-                                    trend_appstrat = trend_appstrat.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].Strategy.ToString()[0].ToString());
-                                }
-                                Query = "UPDATE TeamSummaries SET trend_appstrat = '" + trend_appstrat + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(Query);
+                                //var trend_appstrat = result.trend_appstrat;
+                                //if (Robots[i].Strategy == RobotState.STRATEGY.Select)
+                                //{
+                                //    trend_appstrat = trend_appstrat.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
+                                //}
+                                //else
+                                //{
+                                //    trend_appstrat = trend_appstrat.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].Strategy.ToString()[0].ToString());
+                                //}
+                                //Query = "UPDATE TeamSummaries SET trend_appstrat = '" + trend_appstrat + "' WHERE team_key = '" + result.team_key + "';";
+                                //seasonframework.Database.ExecuteSqlCommand(Query);
                             }
                         }
                         else
                         {
-                            var matches_total = result.matches;
-                            matches_total++;
-                            string query = "UPDATE TeamSummaries SET matches = '" + matches_total + "' WHERE team_key = '" + result.team_key + "';";
-                            seasonframework.Database.ExecuteSqlCommand(query);
+                            //var matches_total = result.matches;
+                            //matches_total++;
+                            //string query = "UPDATE TeamSummaries SET matches = '" + matches_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //seasonframework.Database.ExecuteSqlCommand(query);
 
-                            if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
-                            {
-                                var scouted_total = result.scouted;
-                                scouted_total++;
-                                query = "UPDATE TeamSummaries SET scouted = '" + scouted_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+                            //{
+                            //    var scouted_total = result.scouted;
+                            //    scouted_total++;
+                            //    query = "UPDATE TeamSummaries SET scouted = '" + scouted_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var cone_top_total = result.cone_top;
-                                cone_top_total = cone_top_total + Robots[i].TotDelConeTop.ToString();
-                                query = "UPDATE TeamSummaries SET cone_top = '" + cone_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var cone_top_total = result.cone_top;
+                            //    cone_top_total = cone_top_total + Robots[i].TotDelConeTop.ToString();
+                            //    query = "UPDATE TeamSummaries SET cone_top = '" + cone_top_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var cone_mid_total = result.cone_mid;
-                                cone_mid_total = cone_mid_total + Robots[i].TotDelConeMid.ToString();
-                                query = "UPDATE TeamSummaries SET cone_mid = '" + cone_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var cone_mid_total = result.cone_mid;
+                            //    cone_mid_total = cone_mid_total + Robots[i].TotDelConeMid.ToString();
+                            //    query = "UPDATE TeamSummaries SET cone_mid = '" + cone_mid_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var cone_hyb_total = result.cone_hyb;
-                                cone_hyb_total = cone_hyb_total + Robots[i].TotDelConeHyb.ToString();
-                                query = "UPDATE TeamSummaries SET cone_hyb = '" + cone_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var cone_hyb_total = result.cone_hyb;
+                            //    cone_hyb_total = cone_hyb_total + Robots[i].TotDelConeHyb.ToString();
+                            //    query = "UPDATE TeamSummaries SET cone_hyb = '" + cone_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var cube_top_total = result.cube_top;
-                                cube_top_total = cube_top_total + Robots[i].TotDelCubeTop.ToString();
-                                query = "UPDATE TeamSummaries SET cube_top = '" + cube_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var cube_top_total = result.cube_top;
+                            //    cube_top_total = cube_top_total + Robots[i].TotDelCubeTop.ToString();
+                            //    query = "UPDATE TeamSummaries SET cube_top = '" + cube_top_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var cube_mid_total = result.cube_mid;
-                                cube_mid_total = cube_mid_total + Robots[i].TotDelCubeMid.ToString();
-                                query = "UPDATE TeamSummaries SET cube_mid = '" + cube_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var cube_mid_total = result.cube_mid;
+                            //    cube_mid_total = cube_mid_total + Robots[i].TotDelCubeMid.ToString();
+                            //    query = "UPDATE TeamSummaries SET cube_mid = '" + cube_mid_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var cube_hyb_total = result.cube_hyb;
-                                cube_hyb_total = cube_hyb_total + Robots[i].TotDelCubeHyb.ToString();
-                                query = "UPDATE TeamSummaries SET cube_hyb = '" + cube_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var cube_hyb_total = result.cube_hyb;
+                            //    cube_hyb_total = cube_hyb_total + Robots[i].TotDelCubeHyb.ToString();
+                            //    query = "UPDATE TeamSummaries SET cube_hyb = '" + cube_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var grid_out_total = result.grid_out;
-                                if (Robots[i].TotDelOut > 18)
-                                {
-                                    query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + "Z" + "' WHERE team_key = '" + result.team_key + "';";
-                                }
-                                else
-                                {
-                                    query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + Robots[i].enneadecimal[Robots[i].TotDelOut] + "' WHERE team_key = '" + result.team_key + "';";
-                                }
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var grid_out_total = result.grid_out;
+                            //    if (Robots[i].TotDelOut > 18)
+                            //    {
+                            //        query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + "Z" + "' WHERE team_key = '" + result.team_key + "';";
+                            //    }
+                            //    else
+                            //    {
+                            //        query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + Robots[i].enneadecimal[Robots[i].TotDelOut] + "' WHERE team_key = '" + result.team_key + "';";
+                            //    }
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var grid_coop_total = result.grid_coop;
-                                grid_coop_total = grid_coop_total + Robots[i].TotDelCoop.ToString();
-                                query = "UPDATE TeamSummaries SET grid_coop = '" + grid_coop_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var grid_coop_total = result.grid_coop;
+                            //    grid_coop_total = grid_coop_total + Robots[i].TotDelCoop.ToString();
+                            //    query = "UPDATE TeamSummaries SET grid_coop = '" + grid_coop_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var auto_cones_total = result.auto_cones;
-                                auto_cones_total = auto_cones_total + Robots[i].TotAutoCone.ToString();
-                                query = "UPDATE TeamSummaries SET auto_cones = '" + auto_cones_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var auto_cones_total = result.auto_cones;
+                            //    auto_cones_total = auto_cones_total + Robots[i].TotAutoCone.ToString();
+                            //    query = "UPDATE TeamSummaries SET auto_cones = '" + auto_cones_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var auto_cubes_total = result.auto_cubes;
-                                auto_cubes_total = auto_cubes_total + Robots[i].TotAutoCube.ToString();
-                                query = "UPDATE TeamSummaries SET auto_cubes = '" + auto_cubes_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var auto_cubes_total = result.auto_cubes;
+                            //    auto_cubes_total = auto_cubes_total + Robots[i].TotAutoCube.ToString();
+                            //    query = "UPDATE TeamSummaries SET auto_cubes = '" + auto_cubes_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var auto_pts_total = result.auto_pts;
-                                auto_pts_total = auto_pts_total + Robots[i].APoints;
-                                query = "UPDATE TeamSummaries SET auto_pts = '" + auto_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var auto_pts_total = result.auto_pts;
+                            //    auto_pts_total = auto_pts_total + Robots[i].APoints;
+                            //    query = "UPDATE TeamSummaries SET auto_pts = '" + auto_pts_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var grid_pts_total = result.grid_pts;
-                                grid_pts_total = grid_pts_total + Robots[i].GPoints;
-                                query = "UPDATE TeamSummaries SET grid_pts = '" + grid_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var grid_pts_total = result.grid_pts;
+                            //    grid_pts_total = grid_pts_total + Robots[i].GPoints;
+                            //    query = "UPDATE TeamSummaries SET grid_pts = '" + grid_pts_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var charge_pts_total = result.charge_pts;
-                                charge_pts_total = charge_pts_total + Robots[i].CPoints;
-                                query = "UPDATE TeamSummaries SET charge_pts = '" + charge_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var charge_pts_total = result.charge_pts;
+                            //    charge_pts_total = charge_pts_total + Robots[i].CPoints;
+                            //    query = "UPDATE TeamSummaries SET charge_pts = '" + charge_pts_total + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_setup = result.trend_setup;
-                                if (Robots[i].SetLoc == RobotState.SETLOC.Q_)
-                                {
-                                    trend_setup = trend_setup + 9;
-                                }
-                                else
-                                {
-                                    trend_setup = trend_setup + (int)Robots[i].SetLoc;
-                                }
-                                query = "UPDATE TeamSummaries SET trend_setup = '" + trend_setup + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var trend_setup = result.trend_setup;
+                            //    if (Robots[i].SetLoc == RobotState.SETLOC.Q_)
+                            //    {
+                            //        trend_setup = trend_setup + 9;
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_setup = trend_setup + (int)Robots[i].SetLoc;
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_setup = '" + trend_setup + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_csauto = result.trend_csauto;
-                                if (Robots[i].ChargeStatusAuto == RobotState.CHARGESTATUS.Select)
-                                {
-                                    trend_csauto = trend_csauto + "Z";
-                                }
-                                else
-                                {
-                                    trend_csauto = trend_csauto + Robots[i].ChargeStatusAuto.ToString()[0];
-                                }
-                                query = "UPDATE TeamSummaries SET trend_csauto = '" + trend_csauto + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var trend_csauto = result.trend_csauto;
+                            //    if (Robots[i].ChargeStatusAuto == RobotState.CHARGESTATUS.Select)
+                            //    {
+                            //        trend_csauto = trend_csauto + "Z";
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_csauto = trend_csauto + Robots[i].ChargeStatusAuto.ToString()[0];
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_csauto = '" + trend_csauto + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_csend = result.trend_csend;
-                                if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Select)
-                                {
-                                    charge_pts_total = charge_pts_total + 9;
-                                    trend_csend = trend_csend + "Z";
-                                }
-                                else
-                                {
-                                    trend_csend = trend_csend + Robots[i].ChargeStatus.ToString()[0];
-                                }
-                                query = "UPDATE TeamSummaries SET trend_csend = '" + trend_csend + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var trend_csend = result.trend_csend;
+                            //    if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Select)
+                            //    {
+                            //        charge_pts_total = charge_pts_total + 9;
+                            //        trend_csend = trend_csend + "Z";
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_csend = trend_csend + Robots[i].ChargeStatus.ToString()[0];
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_csend = '" + trend_csend + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_cspartner = result.trend_cspartner;
-                                if (Robots[i].CSTeams == RobotState.CSTEAMS.T_)
-                                {
-                                    trend_cspartner = trend_cspartner + 9;
-                                }
-                                else
-                                {
-                                    trend_cspartner = trend_cspartner + (int)Robots[i].CSTeams;
-                                }
-                                query = "UPDATE TeamSummaries SET trend_cspartner = '" + trend_cspartner + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var trend_cspartner = result.trend_cspartner;
+                            //    if (Robots[i].CSTeams == RobotState.CSTEAMS.T_)
+                            //    {
+                            //        trend_cspartner = trend_cspartner + 9;
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_cspartner = trend_cspartner + (int)Robots[i].CSTeams;
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_cspartner = '" + trend_cspartner + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_csfails = result.trend_csfails;
-                                if (Robots[i].EngageFail == RobotState.ENGAGEFAIL.Select)
-                                {
-                                    trend_csfails = trend_csfails + "Z";
-                                }
-                                else
-                                {
-                                    trend_csfails = trend_csfails + Robots[i].EngageFail.ToString()[0];
-                                }
-                                query = "UPDATE TeamSummaries SET trend_csfails = '" + trend_csfails + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var trend_csfails = result.trend_csfails;
+                            //    if (Robots[i].EngageFail == RobotState.ENGAGEFAIL.Select)
+                            //    {
+                            //        trend_csfails = trend_csfails + "Z";
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_csfails = trend_csfails + Robots[i].EngageFail.ToString()[0];
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_csfails = '" + trend_csfails + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_defense = result.trend_defense;
-                                if (Robots[i].DefRate == RobotState.DEFRATE.D_)
-                                {
-                                    trend_defense = trend_defense + 9;
-                                }
-                                else
-                                {
-                                    trend_defense = trend_defense + (int)Robots[i].DefRate;
-                                }
-                                query = "UPDATE TeamSummaries SET trend_defense = '" + trend_defense + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    var trend_defense = result.trend_defense;
+                            //    if (Robots[i].DefRate == RobotState.DEFRATE.D_)
+                            //    {
+                            //        trend_defense = trend_defense + 9;
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_defense = trend_defense + (int)Robots[i].DefRate;
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_defense = '" + trend_defense + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_avoidance = result.trend_avoidance;
+                            //    var trend_avoidance = result.trend_avoidance;
 
-                                if (Robots[i].AvoRate == RobotState.AVORATE.A_)
-                                {
-                                    trend_avoidance = trend_avoidance + 9;
-                                }
-                                else
-                                {
-                                    trend_avoidance = trend_avoidance + (int)Robots[i].AvoRate;
-                                }
-                                query = "UPDATE TeamSummaries SET trend_avoidance = '" + trend_avoidance + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
+                            //    if (Robots[i].AvoRate == RobotState.AVORATE.A_)
+                            //    {
+                            //        trend_avoidance = trend_avoidance + 9;
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_avoidance = trend_avoidance + (int)Robots[i].AvoRate;
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_avoidance = '" + trend_avoidance + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
 
-                                var trend_appstrat = result.trend_appstrat;
-                                if (Robots[i].Strategy == RobotState.STRATEGY.Select)
-                                {
-                                    trend_appstrat = trend_appstrat + "Z";
-                                }
-                                else
-                                {
-                                    trend_appstrat = trend_appstrat + Robots[i].Strategy.ToString()[0];
-                                }
-                                query = "UPDATE TeamSummaries SET trend_appstrat = '" + trend_appstrat + "' WHERE team_key = '" + result.team_key + "';";
-                                seasonframework.Database.ExecuteSqlCommand(query);
-                            }
+                            //    var trend_appstrat = result.trend_appstrat;
+                            //    if (Robots[i].Strategy == RobotState.STRATEGY.Select)
+                            //    {
+                            //        trend_appstrat = trend_appstrat + "Z";
+                            //    }
+                            //    else
+                            //    {
+                            //        trend_appstrat = trend_appstrat + Robots[i].Strategy.ToString()[0];
+                            //    }
+                            //    query = "UPDATE TeamSummaries SET trend_appstrat = '" + trend_appstrat + "' WHERE team_key = '" + result.team_key + "';";
+                            //    seasonframework.Database.ExecuteSqlCommand(query);
+                            //}
                         }
                     }
                     cbxEndMatch.Checked = false;
@@ -701,73 +674,11 @@ namespace T250DynoScout_v2023
                 //reset values
                 for (int i = 0; i <= 5; i++)
                 {
-                    Robots[i].SetLoc = RobotState.SETLOC.Q_;
-                    Robots[i].ChargeStatusAuto = RobotState.CHARGESTATUS.Select;
-
-                    Robots[i].Acq = RobotState.ACQ.Select;
-
-                    Robots[i].DelFloor = RobotState.DELFLOOR.Select;
-                    Robots[i].DelGrid = RobotState.DELGRID.Select;
-                    Robots[i].DelRow = RobotState.DELROW.Select;
-                    Robots[i].Piece = RobotState.PIECE.Select;
-                    Robots[i].DDelGrid = RobotState.DELGRID.Select;
-                    Robots[i].DPiece = RobotState.PIECE.Select;
-                    Robots[i].Nodelbl = RobotState.NODELBL.Select;
-                    Robots[i].Floorlbl = RobotState.FLOORLBL.Select;
-                    Robots[i].DNodelbl = RobotState.NODELBL.Select;
-                    Robots[i].DFloorlbl = RobotState.FLOORLBL.Select;
-
-                    Robots[i].ChargeStatus = RobotState.CHARGESTATUS.Select;
-                    Robots[i].EngageFail = RobotState.ENGAGEFAIL.Select;
-                    Robots[i].CSTeams = RobotState.CSTEAMS.T_;
-
-                    Robots[i].EngageTimeDouble = 0;
-                    Robots[i].EngageTime_StopWatch.Reset();
-                    Robots[i].EngageTime_StopWatch_running = false;
-                    Robots[i].EngageTime = Robots[i].EngageTime_StopWatch.Elapsed;
-
-
-                    Robots[i].Strategy = RobotState.STRATEGY.Select;
-
-                    Robots[i].DefRate = RobotState.DEFRATE.D_;
-                    Robots[i].AvoRate = RobotState.AVORATE.A_;
-
                     Robots[i].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
-
                     Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
-
                     Robots[i].AUTO = true;
-
                     Robots[i].NoSho = false;
-
                     Robots[i].ScouterError = 0;
-
-                    Robots[i].CPoints = 0;
-                    Robots[i].GPoints = 0;
-                    Robots[i].APoints = 0;
-
-                    Robots[i].TotAutoCone = 0;
-                    Robots[i].TotAutoCube = 0;
-                    Robots[i].TotDelConeHyb = 0;
-                    Robots[i].TotDelConeMid = 0;
-                    Robots[i].TotDelConeTop = 0;
-                    Robots[i].TotDelCoop = 0;
-                    Robots[i].TotDelCubeHyb = 0;
-                    Robots[i].TotDelCubeMid = 0;
-                    Robots[i].TotDelCubeTop = 0;
-                    Robots[i].TotDelOut = 0;
-                }
-
-                DialogResult dialogResult = MessageBox.Show("Do you want to swap scouter locations", "Please Confirm", MessageBoxButtons.YesNo);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    ScouterAssignment frm = new ScouterAssignment();
-                    frm.Show();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //Don't reset names
                 }
 
                 if (currentmatch == InMemoryMatchList.Count)
@@ -817,24 +728,7 @@ namespace T250DynoScout_v2023
                     {
                         Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
 
-                        Robots[i].SetLoc = RobotState.SETLOC.Q_;
-                        Robots[i].ChargeStatusAuto = RobotState.CHARGESTATUS.Select;
-
-                        Robots[i].Acq = RobotState.ACQ.Select;
-
-                        Robots[i].ChargeStatus = RobotState.CHARGESTATUS.Select;
-                        Robots[i].EngageFail = RobotState.ENGAGEFAIL.Select;
-                        Robots[i].CSTeams = RobotState.CSTEAMS.T_;
-
-                        Robots[i].EngageTimeDouble = 0;
-                        Robots[i].EngageTime_StopWatch.Reset();
-                        Robots[i].EngageTime_StopWatch_running = false;
-                        Robots[i].EngageTime = Robots[i].EngageTime_StopWatch.Elapsed;
-
-                        Robots[i].Strategy = RobotState.STRATEGY.Select;
-
-                        Robots[i].DefRate = RobotState.DEFRATE.D_;
-                        Robots[i].AvoRate = RobotState.AVORATE.A_;
+                        
 
                         Robots[i].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
 
@@ -846,20 +740,7 @@ namespace T250DynoScout_v2023
 
                         Robots[i].ScouterError = 0;
 
-                        Robots[i].CPoints = 0;
-                        Robots[i].GPoints = 0;
-                        Robots[i].APoints = 0;
-
-                        Robots[i].TotAutoCone = 0;
-                        Robots[i].TotAutoCube = 0;
-                        Robots[i].TotDelConeHyb = 0;
-                        Robots[i].TotDelConeMid = 0;
-                        Robots[i].TotDelConeTop = 0;
-                        Robots[i].TotDelCoop = 0;
-                        Robots[i].TotDelCubeHyb = 0;
-                        Robots[i].TotDelCubeMid = 0;
-                        Robots[i].TotDelCubeTop = 0;
-                        Robots[i].TotDelOut = 0;
+                        
                     }
                 }
                 else
@@ -887,48 +768,13 @@ namespace T250DynoScout_v2023
             }
             for (int i = 0; i <= 5; i++)
             {
-                Robots[i].SetLoc = RobotState.SETLOC.Q_;
-                Robots[i].ChargeStatusAuto = RobotState.CHARGESTATUS.Select;
-
-                Robots[i].ChargeStatus = RobotState.CHARGESTATUS.Select;
-                Robots[i].EngageFail = RobotState.ENGAGEFAIL.Select;
-                Robots[i].CSTeams = RobotState.CSTEAMS.T_;
-
-                Robots[i].EngageTimeDouble = 0;
-                Robots[i].EngageTime_StopWatch.Reset();
-                Robots[i].EngageTime_StopWatch_running = false;
-                Robots[i].EngageTime = Robots[i].EngageTime_StopWatch.Elapsed;
-
-                Robots[i].Strategy = RobotState.STRATEGY.Select;
-
-                Robots[i].DefRate = RobotState.DEFRATE.D_;
-                Robots[i].AvoRate = RobotState.AVORATE.A_;
-
                 Robots[i].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
                 Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
-
                 Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
-
                 Robots[i].AUTO = true;
                 Robots[i].NoSho = false;
                 Robots[i].TransactionCheck = false;
-
                 Robots[i].ScouterError = 0;
-
-                Robots[i].CPoints = 0;
-                Robots[i].GPoints = 0;
-                Robots[i].APoints = 0;
-
-                Robots[i].TotAutoCone = 0;
-                Robots[i].TotAutoCube = 0;
-                Robots[i].TotDelConeHyb = 0;
-                Robots[i].TotDelConeMid = 0;
-                Robots[i].TotDelConeTop = 0;
-                Robots[i].TotDelCoop = 0;
-                Robots[i].TotDelCubeHyb = 0;
-                Robots[i].TotDelCubeMid = 0;
-                Robots[i].TotDelCubeTop = 0;
-                Robots[i].TotDelOut = 0;
             }
         }
 
@@ -967,7 +813,7 @@ namespace T250DynoScout_v2023
                 Log("Event Code -> " + eventcode);
 
                 //#AuthKey
-                string uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/teams?X-TBA-Auth-Key=YOUR_API_KEY_HERE";
+                string uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/teams?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
 
                 req = WebRequest.Create(uri);
 
@@ -1039,7 +885,7 @@ namespace T250DynoScout_v2023
                 //Get the matches from the Blue Alliance API
 
                 //#AuthKey
-                uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/matches?X-TBA-Auth-Key=YOUR_API_KEY_HERE";
+                uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/matches?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
 
                 try
                 {
@@ -1403,7 +1249,7 @@ namespace T250DynoScout_v2023
 
 
                 //#AuthKey
-                uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/rankings?X-TBA-Auth-Key=YOUR_API_KEY_HERE";
+                uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/rankings?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
                 try
                 {
                     req = WebRequest.Create(uri);
@@ -1654,6 +1500,12 @@ namespace T250DynoScout_v2023
         private void lbl0Position7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SwapScouters_Click(object sender, EventArgs e)
+        {
+            ScouterAssignment frm = new ScouterAssignment();
+            frm.Show();
         }
     }
 }

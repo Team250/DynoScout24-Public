@@ -45,7 +45,7 @@ namespace T250DynoScout_v2023
             //string uri = "http://www.thebluealliance.com/api/v2/events/2023?X-TBA-App-Id=frc250:T250DynoScoutClient:v2020";
 
             //#AuthKey
-            string uri = "https://www.thebluealliance.com/api/v3/events/2023?X-TBA-Auth-Key=YOUR_API_KEY_HERE";
+            string uri = "https://www.thebluealliance.com/api/v3/events/2023?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
             System.Net.WebRequest req = WebRequest.Create(uri);
 
             HttpWebResponse response = (HttpWebResponse)req.GetResponse();      //Make the request

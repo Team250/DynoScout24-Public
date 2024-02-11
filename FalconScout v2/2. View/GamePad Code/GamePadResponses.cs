@@ -17,7 +17,6 @@ namespace T250DynoScout_v2023
         public void setScore()
         {
             RobotState.Red_Score = 0;
-
             RobotState.Blue_Score = 0;
         }
 
@@ -163,9 +162,8 @@ namespace T250DynoScout_v2023
             {
                 if (rs[controllerNumberMap[controllerNumber]].match_event != RobotState.MATCHEVENT_NAME.Match_Event &&
                     !rs[controllerNumberMap[controllerNumber]].NoSho &&
-                    (rs[controllerNumberMap[controllerNumber]]._ScouterName != RobotState.SCOUTER_NAME.Select_Name || rs[controllerNumberMap[controllerNumber]]._ScouterNameALT != RobotState.SCOUTER_NAME_ALT.Select_AltName))
+                    rs[controllerNumberMap[controllerNumber]]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
                 {
-
                     if (rs[controllerNumberMap[controllerNumber]].match_event == RobotState.MATCHEVENT_NAME.No_Show)
                     {
                         activity_record.match_event = (rs[controllerNumberMap[controllerNumber]].match_event.ToString())[0].ToString();
@@ -180,44 +178,38 @@ namespace T250DynoScout_v2023
                     activity_record.Time = DateTime.Now;
                     activity_record.Mode = rs[controllerNumberMap[controllerNumber]].Current_Mode.ToString();
                     activity_record.ScouterName = rs[controllerNumberMap[controllerNumber]].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
-                    //activity_record.ScouterNameAlt = rs[controllerNumberMap[controllerNumber]].getScouterNameALT(RobotState.SCOUTER_NAME_ALT.Select_AltName).ToString();
                     activity_record.RecordType = "Match_Event";
-                    activity_record.Mobility = 0;
-                    activity_record.AcqSub1 = 0;
-                    activity_record.AcqSub2 = 0;
-                    activity_record.AcqFComm = 0;
-                    activity_record.AcqFLoad = 0;
-                    activity_record.AcqFOther = 0;
-                    activity_record.AcqFOpps = 0;
-                    activity_record.DelTop = 0;
-                    activity_record.DelMid = 0;
-                    activity_record.DelBot = 0;
-                    activity_record.DelFloor = 0;
-                    activity_record.DelOut = 0;
-                    activity_record.DelCoop = 0;
-                    activity_record.DelDrop = 0;
-                    activity_record.Cone = 0;
-                    activity_record.Cube = 0;
-                    activity_record.Parked = 0;
-                    activity_record.Docked = 0;
-                    activity_record.Engaged = 0;
-                    activity_record.Tried_And_Failed = 0;
-                    activity_record.No_Attempt = 0;
-                    activity_record.ChargePart = 0;
-                    activity_record.EngageT = 0;
-                    activity_record.EngageFail = "-";
-                    activity_record.Setup = 0;
-                    activity_record.AutoPts = 0;
-                    activity_record.GridPts = 0;
-                    activity_record.ChargePts = 0;
-                    activity_record.ScouterError = 0;
-                    activity_record.Defense = 0;
-                    activity_record.Avoidance = 0;
+
+                    //2024
+                    activity_record.Leave = 0;
+                    activity_record.AcqLoc = "-";
+                    activity_record.AcqCenter = 0;
+                    activity_record.AcqDis = 0;
+                    activity_record.AcqDrp = 0;
+                    activity_record.DelMiss = 0;
+                    activity_record.DelOrig = "-";
+                    activity_record.DelDest = "-";
+                    activity_record.DriveSta = "-";
+                    activity_record.RobotSta = "-";
+                    activity_record.HPAmp = "-";
+                    activity_record.StageStat = "-";
+                    activity_record.StageAtt = 9;
+                    activity_record.StageLoc = "-";
+                    activity_record.Harmony = 9;
+                    activity_record.Spotlit = 9;
+                    activity_record.ClimbT = 0;
+                    activity_record.OZTime = 0;
+                    activity_record.AZTime = 0;
+                    activity_record.NZTime = 0;
+                    activity_record.Mics = 9;
+                    activity_record.Defense = 9;   
+                    activity_record.Avoidance = 9;
                     activity_record.Strategy = "-";
 
+
                     //Save Record to the database
-                    //seasonframework.ActivitySet.Add(activity_record);
-                    //seasonframework.SaveChanges(); // If you crash here migration isn't working
+                    seasonframework.ActivitySet.Add(activity_record);
+                    seasonframework.SaveChanges(); // If you crash here migration isn't working
 
                     rs[controllerNumberMap[controllerNumber]].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
 
@@ -241,28 +233,62 @@ namespace T250DynoScout_v2023
                 {
                     if (gamepad.RTHRight_Press)
                     {
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName > RobotState.SCOUTER_NAME.Scouter5)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Scouter12;
+                        }
+
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName == RobotState.SCOUTER_NAME.Scouter5)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Scouter12;
+                        }
+
                         rs[controllerNumberMap[controllerNumber]].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
-                        rs[controllerNumberMap[controllerNumber]]._ScouterNameALT = RobotState.SCOUTER_NAME_ALT.Select_AltName;
+                        ScouterNameMap[controllerNumber] = rs[controllerNumber]._ScouterName;
                     }
                     if (gamepad.RTHLeft_Press)
                     {
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName > RobotState.SCOUTER_NAME.Scouter5)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Scouter6;
+                        }
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName == RobotState.SCOUTER_NAME.Select_Name)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Scouter6;
+                        }
                         rs[controllerNumberMap[controllerNumber]].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
-                        rs[controllerNumberMap[controllerNumber]]._ScouterNameALT = RobotState.SCOUTER_NAME_ALT.Select_AltName;
+                        ScouterNameMap[controllerNumber] = rs[controllerNumber]._ScouterName;
                     }
-                    if (gamepad.RTHUp_Press && rs[controllerNumberMap[controllerNumber]].Alt_Flag == false)
+                    if (gamepad.RTHUp_Press && rs[controllerNumberMap[controllerNumber]].RTHUP_Lock == false)
                     {
-                        rs[controllerNumberMap[controllerNumber]].changeScouterNameALT(RobotState.CYCLE_DIRECTION.Up);
-                        rs[controllerNumberMap[controllerNumber]].Alt_Flag = true;
-                        rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName < RobotState.SCOUTER_NAME.Scouter5)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Scouter5;
+                        }
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName == RobotState.SCOUTER_NAME.Scouter12)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Scouter5;
+                        }
+                        rs[controllerNumberMap[controllerNumber]].changeScouterName(RobotState.CYCLE_DIRECTION.Up);
+                        rs[controllerNumberMap[controllerNumber]].RTHUP_Lock = true;
+                        ScouterNameMap[controllerNumber] = rs[controllerNumber]._ScouterName;
                     }
-                    if (!gamepad.RTHUp_Press && rs[controllerNumberMap[controllerNumber]].Alt_Flag == true)
+                    if (!gamepad.RTHUp_Press && rs[controllerNumberMap[controllerNumber]].RTHUP_Lock == true)
                     {
-                        rs[controllerNumberMap[controllerNumber]].Alt_Flag = false;
+                        rs[controllerNumberMap[controllerNumber]].RTHUP_Lock = false;
                     }
                     if (gamepad.RTHDown_Press)
                     {
-                        rs[controllerNumberMap[controllerNumber]].changeScouterNameALT(RobotState.CYCLE_DIRECTION.Down);
-                        rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName < RobotState.SCOUTER_NAME.Scouter5)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
+                        }
+                        if (rs[controllerNumberMap[controllerNumber]]._ScouterName == RobotState.SCOUTER_NAME.Scouter6)
+                        {
+                            rs[controllerNumberMap[controllerNumber]]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
+                        }
+                        rs[controllerNumberMap[controllerNumber]].changeScouterName(RobotState.CYCLE_DIRECTION.Down);
+                        ScouterNameMap[controllerNumber] = rs[controllerNumber]._ScouterName;
                     }
                 }
 
@@ -283,6 +309,7 @@ namespace T250DynoScout_v2023
                 if (gamepad.StartButton_Press && rs[controllerNumberMap[controllerNumber]].Leave == 0)
                 {
                     rs[controllerNumberMap[controllerNumber]].Leave = 1;
+                
                 }
                 else if (gamepad.StartButton_Press && rs[controllerNumberMap[controllerNumber]].Leave == 1)
                 {
@@ -581,12 +608,6 @@ namespace T250DynoScout_v2023
                 }
 
                 //2024 comp
-                if (gamepad.RightTrigger_Press)
-                {
-                    rs[controllerNumberMap[controllerNumber]].Del_Dest = RobotState.DEL_DEST.Select;
-                    rs[controllerNumberMap[controllerNumber]].Acq_Loc = "Select";
-                    rs[controllerNumberMap[controllerNumber]].Flag = 0;
-                }
                 if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Neut)
                 {
                     rs[controllerNumberMap[controllerNumber]].NeutT_StopWatch.Start();
@@ -781,12 +802,7 @@ namespace T250DynoScout_v2023
                 {
                     rs[controllerNumberMap[controllerNumber]].Flag = 0;
                 }
-                if (gamepad.RightTrigger_Press)
-                {
-                    rs[controllerNumberMap[controllerNumber]].Del_Dest = RobotState.DEL_DEST.Select;
-                    rs[controllerNumberMap[controllerNumber]].Flag = 0;
-                }
-
+              
                 //2024 stat
                 if (gamepad.XButton_Down)
                 {
@@ -850,10 +866,27 @@ namespace T250DynoScout_v2023
                     if (gamepad.LTHLeft_Press)
                     {
                         rs[controllerNumberMap[controllerNumber]].Harm++;
+                        if (rs[controllerNumberMap[controllerNumber]].Harm == 11)
+                        {
+                            rs[controllerNumberMap[controllerNumber]].Harm = 0;
+
+                        }
+                        if (rs[controllerNumberMap[controllerNumber]].Harm == 3)
+                        {
+                            rs[controllerNumberMap[controllerNumber]].Harm = 0;
+                        }
                     }
                     if (gamepad.LTHRight_Press)
                     {
                         rs[controllerNumberMap[controllerNumber]].Harm--;
+                        if (rs[controllerNumberMap[controllerNumber]].Harm == 8)
+                        {
+                            rs[controllerNumberMap[controllerNumber]].Harm = 0;
+                        }
+                        if (rs[controllerNumberMap[controllerNumber]].Harm == -1)
+                        {
+                            rs[controllerNumberMap[controllerNumber]].Harm = 2;
+                        }
                     }
                 }
 
@@ -861,6 +894,10 @@ namespace T250DynoScout_v2023
                 if (gamepad.DpadUp_Press)
                 {
                     rs[controllerNumberMap[controllerNumber]].Mic++;
+                    if (rs[controllerNumberMap[controllerNumber]].Mic == 11)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Mic = 0;
+                    }
                     if (rs[controllerNumberMap[controllerNumber]].Mic == 4)
                     {
                         rs[controllerNumberMap[controllerNumber]].Mic = 0;
@@ -877,14 +914,23 @@ namespace T250DynoScout_v2023
                 if (gamepad.DpadRight_Press)
                 {
                     rs[controllerNumberMap[controllerNumber]].Def_Rat++;
+                    if (rs[controllerNumberMap[controllerNumber]].Def_Rat == 11)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Def_Rat = 0;
+                    }
                     if (rs[controllerNumberMap[controllerNumber]].Def_Rat == 4)
                     {
                         rs[controllerNumberMap[controllerNumber]].Def_Rat = 0;
                     }
                 }
+
                 if (gamepad.DpadLeft_Press)
                 {
                     rs[controllerNumberMap[controllerNumber]].Avo_Rat++;
+                    if (rs[controllerNumberMap[controllerNumber]].Avo_Rat == 11)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Avo_Rat = 0;
+                    }
                     if (rs[controllerNumberMap[controllerNumber]].Avo_Rat == 4)
                     {
                         rs[controllerNumberMap[controllerNumber]].Avo_Rat = 0;
@@ -892,12 +938,11 @@ namespace T250DynoScout_v2023
                 }
             }
 
-
             // #Transact
             // **************************************************************
             // ***  TRANSACT TO DATABASE  ***
             // **************************************************************
-            if (rs[controllerNumberMap[controllerNumber]]._ScouterName != RobotState.SCOUTER_NAME.Select_Name || rs[controllerNumberMap[controllerNumber]]._ScouterNameALT != RobotState.SCOUTER_NAME_ALT.Select_AltName)
+            if (rs[controllerNumberMap[controllerNumber]]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
             {
                 rs[controllerNumberMap[controllerNumber]].TransactionCheck = true;
             }
@@ -916,82 +961,223 @@ namespace T250DynoScout_v2023
                 activity_record.Time = DateTime.Now;
                 activity_record.Mode = rs[controllerNumberMap[controllerNumber]].Current_Mode.ToString();
                 activity_record.ScouterName = rs[controllerNumberMap[controllerNumber]].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
-                //activity_record.ScouterNameAlt = rs[controllerNumberMap[controllerNumber]].getScouterNameALT(RobotState.SCOUTER_NAME_ALT.Select_AltName).ToString();
                 activity_record.RecordType = "EndAuto";
-
                 activity_record.match_event = "-";
-
-                activity_record.Defense = 0;
-                activity_record.Avoidance = 0;
-
                 activity_record.ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError;
+                if (rs[controllerNumberMap[controllerNumber]].Leave == 1)
+                {
+                    activity_record.Leave = 1;
+                }
+                else if (rs[controllerNumberMap[controllerNumber]].Leave == 0)
+                {
+                    activity_record.Leave = 0;
+                }
+                activity_record.AcqLoc = "-";
+                activity_record.AcqCenter = 0;
+                activity_record.AcqDis = 0;
+                activity_record.AcqDrp = 0;
+                activity_record.DelMiss = 0;
+                activity_record.DelOrig = "-";
+                activity_record.DelDest = "-";
+                activity_record.DriveSta = "-";
+                if (rs[controllerNumberMap[controllerNumber]].Robot_Set == RobotState.ROBOT_SET.Select)
+                {
+                    activity_record.RobotSta = "Z";
+                }
+                else
+                {
+                    activity_record.RobotSta = rs[controllerNumberMap[controllerNumber]].Robot_Set.ToString();
+                }
 
-                activity_record.AcqSub1 = 0;
-                activity_record.AcqSub2 = 0;
-                activity_record.AcqFComm = 0;
-                activity_record.AcqFLoad = 0;
-                activity_record.AcqFOther = 0;
-                activity_record.AcqFOpps = 0;
-                activity_record.DelTop = 0;
-                activity_record.DelMid = 0;
-                activity_record.DelBot = 0;
-                activity_record.DelOut = 0;
-                activity_record.DelCoop = 0;
-                activity_record.DelDrop = 0;
-                activity_record.Cone = 0;
-                activity_record.Cube = 0;
-                activity_record.Parked = 0;
-                activity_record.ChargePart = 0;
-                activity_record.EngageT = 0;
-                activity_record.EngageFail = "-";
-                activity_record.GridPts = 0;
-                activity_record.ChargePts = 0;
+                if (rs[controllerNumberMap[controllerNumber]].HP_Amp == RobotState.HP_AMP.Select)
+                {
+                    activity_record.HPAmp = "Z";
+                }
+                else
+                {
+                    activity_record.HPAmp = rs[controllerNumberMap[controllerNumber]].HP_Amp.ToString();
+                }
+
+                activity_record.StageStat = "-";
+                activity_record.StageAtt = 9;
+                activity_record.StageLoc = "-";
+                activity_record.Harmony = 9;
+                activity_record.Spotlit = 9;
+                activity_record.ClimbT = 0;
+                activity_record.OZTime = 0;
+                activity_record.AZTime = 0;
+                activity_record.NZTime = 0;
+                activity_record.Mics = 9;
+                activity_record.Defense = 9;
+                activity_record.Avoidance = 9;
                 activity_record.Strategy = "-";
-
                 rs[controllerNumberMap[controllerNumber]].AUTO = false;
 
                 //Save Record to the database
-                //seasonframework.ActivitySet.Add(activity_record);
-                //seasonframework.SaveChanges();
-
-                //Reset Values
-                rs[controllerNumberMap[controllerNumber]].Mob = RobotState.MOB.N;
-                rs[controllerNumberMap[controllerNumber]].ChargeStatus = RobotState.CHARGESTATUS.Select;
+                seasonframework.ActivitySet.Add(activity_record);
+                seasonframework.SaveChanges();
             }
             else if (gamepad.RightTrigger_Press && !rs[controllerNumberMap[controllerNumber]].NoSho && rs[controllerNumberMap[controllerNumber]].TransactionCheck == true)
             {
-                activity_record.Team = rs[controllerNumberMap[controllerNumber]].TeamName;
-                activity_record.Match = rs[controllerNumberMap[controllerNumber]].Current_Match;
-                activity_record.Time = DateTime.Now;
-                activity_record.Mode = rs[controllerNumberMap[controllerNumber]].Current_Mode.ToString();
-                activity_record.ScouterName = rs[controllerNumberMap[controllerNumber]].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
-                //activity_record.ScouterNameAlt = rs[controllerNumberMap[controllerNumber]].getScouterNameALT(RobotState.SCOUTER_NAME_ALT.Select_AltName).ToString();
-                activity_record.RecordType = "Activities";
+                if (rs[controllerNumberMap[controllerNumber]].Acq_Loc != RobotState.CURRENT_LOC.Select.ToString())
+                {
+                    rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = rs[controllerNumberMap[controllerNumber]].Acq_Loc;
+                    rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp = rs[controllerNumberMap[controllerNumber]].Acq_Center;
 
-                activity_record.match_event = "-";
+                    if (rs[controllerNumberMap[controllerNumber]].Flag == 1)
+                    {
+                        activity_record.Leave = 0;
+                        activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
+                        activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center;
 
-                activity_record.Mobility = 0;
-                activity_record.Parked = 0;
-                activity_record.Docked = 0;
-                activity_record.Engaged = 0;
-                activity_record.Tried_And_Failed = 0;
-                activity_record.No_Attempt = 0;
-                activity_record.ChargePart = 0;
-                activity_record.EngageT = 0;
-                activity_record.EngageFail = "-";
-                activity_record.Setup = 0;
-                activity_record.AutoPts = 0;
-                activity_record.ChargePts = 0;
-                activity_record.Strategy = "-";
+                        if (rs[controllerNumberMap[controllerNumber]].Acq_Center != 0)
+                        {
+                            activity_record.AcqDis = 1;
+                            activity_record.AcqDrp = 0;
+                        }
+                        else
+                        {
+                            activity_record.AcqDis = 0;
+                            activity_record.AcqDrp = 1;
+                        }
 
-                activity_record.Defense = 0;
-                activity_record.Avoidance = 0;
+                        activity_record.DelMiss = 0;
+                        activity_record.DelOrig = "-";
+                        activity_record.DelDest = "-";
+                        activity_record.DriveSta = "-";
+                        activity_record.RobotSta = "-";
+                        activity_record.HPAmp = "-";
+                        activity_record.StageStat = "-";
+                        activity_record.StageAtt = 9;
+                        activity_record.StageLoc = "-";
+                        activity_record.Harmony = 9;
+                        activity_record.Spotlit = 9;
+                        activity_record.ClimbT = 0;
+                        activity_record.OZTime = 0;
+                        activity_record.AZTime = 0;
+                        activity_record.NZTime = 0;
+                        activity_record.Mics = 9;
+                        activity_record.Defense = 9;
+                        activity_record.Avoidance = 9;
+                        activity_record.Strategy = "-";
+                        activity_record.Team = rs[controllerNumberMap[controllerNumber]].TeamName;
+                        activity_record.Match = rs[controllerNumberMap[controllerNumber]].Current_Match;
+                        activity_record.Time = DateTime.Now;
+                        activity_record.Mode = rs[controllerNumberMap[controllerNumber]].Current_Mode.ToString();
+                        activity_record.ScouterName = rs[controllerNumberMap[controllerNumber]].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                        activity_record.RecordType = "Activities";
+                        activity_record.match_event = "-";
+                        activity_record.ScouterError = 0;
 
-                activity_record.ScouterError = 0;
+                        //Save Record to the database
+                        seasonframework.ActivitySet.Add(activity_record);
+                        seasonframework.SaveChanges();
+                    }
+                }
+                else if (rs[controllerNumberMap[controllerNumber]].Del_Dest != RobotState.DEL_DEST.Select)
+                {
+                    activity_record.Leave = 0;
+                    activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
+                    activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
+                    activity_record.AcqDis = 0;
+                    activity_record.AcqDrp = 0;
+                    activity_record.DelMiss = rs[controllerNumberMap[controllerNumber]].Flag;
 
-                //Save Record to the database
-                //seasonframework.ActivitySet.Add(activity_record);
-                //seasonframework.SaveChanges();
+                    // red right logic 
+                    if (RobotState.Red_Right == true)
+                    {
+                        if (rs[controllerNumberMap[controllerNumber]].color == "Red")
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                activity_record.DelOrig = "AllyW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                activity_record.DelOrig = "OppW";
+                            }
+                        }
+                        else
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                activity_record.DelOrig = "OppW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                activity_record.DelOrig = "AllyW";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (rs[controllerNumberMap[controllerNumber]].color == "Red")
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                activity_record.DelOrig = "OppW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                activity_record.DelOrig = "AllyW";
+                            }
+                        }
+                        else
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                activity_record.DelOrig = "AllyW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                activity_record.DelOrig = "OppW";
+                            }
+                        }
+                    }
+                    if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Neut)
+                    {
+                        activity_record.DelOrig = "Neut";
+                    }
+                    if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.SubW)
+                    {
+                        activity_record.DelOrig = "SubW";
+                    }
+                    if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Source)
+                    {
+                        activity_record.DelOrig = "Source";
+                    }
+                    activity_record.DelDest = rs[controllerNumberMap[controllerNumber]].Del_Dest.ToString();
+                    rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Select";
+
+                    activity_record.DriveSta = "-";
+                    activity_record.RobotSta = "-";
+                    activity_record.HPAmp = "-";
+                    activity_record.StageStat = "-";
+                    activity_record.StageAtt = 9;
+                    activity_record.StageLoc = "-";
+                    activity_record.Harmony = 9;
+                    activity_record.Spotlit = 9;
+                    activity_record.ClimbT = 0;
+                    activity_record.OZTime = 0;
+                    activity_record.AZTime = 0;
+                    activity_record.NZTime = 0;
+                    activity_record.Mics = 9;
+                    activity_record.Defense = 9;
+                    activity_record.Avoidance = 9;
+                    activity_record.Strategy = "-";
+                    activity_record.Team = rs[controllerNumberMap[controllerNumber]].TeamName;
+                    activity_record.Match = rs[controllerNumberMap[controllerNumber]].Current_Match;
+                    activity_record.Time = DateTime.Now;
+                    activity_record.Mode = rs[controllerNumberMap[controllerNumber]].Current_Mode.ToString();
+                    activity_record.ScouterName = rs[controllerNumberMap[controllerNumber]].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                    activity_record.RecordType = "Activities";
+                    activity_record.match_event = "-";
+                    activity_record.ScouterError = 0;
+
+                    //Save Record to the database
+                    seasonframework.ActivitySet.Add(activity_record);
+                    seasonframework.SaveChanges();
+                }
 
                 //Reset Values
                 rs[controllerNumberMap[controllerNumber]].Del_Dest = RobotState.DEL_DEST.Select;
@@ -999,6 +1185,7 @@ namespace T250DynoScout_v2023
                 rs[controllerNumberMap[controllerNumber]].Acq_Center = 0;
                 rs[controllerNumberMap[controllerNumber]].Flag = 0;
                 rs[controllerNumberMap[controllerNumber]].TransactionCheck = false;
+
             }
             else if (gamepad.RightTrigger_Press && !rs[controllerNumberMap[controllerNumber]].NoSho && rs[controllerNumberMap[controllerNumber]].TransactionCheck == false)
             {
@@ -1019,6 +1206,18 @@ namespace T250DynoScout_v2023
                 rs[controllerNumberMap[controllerNumber]].ClimbT_StopWatch.Start();
                 rs[controllerNumberMap[controllerNumber]].ClimbT = rs[controllerNumberMap[controllerNumber]].ClimbT_StopWatch.Elapsed;
                 rs[controllerNumberMap[controllerNumber]].ClimbT_StopWatch_running = true;
+
+                rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch.Stop();
+                rs[controllerNumberMap[controllerNumber]].AllyT = rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch.Elapsed;
+                rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch_running = false;
+
+                rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch.Stop();
+                rs[controllerNumberMap[controllerNumber]].OpptT = rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch.Elapsed;
+                rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch_running = false;
+
+                rs[controllerNumberMap[controllerNumber]].NeutT_StopWatch.Stop();
+                rs[controllerNumberMap[controllerNumber]].NeutT = rs[controllerNumberMap[controllerNumber]].NeutT_StopWatch.Elapsed;
+                rs[controllerNumberMap[controllerNumber]].NeutT_StopWatch_running = false;
             }
             else if (gamepad.BackButton_Press && rs[controllerNumberMap[controllerNumber]].Current_Mode == RobotState.ROBOT_MODE.Showtime && !rs[controllerNumberMap[controllerNumber]].NoSho)
             {

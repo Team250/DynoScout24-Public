@@ -146,7 +146,6 @@ namespace T250DynoScout_v2023
         public int redcharge { get; set; }
         public int bluetotaldel { get; set; }
         public int redtotaldel { get; set; }
-
     }
 
     public class Activity : BaseEntity
@@ -154,45 +153,38 @@ namespace T250DynoScout_v2023
         //Data elements used in multiple modes (Auto, Auto and/or Showtime)
         //Record Type = Transaction
 
+        //2024
         public string Team { get; set; }
         public int Match { get; set; }
         public DateTime Time { get; set; }
         public string RecordType { get; set; }
         public string Mode { get; set; }
-        public int Mobility { get; set; }
-        public int AcqSub1 { get; set; }
-        public int AcqSub2 { get; set; }
-        public int AcqFComm { get; set; }
-        public int AcqFLoad { get; set; }
-        public int AcqFOther { get; set; }
-        public int AcqFOpps { get; set; }
-        public int DelTop { get; set; }
-        public int DelMid { get; set; }
-        public int DelBot { get; set; }
-        public int DelFloor { get; set; }
-        public int DelOut { get; set; }
-        public int DelCoop { get; set; }
-        public int DelDrop { get; set; }
-        public int Cone { get; set; }
-        public int Cube { get; set; }
-        public int No_Attempt { get; set; }
-        public int Tried_And_Failed { get; set; }
-        public int Parked { get; set; }
-        public int Docked { get; set; }
-        public int Engaged { get; set; }
-        public int ChargePart { get; set; }
-        public double EngageT { get; set; }
-        public string EngageFail { get; set; }
-        public int Setup { get; set; }
-        public int AutoPts { get; set; }
-        public int GridPts { get; set; }
-        public int ChargePts { get; set; }
-        public string ScouterName { get; set; }
-        //public string ScouterNameAlt { get; set; }
-        public int ScouterError { get; set; }
+        public int Leave { get; set; }
+        public string AcqLoc { get; set; }
+        public int AcqCenter { get; set; }
+        public int AcqDis { get; set; }
+        public int AcqDrp { get; set; }
+        public string DelOrig { get; set; }
+        public string DelDest { get; set; }
+        public int DelMiss { get; set; }
+        public string DriveSta { get; set; }
+        public string RobotSta { get; set; }
+        public string HPAmp { get; set; }
+        public string StageStat { get; set; }
+        public int StageAtt { get; set; }
+        public string StageLoc { get; set; }
+        public int Harmony { get; set; }
+        public int Spotlit { get; set; }
+        public double ClimbT { get; set; }
+        public double OZTime { get; set; }
+        public double NZTime { get; set; }
+        public double AZTime { get; set; }
         public int Defense { get; set; }
         public int Avoidance { get; set; }
         public string Strategy { get; set; }
+        public int Mics { get; set; }
+        public string ScouterName { get; set; }
+        public int ScouterError { get; set; }
         public string match_event { get; set; }
 
         //Examples from previous years
@@ -244,12 +236,10 @@ namespace T250DynoScout_v2023
         public int GridPts { get; set; }
         public int ChargePts { get; set; }
         public string ScouterName { get; set; }
-        //public string ScouterNameAlt { get; set; }
         public int ScouterError { get; set; }
         public int Defense { get; set; }
         public int Avoidance { get; set; }
         public string Strategy { get; set; }
         public string match_event { get; set; }
-
     }
 }
