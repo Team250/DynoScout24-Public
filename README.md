@@ -22,7 +22,7 @@ To get the data from The Blue Alliance you will need to create a Read Me API Key
 ![Auto](https://i.imgur.com/t9gEicX.png)     ![Teleop](https://i.imgur.com/CeKyL8E.png[/img])
 ![Showtime](https://i.imgur.com/f8c1HPt.png[/img])
 
-Currently, all 3 modes work and you can input the correct controls. The next step is to send all the data to the database. The text below is what will happen when the code is complete. 
+Currently, all 3 modes work and you can input the correct controls. All the data should be recorded to the database correctly. Next is to reset all the variables, make the other 5 boxes, and then create the update database form. The text below is what will happen when the code is complete. 
 
 When the code starts up, the interface will be prompted.
 The user will need to load the events through the **Load** button at the top. This connects to The Blue Alliance API. After the code gets the events, the user will need to find the name of the event in the list of events, sorted by event code. 
