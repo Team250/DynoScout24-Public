@@ -4,7 +4,6 @@ using System;
 
 namespace T250DynoScout_v2023
 {
-
     public abstract class BaseEntity
     {
         public int Id { get; set; }
@@ -26,7 +25,7 @@ namespace T250DynoScout_v2023
     internal class SeasonContext : DbContext
     {
         public SeasonContext()
-            : base("2023seasondb")
+            : base("2024seasondb")
         { }
 
         public DbSet<EventSummary> Eventset { get; set; }

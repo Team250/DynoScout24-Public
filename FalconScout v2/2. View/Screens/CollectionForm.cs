@@ -100,6 +100,7 @@ namespace T250DynoScout_v2023
             List<string> ScoutList = new List<string>();
             if (cbxEndMatch.Checked)
             {
+                this.lblMatch.Text = (currentmatch + 1).ToString();
                 for (int i = 0; i <= 5; i++)
                 {
                     int prevmatchcheck = 0;
@@ -134,10 +135,20 @@ namespace T250DynoScout_v2023
                         activity_record.AcqCenter = 0;
                         activity_record.AcqDis = 0;
                         activity_record.AcqDrp = 0;
-                        activity_record.DelMiss = 0;
                         activity_record.DelOrig = "-";
                         activity_record.DelDest = "-";
+                        activity_record.DelMiss = 0;
                         activity_record.DriveSta = Robots[i].Drive_Sta;
+
+                        if (Robots[i].App_Strat == RobotState.APP_STRAT.Select)
+                        {
+                            activity_record.Strategy = "Z";
+                        }
+                        else
+                        {
+                            activity_record.Strategy = Robots[i].App_Strat.ToString();
+                        }
+
                         if (Robots[i].Robot_Set == RobotState.ROBOT_SET.Select)
                         {
                             activity_record.RobotSta = "Z";
@@ -146,6 +157,7 @@ namespace T250DynoScout_v2023
                         {
                             activity_record.RobotSta = Robots[i].Robot_Set.ToString();
                         }
+
                         if (Robots[i].HP_Amp == RobotState.HP_AMP.Select)
                         {
                             activity_record.HPAmp = "Z";
@@ -220,15 +232,16 @@ namespace T250DynoScout_v2023
                         }
 
                         // Harmony
-                        if (Robots[i].Harm == 9)
+                        if (Robots[i].Stage_Stat != RobotState.STAGE_STAT.Onstage)
                         {
-                            activity_record.Harmony = 10;
+                            activity_record.Harmony = 9;
                         }
                         else
                         {
                             activity_record.Harmony = Robots[i].Harm;
                         }
 
+                        // Spot lit
                         if (Robots[i].Lit == RobotState.LIT.Select)
                         {
                             activity_record.Spotlit = 10;
@@ -242,34 +255,46 @@ namespace T250DynoScout_v2023
                             activity_record.Spotlit = 0;
                         }
 
-                        Robots[i].ClimbTDouble = Robots[i].ClimbT_StopWatch.Elapsed.TotalSeconds;
-                        Robots[i].AllyTDouble = Robots[i].AllyT_StopWatch.Elapsed.TotalSeconds;
-                        Robots[i].OpptTDouble = Robots[i].OpptT_StopWatch.Elapsed.TotalSeconds;
-                        Robots[i].NeutTDouble = Robots[i].NeutT_StopWatch.Elapsed.TotalSeconds;
-                        activity_record.ClimbT = Robots[i].ClimbTDouble;
-                        activity_record.OZTime = Robots[i].OpptTDouble;
-                        activity_record.AZTime = Robots[i].AllyTDouble;
-                        activity_record.NZTime = Robots[i].NeutTDouble;
-                        activity_record.Mics = Robots[i].Mic;
-
-                        if (Robots[i].Def_Rat == 9)
+                        if (Robots[i].Stage_Stat != RobotState.STAGE_STAT.Onstage)
                         {
-                            activity_record.Defense = 10;
+                            activity_record.Spotlit = 9;
+                        }
+
+                        if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                        {
+                            activity_record.ClimbT = 0;
+                            activity_record.OZTime = 0;
+                            activity_record.AZTime = 0;
+                            activity_record.NZTime = 0;
                         }
                         else
                         {
-                            activity_record.Defense = Robots[i].Def_Rat;
+                            Robots[i].ClimbTDouble = Robots[i].ClimbT_StopWatch.Elapsed.TotalSeconds;
+                            Robots[i].AllyTDouble = Robots[i].AllyT_StopWatch.Elapsed.TotalSeconds;
+                            Robots[i].OpptTDouble = Robots[i].OpptT_StopWatch.Elapsed.TotalSeconds;
+                            Robots[i].NeutTDouble = Robots[i].NeutT_StopWatch.Elapsed.TotalSeconds;
+                            activity_record.ClimbT = Robots[i].ClimbTDouble;
+                            activity_record.OZTime = Robots[i].OpptTDouble;
+                            activity_record.AZTime = Robots[i].AllyTDouble;
+                            activity_record.NZTime = Robots[i].NeutTDouble;
                         }
 
-                        if (Robots[i].Avo_Rat == 9)
+                        if (Robots[i].Mic == 9)
                         {
-                            activity_record.Avoidance = 10;
+                            activity_record.Mics = 10;
                         }
                         else
                         {
-                            activity_record.Avoidance = Robots[i].Avo_Rat;
+                            activity_record.Mics = Robots[i].Mic;
                         }
 
+                        if (Robots[i].HP_Amp == RobotState.HP_AMP.N)
+                        {
+                            activity_record.Mics = 9;
+                        }
+
+                        activity_record.Defense = Robots[i].Def_Rat;
+                        activity_record.Avoidance = Robots[i].Avo_Rat;
                         activity_record.ScouterError = Robots[i].ScouterError;
 
                         //Save changes
@@ -277,10 +302,8 @@ namespace T250DynoScout_v2023
                         seasonframework.SaveChanges();
                     }
 
-
                     using (var db = new SeasonContext())
                     {
-
                         var teamNumber = Robots[i].TeamName;
                         var result = db.Teamset.FirstOrDefault(b => b.team_key == teamNumber);
 
@@ -679,6 +702,33 @@ namespace T250DynoScout_v2023
                     Robots[i].AUTO = true;
                     Robots[i].NoSho = false;
                     Robots[i].ScouterError = 0;
+                    Robots[i].Leave = 0;
+                    Robots[i].Acq_Loc = "Select";
+                    Robots[i].Acq_Center = 0;
+                    Robots[i].Acq_Loc_Temp = "Preload";
+                    Robots[i].Flag = 0;
+                    Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
+                    Robots[i].Drive_Sta = "Select";
+                    Robots[i].Robot_Set = RobotState.ROBOT_SET.Select;
+                    Robots[i].HP_Amp = RobotState.HP_AMP.Select;
+                    Robots[i].Stage_Stat = RobotState.STAGE_STAT.Select;
+                    Robots[i].Stage_Att = RobotState.STAGE_ATT.Select;
+                    Robots[i].Stage_Loc = RobotState.STAGE_LOC.Select;
+                    Robots[i].Harm = 9;
+                    Robots[i].Lit = RobotState.LIT.Select;
+                    Robots[i].ClimbT_StopWatch.Reset();
+                    Robots[i].AllyT_StopWatch.Reset();
+                    Robots[i].OpptT_StopWatch.Reset();
+                    Robots[i].NeutT_StopWatch.Reset();
+                    Robots[i].ClimbTDouble = 0;
+                    Robots[i].AllyTDouble = 0;
+                    Robots[i].OpptTDouble = 0;
+                    Robots[i].NeutTDouble = 0;
+                    Robots[i].Def_Rat = 9;
+                    Robots[i].Avo_Rat = 9;
+                    Robots[i].App_Strat = RobotState.APP_STRAT.Select;
+                    Robots[i].Mic = 9;
+                    Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
                 }
 
                 if (currentmatch == InMemoryMatchList.Count)
@@ -688,12 +738,12 @@ namespace T250DynoScout_v2023
                     currentmatch++;
                     //#Session0
                     this.lbl0TeamName.Text = Robots[0].TeamName = InMemoryMatchList[currentmatch].redteam1;
-                    //this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
-                    //this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
-                    //this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
-                    //this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
-                    //this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
-                    //this.lblMatch.Text = (currentmatch + 1).ToString();
+                    this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
+                    this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
+                    this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
+                    this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
+                    this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
+                    this.lblMatch.Text = (currentmatch + 1).ToString();
 
                     Robots[0].Desired_Mode = Robots[1].Desired_Mode = Robots[2].Desired_Mode = Robots[3].Desired_Mode = Robots[4].Desired_Mode = Robots[5].Desired_Mode = RobotState.ROBOT_MODE.Auto;
                     Robots[0].Current_Mode = Robots[1].Current_Mode = Robots[2].Current_Mode = Robots[3].Current_Mode = Robots[4].Current_Mode = Robots[5].Current_Mode = RobotState.ROBOT_MODE.Auto;
@@ -703,7 +753,6 @@ namespace T250DynoScout_v2023
                 {
                     ScoutList.Add(Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString());
                 }
-                int l = 5;
             }
             else
             {
@@ -713,11 +762,11 @@ namespace T250DynoScout_v2023
                 {
                     //#Session0
                     this.lbl0TeamName.Text = Robots[0].TeamName = InMemoryMatchList[currentmatch].redteam1;
-                    //this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
-                    //this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
-                    //this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
-                    //this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
-                    //this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
+                    this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
+                    this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
+                    this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
+                    this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
+                    this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
                     this.lblMatch.Text = (currentmatch + 1).ToString();
 
                     Robots[0].Desired_Mode = Robots[1].Desired_Mode = Robots[2].Desired_Mode = Robots[3].Desired_Mode = Robots[4].Desired_Mode = Robots[5].Desired_Mode = RobotState.ROBOT_MODE.Auto;
@@ -726,21 +775,39 @@ namespace T250DynoScout_v2023
                     //reset values
                     for (int i = 0; i <= 5; i++)
                     {
-                        Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
-
-                        
-
                         Robots[i].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
-
                         Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
-
                         Robots[i].AUTO = true;
                         Robots[i].NoSho = false;
                         Robots[i].TransactionCheck = false;
-
                         Robots[i].ScouterError = 0;
-
-                        
+                        Robots[i].Leave = 0;
+                        Robots[i].Acq_Loc = "Select";
+                        Robots[i].Acq_Center = 0;
+                        Robots[i].Acq_Loc_Temp = "Preload";
+                        Robots[i].Flag = 0;
+                        Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
+                        Robots[i].Drive_Sta = "Select";
+                        Robots[i].Robot_Set = RobotState.ROBOT_SET.Select;
+                        Robots[i].HP_Amp = RobotState.HP_AMP.Select;
+                        Robots[i].Stage_Stat = RobotState.STAGE_STAT.Select;
+                        Robots[i].Stage_Att = RobotState.STAGE_ATT.Select;
+                        Robots[i].Stage_Loc = RobotState.STAGE_LOC.Select;
+                        Robots[i].Harm = 9;
+                        Robots[i].Lit = RobotState.LIT.Select;
+                        Robots[i].ClimbT_StopWatch.Reset();
+                        Robots[i].AllyT_StopWatch.Reset();
+                        Robots[i].OpptT_StopWatch.Reset();
+                        Robots[i].NeutT_StopWatch.Reset();
+                        Robots[i].ClimbTDouble = 0;
+                        Robots[i].AllyTDouble = 0;
+                        Robots[i].NeutTDouble = 0;
+                        Robots[i].OpptTDouble = 0;
+                        Robots[i].Def_Rat = 9;
+                        Robots[i].Avo_Rat = 9;
+                        Robots[i].App_Strat = RobotState.APP_STRAT.Select;
+                        Robots[i].Mic = 9;
+                        Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
                     }
                 }
                 else
@@ -759,28 +826,53 @@ namespace T250DynoScout_v2023
             {
                 currentmatch--;
                 this.lbl0TeamName.Text = Robots[0].TeamName = InMemoryMatchList[currentmatch].redteam1;
-                //this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
-                //this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
-                //this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
-                //this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
-                //this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
+                this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
+                this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
+                this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
+                this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
+                this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
                 this.lblMatch.Text = (currentmatch + 1).ToString();
             }
             for (int i = 0; i <= 5; i++)
             {
                 Robots[i].match_event = RobotState.MATCHEVENT_NAME.Match_Event;
-                Robots[i]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
                 Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
                 Robots[i].AUTO = true;
                 Robots[i].NoSho = false;
                 Robots[i].TransactionCheck = false;
                 Robots[i].ScouterError = 0;
+                Robots[i].Leave = 0;
+                Robots[i].Acq_Loc = "Select";
+                Robots[i].Acq_Center = 0;
+                Robots[i].Acq_Loc_Temp = "Preload";
+                Robots[i].Flag = 0;
+                Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
+                Robots[i].Drive_Sta = "Select";
+                Robots[i].Robot_Set = RobotState.ROBOT_SET.Select;
+                Robots[i].HP_Amp = RobotState.HP_AMP.Select;
+                Robots[i].Stage_Stat = RobotState.STAGE_STAT.Select;
+                Robots[i].Stage_Att = RobotState.STAGE_ATT.Select;
+                Robots[i].Stage_Loc = RobotState.STAGE_LOC.Select;
+                Robots[i].Harm = 9;
+                Robots[i].Lit = RobotState.LIT.Select;
+                Robots[i].ClimbT_StopWatch.Reset();
+                Robots[i].AllyT_StopWatch.Reset();
+                Robots[i].OpptT_StopWatch.Reset();
+                Robots[i].NeutT_StopWatch.Reset();
+                Robots[i].ClimbTDouble = 0;
+                Robots[i].AllyTDouble = 0;
+                Robots[i].NeutTDouble = 0;
+                Robots[i].OpptTDouble = 0;
+                Robots[i].Def_Rat = 9;
+                Robots[i].Avo_Rat = 9;
+                Robots[i].App_Strat = RobotState.APP_STRAT.Select;
+                Robots[i].Mic = 9;
+                Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
             }
         }
 
         private void btnpopulateForEvent_Click(object sender, EventArgs e)
         {
-
             if (this.comboBoxSelectRegional.Text == "Please press the Load Events Button...")
             {
                 MessageBox.Show("You must load an event first.", "Not Ready to Get Matches");
@@ -1207,11 +1299,11 @@ namespace T250DynoScout_v2023
 
                                 // #Session0
                                 this.lbl0TeamName.Text = Robots[0].TeamName = InMemoryMatchList[currentmatch].redteam1;
-                                // this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
-                                //this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
-                                //this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
-                                //this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
-                                //this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
+                                this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
+                                this.lbl2TeamName.Text = Robots[2].TeamName = InMemoryMatchList[currentmatch].redteam3;
+                                this.lbl3TeamName.Text = Robots[3].TeamName = InMemoryMatchList[currentmatch].blueteam1;
+                                this.lbl4TeamName.Text = Robots[4].TeamName = InMemoryMatchList[currentmatch].blueteam2;
+                                this.lbl5TeamName.Text = Robots[5].TeamName = InMemoryMatchList[currentmatch].blueteam3;
                                 Robots[0].color = "Blue";
                                 Robots[1].color = "Blue";
                                 Robots[2].color = "Blue";
@@ -1234,7 +1326,6 @@ namespace T250DynoScout_v2023
                     if (ex.Status == WebExceptionStatus.ProtocolError &&
                         ex.Response != null)
                     {
-
                         var resp = (HttpWebResponse)ex.Response;
                         if ((resp.StatusCode == HttpStatusCode.NotFound))
                         {
@@ -1246,7 +1337,6 @@ namespace T250DynoScout_v2023
                         }
                     }
                 }
-
 
                 //#AuthKey
                 uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/rankings?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
@@ -1311,7 +1401,6 @@ namespace T250DynoScout_v2023
                     if (ex.Status == WebExceptionStatus.ProtocolError &&
                         ex.Response != null)
                     {
-
                         var resp = (HttpWebResponse)ex.Response;
                         if ((resp.StatusCode == HttpStatusCode.NotFound))
                         {
@@ -1325,181 +1414,10 @@ namespace T250DynoScout_v2023
                 }
             }
         }
-
-        private void comboBoxSelectRegional_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DynoScoutScoutingSystemForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstLog_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl1TeamName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl1ModeValue_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMatch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl0ScoutName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblkey_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbxEndMatch_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl0Position5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void team1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl0Position2Value1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl0Position6Value3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl0Position8Value1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl0Position9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label52_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label139_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl1TeamName_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUpdateDB_Click(object sender, EventArgs e)
         {
             UpdateDatabase frm = new UpdateDatabase(teamlist, MatchNumbers);
             frm.Show();
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl0Position7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void SwapScouters_Click(object sender, EventArgs e)

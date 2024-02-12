@@ -27,7 +27,7 @@ namespace T250DynoScout_v2023
 
             Log("Cleaning databases...");
             //seasonframework.Database.Initialize(true);
-            seasonframework.Database.ExecuteSqlCommand("DELETE FROM [EventSummaries]");
+            seasonframework.Database.ExecuteSqlCommand("DELETE FROM [EventSummaries]");  // If you crash here, the database structure has been changed, delete DB and retry
             seasonframework.Database.ExecuteSqlCommand("DELETE FROM [Matches]");
             //seasonframework.Database.ExecuteSqlCommand("DELETE FROM [TeamSummaries]");    // DO NOT DELETE DURING EVENT
             //seasonframework.Database.ExecuteSqlCommand("DELETE FROM [Activities]");       // DO NOT DELETE DURING EVENT

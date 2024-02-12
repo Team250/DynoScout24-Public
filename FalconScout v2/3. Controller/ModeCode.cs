@@ -47,30 +47,30 @@ namespace T250DynoScout_v2023
             if (Robots[0].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(0);  // Scouter 1
             else if (Robots[0].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(0);
             else if (Robots[0].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(0);
-            //    // Scouter 2
-            //    if (Robots[1].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(1);  // Scouter 2
-            //    else if (Robots[1].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(1);
-            //    else if (Robots[1].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(1);
+            // Scouter 2
+            if (Robots[1].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(1);  // Scouter 2
+            else if (Robots[1].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(1);
+            else if (Robots[1].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(1);
 
-            //    // Scouter 3
-            //    if (Robots[2].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(2);  // Scouter 3
-            //    else if (Robots[2].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(2);
-            //    else if (Robots[2].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(2);
+            // Scouter 3
+            if (Robots[2].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(2);  // Scouter 3
+            else if (Robots[2].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(2);
+            else if (Robots[2].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(2);
 
-            //    // Scouter 4
-            //    if (Robots[3].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(3);  // Scouter 4
-            //    else if (Robots[3].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(3);
-            //    else if (Robots[3].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(3);
+            // Scouter 4
+            if (Robots[3].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(3);  // Scouter 4
+            else if (Robots[3].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(3);
+            else if (Robots[3].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(3);
 
-            //    // Scouter 5
-            //    if (Robots[4].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(4);  // Scouter 5
-            //    else if (Robots[4].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(4);
-            //    else if (Robots[4].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(4);
+            // Scouter 5
+            if (Robots[4].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(4);  // Scouter 5
+            else if (Robots[4].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(4);
+            else if (Robots[4].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(4);
 
-            //    // Scouter 6
-            //    if (Robots[5].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(5);  // Scouter 6
-            //    else if (Robots[5].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(5);
-            //    else if (Robots[5].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(5);
+            // Scouter 6
+            if (Robots[5].Current_Mode == RobotState.ROBOT_MODE.Auto) InAutoMode(5);  // Scouter 6
+            else if (Robots[5].Current_Mode == RobotState.ROBOT_MODE.Teleop) InTeleopMode(5);
+            else if (Robots[5].Current_Mode == RobotState.ROBOT_MODE.Showtime) InShowtimeMode(5);
         }
 
         private void InAutoMode(int Controller_Number)
@@ -397,7 +397,7 @@ namespace T250DynoScout_v2023
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5", true)[0]).Text = "Harm:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5", true)[0]).Visible = true;
-            if (Robots[Controller_Number].Harm == 10)
+            if (Robots[Controller_Number].Harm == 10 || Robots[Controller_Number].Harm == 9)
             {
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5Value", true)[0]).Visible = false;
             }
@@ -445,7 +445,7 @@ namespace T250DynoScout_v2023
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position8", true)[0]).Text = "Def:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position8", true)[0]).Visible = true;
-            if (Robots[Controller_Number].Def_Rat == 10)
+            if (Robots[Controller_Number].Def_Rat == 10 || Robots[Controller_Number].Def_Rat == 9)
             {
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position8Value", true)[0]).Visible = false;
             }
@@ -457,7 +457,7 @@ namespace T250DynoScout_v2023
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position9", true)[0]).Text = "Mics:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position9", true)[0]).Visible = true;
-            if (Robots[Controller_Number].Mic == 10)
+            if (Robots[Controller_Number].Mic == 10 || Robots[Controller_Number].Mic == 9)
             {
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position9Value", true)[0]).Visible = false;
             }
@@ -470,7 +470,7 @@ namespace T250DynoScout_v2023
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position10", true)[0]).Text = "Avo:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position10", true)[0]).Visible = true;
-            if (Robots[Controller_Number].Avo_Rat == 10)
+            if (Robots[Controller_Number].Avo_Rat == 10 || Robots[Controller_Number].Avo_Rat == 9)
             {
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position10Value", true)[0]).Visible = false;
             }

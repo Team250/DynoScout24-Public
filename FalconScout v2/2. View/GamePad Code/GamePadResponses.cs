@@ -189,7 +189,7 @@ namespace T250DynoScout_v2023
                     activity_record.DelMiss = 0;
                     activity_record.DelOrig = "-";
                     activity_record.DelDest = "-";
-                    activity_record.DriveSta = "-";
+                    activity_record.DriveSta = rs[controllerNumberMap[controllerNumber]].Drive_Sta;
                     activity_record.RobotSta = "-";
                     activity_record.HPAmp = "-";
                     activity_record.StageStat = "-";
@@ -202,7 +202,7 @@ namespace T250DynoScout_v2023
                     activity_record.AZTime = 0;
                     activity_record.NZTime = 0;
                     activity_record.Mics = 9;
-                    activity_record.Defense = 9;   
+                    activity_record.Defense = 9;
                     activity_record.Avoidance = 9;
                     activity_record.Strategy = "-";
 
@@ -309,7 +309,7 @@ namespace T250DynoScout_v2023
                 if (gamepad.StartButton_Press && rs[controllerNumberMap[controllerNumber]].Leave == 0)
                 {
                     rs[controllerNumberMap[controllerNumber]].Leave = 1;
-                
+
                 }
                 else if (gamepad.StartButton_Press && rs[controllerNumberMap[controllerNumber]].Leave == 1)
                 {
@@ -802,7 +802,7 @@ namespace T250DynoScout_v2023
                 {
                     rs[controllerNumberMap[controllerNumber]].Flag = 0;
                 }
-              
+
                 //2024 stat
                 if (gamepad.XButton_Down)
                 {
@@ -942,7 +942,7 @@ namespace T250DynoScout_v2023
             // **************************************************************
             // ***  TRANSACT TO DATABASE  ***
             // **************************************************************
-            if (rs[controllerNumberMap[controllerNumber]]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+            if (rs[controllerNumberMap[controllerNumber]]._ScouterName != RobotState.SCOUTER_NAME.Select_Name && (rs[controllerNumberMap[controllerNumber]].Acq_Loc != "Select" || rs[controllerNumberMap[controllerNumber]].Del_Dest != RobotState.DEL_DEST.Select))
             {
                 rs[controllerNumberMap[controllerNumber]].TransactionCheck = true;
             }
@@ -964,14 +964,7 @@ namespace T250DynoScout_v2023
                 activity_record.RecordType = "EndAuto";
                 activity_record.match_event = "-";
                 activity_record.ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError;
-                if (rs[controllerNumberMap[controllerNumber]].Leave == 1)
-                {
-                    activity_record.Leave = 1;
-                }
-                else if (rs[controllerNumberMap[controllerNumber]].Leave == 0)
-                {
-                    activity_record.Leave = 0;
-                }
+                activity_record.Leave = rs[controllerNumberMap[controllerNumber]].Leave;
                 activity_record.AcqLoc = "-";
                 activity_record.AcqCenter = 0;
                 activity_record.AcqDis = 0;
@@ -979,7 +972,9 @@ namespace T250DynoScout_v2023
                 activity_record.DelMiss = 0;
                 activity_record.DelOrig = "-";
                 activity_record.DelDest = "-";
-                activity_record.DriveSta = "-";
+
+                activity_record.DriveSta = rs[controllerNumberMap[controllerNumber]].Drive_Sta;
+
                 if (rs[controllerNumberMap[controllerNumber]].Robot_Set == RobotState.ROBOT_SET.Select)
                 {
                     activity_record.RobotSta = "Z";
@@ -1021,12 +1016,73 @@ namespace T250DynoScout_v2023
             {
                 if (rs[controllerNumberMap[controllerNumber]].Acq_Loc != RobotState.CURRENT_LOC.Select.ToString())
                 {
-                    rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = rs[controllerNumberMap[controllerNumber]].Acq_Loc;
+                    if (RobotState.Red_Right == true)
+                    {
+                        if (rs[controllerNumberMap[controllerNumber]].color == "Red")
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "AllyW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "OppW";
+                            }
+                        }
+                        else
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "OppW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "AllyW";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (rs[controllerNumberMap[controllerNumber]].color == "Red")
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "OppW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "AllyW";
+                            }
+                        }
+                        else
+                        {
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Right)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "AllyW";
+                            }
+                            if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Left)
+                            {
+                                rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "OppW";
+                            }
+                        }
+                    }
+                    if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Source)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Srce";
+                    }
+                    if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Neut)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Neut";
+                    }
+
                     rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp = rs[controllerNumberMap[controllerNumber]].Acq_Center;
+
+
 
                     if (rs[controllerNumberMap[controllerNumber]].Flag == 1)
                     {
                         activity_record.Leave = 0;
+
                         activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
                         activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center;
 
@@ -1044,7 +1100,50 @@ namespace T250DynoScout_v2023
                         activity_record.DelMiss = 0;
                         activity_record.DelOrig = "-";
                         activity_record.DelDest = "-";
-                        activity_record.DriveSta = "-";
+                        activity_record.DriveSta = rs[controllerNumberMap[controllerNumber]].Drive_Sta;
+                        activity_record.RobotSta = "-";
+                        activity_record.HPAmp = "-";
+                        activity_record.StageStat = "-";
+                        activity_record.StageAtt = 9;
+                        activity_record.StageLoc = "-";
+                        activity_record.Harmony = 9;
+                        activity_record.Spotlit = 9;
+                        activity_record.ClimbT = 0;
+                        activity_record.OZTime = 0;
+                        activity_record.AZTime = 0;
+                        activity_record.NZTime = 0;
+                        activity_record.Mics = 9;
+                        activity_record.Defense = 9;
+                        activity_record.Avoidance = 9;
+                        activity_record.Strategy = "-";
+                        activity_record.Team = rs[controllerNumberMap[controllerNumber]].TeamName;
+                        activity_record.Match = rs[controllerNumberMap[controllerNumber]].Current_Match;
+                        activity_record.Time = DateTime.Now;
+                        activity_record.Mode = rs[controllerNumberMap[controllerNumber]].Current_Mode.ToString();
+                        activity_record.ScouterName = rs[controllerNumberMap[controllerNumber]].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                        activity_record.RecordType = "Activities";
+                        activity_record.match_event = "-";
+                        activity_record.ScouterError = 0;
+
+                        //Save Record to the database
+                        seasonframework.ActivitySet.Add(activity_record);
+                        seasonframework.SaveChanges();
+                    }
+                    else if (rs[controllerNumberMap[controllerNumber]].Flag == 0 &&
+                        (rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp > 0 || rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp < 6))
+                    {
+                        activity_record.Leave = 0;
+
+                        activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
+                        activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center;
+
+
+                        activity_record.AcqDrp = 0;
+                        activity_record.AcqDis = 0;
+                        activity_record.DelMiss = 0;
+                        activity_record.DelOrig = "-";
+                        activity_record.DelDest = "-";
+                        activity_record.DriveSta = rs[controllerNumberMap[controllerNumber]].Drive_Sta;
                         activity_record.RobotSta = "-";
                         activity_record.HPAmp = "-";
                         activity_record.StageStat = "-";
@@ -1077,7 +1176,7 @@ namespace T250DynoScout_v2023
                 else if (rs[controllerNumberMap[controllerNumber]].Del_Dest != RobotState.DEL_DEST.Select)
                 {
                     activity_record.Leave = 0;
-                    activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
+
                     activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
                     activity_record.AcqDis = 0;
                     activity_record.AcqDrp = 0;
@@ -1146,10 +1245,31 @@ namespace T250DynoScout_v2023
                     {
                         activity_record.DelOrig = "Source";
                     }
+
+                    if (rs[controllerNumberMap[controllerNumber]].Current_Mode == RobotState.ROBOT_MODE.Showtime)
+                    {
+                        if (rs[controllerNumberMap[controllerNumber]].Del_Dest == RobotState.DEL_DEST.Trap)
+                        {
+                            activity_record.DelOrig = "Showtime";
+                        }
+                    }
+
+
+
+                    if (rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp == "Select")
+                    {
+                        activity_record.AcqLoc = "Z";
+                    }
+                    else
+                    {
+                        activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
+                    }
+
+
                     activity_record.DelDest = rs[controllerNumberMap[controllerNumber]].Del_Dest.ToString();
                     rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Select";
 
-                    activity_record.DriveSta = "-";
+                    activity_record.DriveSta = rs[controllerNumberMap[controllerNumber]].Drive_Sta;
                     activity_record.RobotSta = "-";
                     activity_record.HPAmp = "-";
                     activity_record.StageStat = "-";
@@ -1223,6 +1343,22 @@ namespace T250DynoScout_v2023
             {
                 rs[controllerNumberMap[controllerNumber]].Desired_Mode = RobotState.ROBOT_MODE.Showtime;
                 rs[controllerNumberMap[controllerNumber]].Current_Mode = RobotState.ROBOT_MODE.Teleop;
+
+                rs[controllerNumberMap[controllerNumber]].ClimbT_StopWatch.Stop();
+                rs[controllerNumberMap[controllerNumber]].ClimbT = rs[controllerNumberMap[controllerNumber]].ClimbT_StopWatch.Elapsed;
+                rs[controllerNumberMap[controllerNumber]].ClimbT_StopWatch_running = false;
+
+                rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch.Start();
+                rs[controllerNumberMap[controllerNumber]].AllyT = rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch.Elapsed;
+                rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch_running = true;
+
+                rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch.Start();
+                rs[controllerNumberMap[controllerNumber]].OpptT = rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch.Elapsed;
+                rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch_running = true;
+
+                rs[controllerNumberMap[controllerNumber]].NeutT_StopWatch.Start();
+                rs[controllerNumberMap[controllerNumber]].NeutT = rs[controllerNumberMap[controllerNumber]].NeutT_StopWatch.Elapsed;
+                rs[controllerNumberMap[controllerNumber]].NeutT_StopWatch_running = true;
             }
         }
     }

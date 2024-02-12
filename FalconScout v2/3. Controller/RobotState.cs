@@ -7,24 +7,41 @@ namespace T250DynoScout_v2023
     public class RobotState
     {
         // These are our own defined types...
+        // Year to Year enums
         public enum TEAM_ENUM { };
         public enum ROBOT_MODE { Auto, Teleop, Showtime };
         public enum CYCLE_DIRECTION { Up, Down }
-        public enum MATCHEVENT_NAME { Match_Event, Fumbled, Broke_Down, Got_Stuck, Jammed_Piece, Lost_Parts, No_Show, Partner_Engage, Tipped_Over }
+        public enum MATCHEVENT_NAME { Match_Event, Fumbled, Broke_Down, Got_Stuck, Jammed_Piece, Lost_Parts, No_Show, Tipped_Over }
         public enum SCOUTER_NAME { Select_Name, Scouter1, Scouter2, Scouter3, Scouter4, Scouter5, Scouter6, Scouter7, Scouter8, Scouter9, Scouter10, Scouter11, Scouter12 }
+
+        // Year to Year ints
+        public int ScouterError;
+        public int Current_Match;               //Current Match
+
+        // Year to Year doubles
+        public static double Red_Score;
+        public static double Blue_Score;
+
+        // Year to Year strings
+        public string color;
+
+        // Year to Year bools
+        public static bool Red_Right;
+        public bool RTHUP_Lock;
+        public bool TransactionCheck = false;
+        public bool AUTO = true;
+        public bool NoSho = false;
 
         // 2024 enums
         public enum DEL_DEST { Select, Speaker, Amp, Trap, FloorWing, FloorNeut }
         public enum ROBOT_SET { Select, Amp, Sub, Pod, Opp }
         public enum HP_AMP { Select, Y, N }
         public enum STAGE_STAT { Select, Onstage, Park, Elsewhere }
-        public enum STAGE_ATT { Select, Y, N}
+        public enum STAGE_ATT { Select, Y, N }
         public enum STAGE_LOC { Select, L, C, R }
         public enum LIT { Select, Y, N, }
         public enum APP_STRAT { Select, None, Defense, Mover, Shooter, Hybrid, Celeberity }
         public enum CURRENT_LOC { Select, Left, Right, Neut, SubW, Source }
-
-        public int ScouterError;
 
         //2024 PUBLIC INT
         public int Leave;
@@ -36,11 +53,8 @@ namespace T250DynoScout_v2023
         public int Mic = 10;
         public int Coop;
         public string Acq_Loc = CURRENT_LOC.Select.ToString();
-        public string Acq_Loc_Temp = CURRENT_LOC.Select.ToString();
+        public string Acq_Loc_Temp = "Preload";
         public int Acq_Center_Temp;
-        
-        public static bool Red_Right;
-        public bool RTHUP_Lock;
 
         // 2024 timers
         public TimeSpan OpptT = TimeSpan.Zero;
@@ -63,23 +77,9 @@ namespace T250DynoScout_v2023
         public bool AllyT_StopWatch_running;
         public double AllyTDouble;
 
-        public bool TransactionCheck = false;
-
-        public bool AUTO = true;
-
         // These are the standard types...
 
         public ROBOT_MODE Desired_Mode;         //Desired Mode
-        public int Current_Match;               //Current Match
-
-        public string color;
-
-        public static double Red_Score;
-        public static double Blue_Score;
-
-        public bool NoSho = false;
-
-        public int DrStation;
 
         //LOCAL VARIABLES SECTION.  All underscored variables indicate local variables for one controller/scouter
 
