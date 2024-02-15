@@ -167,7 +167,7 @@ namespace T250DynoScout_v2023
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position4Value", true)[0]).BackColor = System.Drawing.Color.Green;
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position4Value", true)[0]).ForeColor = System.Drawing.Color.Green;
             }
-        
+
             // Hp in Amp
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5", true)[0]).Text = "HP Amp";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5", true)[0]).Visible = true;
@@ -188,8 +188,27 @@ namespace T250DynoScout_v2023
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
             }
 
-            ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Visible = false;
-            ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = false;
+            if (Robots[Controller_Number].NoSho == true)
+            {
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Text = "Mics:";
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Visible = true;
+
+                if (Robots[Controller_Number].Mic == 10 || Robots[Controller_Number].Mic == 9)
+                {
+                    ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = false;
+                }
+                else
+                {
+                    ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Text = Robots[Controller_Number].Mic.ToString();
+                    ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = true;
+                }
+            }
+            else
+            {
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Visible = false;
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = false;
+            }
+
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position7", true)[0]).Visible = false;
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position7Value", true)[0]).Visible = false;

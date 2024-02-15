@@ -56,6 +56,17 @@ namespace T250DynoScout_v2023
         public string Acq_Loc_Temp = "Preload";
         public int Acq_Center_Temp;
 
+        public DateTime Auto_Time;
+
+        public static string blue0;
+        public static string blue1;
+        public static string blue2;
+
+        public static string red0;
+        public static string red1;
+        public static string red2;
+
+
         // 2024 timers
         public TimeSpan OpptT = TimeSpan.Zero;
         public Stopwatch OpptT_StopWatch;

@@ -308,7 +308,6 @@
             this.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstLog.ForeColor = System.Drawing.Color.White;
             this.lstLog.FormattingEnabled = true;
-            this.lstLog.ItemHeight = 16;
             this.lstLog.Location = new System.Drawing.Point(8, 728);
             this.lstLog.Name = "lstLog";
             this.lstLog.Size = new System.Drawing.Size(1010, 0);
@@ -364,7 +363,7 @@
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label14.Location = new System.Drawing.Point(211, 12);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 32);
+            this.label14.Size = new System.Drawing.Size(38, 26);
             this.label14.TabIndex = 244;
             this.label14.Text = "Event:\r\n\r\n";
             // 
@@ -400,7 +399,7 @@
             this.comboBoxSelectRegional.FormattingEnabled = true;
             this.comboBoxSelectRegional.Location = new System.Drawing.Point(250, 7);
             this.comboBoxSelectRegional.Name = "comboBoxSelectRegional";
-            this.comboBoxSelectRegional.Size = new System.Drawing.Size(191, 24);
+            this.comboBoxSelectRegional.Size = new System.Drawing.Size(191, 21);
             this.comboBoxSelectRegional.TabIndex = 254;
             this.comboBoxSelectRegional.Text = "Please press the Load Events Button...";
             this.comboBoxSelectRegional.ValueMember = "event_code";
@@ -434,7 +433,7 @@
             this.labelMatch.ForeColor = System.Drawing.Color.LimeGreen;
             this.labelMatch.Location = new System.Drawing.Point(587, 6);
             this.labelMatch.Name = "labelMatch";
-            this.labelMatch.Size = new System.Drawing.Size(83, 29);
+            this.labelMatch.Size = new System.Drawing.Size(66, 24);
             this.labelMatch.TabIndex = 259;
             this.labelMatch.Text = "Match:";
             // 
@@ -455,7 +454,7 @@
             this.cbxEndMatch.Location = new System.Drawing.Point(723, 10);
             this.cbxEndMatch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEndMatch.Name = "cbxEndMatch";
-            this.cbxEndMatch.Size = new System.Drawing.Size(92, 20);
+            this.cbxEndMatch.Size = new System.Drawing.Size(78, 17);
             this.cbxEndMatch.TabIndex = 280;
             this.cbxEndMatch.Text = "End Match";
             this.cbxEndMatch.UseVisualStyleBackColor = false;
@@ -499,7 +498,7 @@
             this.lbl0Position6Value2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position6Value2.Location = new System.Drawing.Point(418, 214);
             this.lbl0Position6Value2.Name = "lbl0Position6Value2";
-            this.lbl0Position6Value2.Size = new System.Drawing.Size(46, 31);
+            this.lbl0Position6Value2.Size = new System.Drawing.Size(38, 26);
             this.lbl0Position6Value2.TabIndex = 277;
             this.lbl0Position6Value2.Text = "00";
             this.lbl0Position6Value2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -550,7 +549,7 @@
             this.lbl0Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position6Value.Location = new System.Drawing.Point(263, 159);
             this.lbl0Position6Value.Name = "lbl0Position6Value";
-            this.lbl0Position6Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl0Position6Value.Size = new System.Drawing.Size(32, 24);
             this.lbl0Position6Value.TabIndex = 345;
             this.lbl0Position6Value.Text = "$$";
             this.lbl0Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -563,7 +562,7 @@
             this.lbl0Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position10Value.Location = new System.Drawing.Point(246, 211);
             this.lbl0Position10Value.Name = "lbl0Position10Value";
-            this.lbl0Position10Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl0Position10Value.Size = new System.Drawing.Size(21, 24);
             this.lbl0Position10Value.TabIndex = 344;
             this.lbl0Position10Value.Text = "0";
             this.lbl0Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -575,7 +574,7 @@
             this.lbl0Position10.ForeColor = System.Drawing.Color.White;
             this.lbl0Position10.Location = new System.Drawing.Point(202, 210);
             this.lbl0Position10.Name = "lbl0Position10";
-            this.lbl0Position10.Size = new System.Drawing.Size(63, 29);
+            this.lbl0Position10.Size = new System.Drawing.Size(52, 24);
             this.lbl0Position10.TabIndex = 343;
             this.lbl0Position10.Text = "Avo:";
             // 
@@ -588,7 +587,7 @@
             this.lbl0Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position7Value.Location = new System.Drawing.Point(97, 184);
             this.lbl0Position7Value.Name = "lbl0Position7Value";
-            this.lbl0Position7Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl0Position7Value.Size = new System.Drawing.Size(16, 24);
             this.lbl0Position7Value.TabIndex = 342;
             this.lbl0Position7Value.Text = ".";
             this.lbl0Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -601,7 +600,7 @@
             this.lbl0Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position9Value.Location = new System.Drawing.Point(68, 213);
             this.lbl0Position9Value.Name = "lbl0Position9Value";
-            this.lbl0Position9Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl0Position9Value.Size = new System.Drawing.Size(21, 24);
             this.lbl0Position9Value.TabIndex = 341;
             this.lbl0Position9Value.Text = "#";
             this.lbl0Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -613,7 +612,7 @@
             this.lbl0Position9.ForeColor = System.Drawing.Color.White;
             this.lbl0Position9.Location = new System.Drawing.Point(3, 213);
             this.lbl0Position9.Name = "lbl0Position9";
-            this.lbl0Position9.Size = new System.Drawing.Size(74, 29);
+            this.lbl0Position9.Size = new System.Drawing.Size(59, 24);
             this.lbl0Position9.TabIndex = 340;
             this.lbl0Position9.Text = "Mics:";
             // 
@@ -624,7 +623,7 @@
             this.lbl0Position7.ForeColor = System.Drawing.Color.White;
             this.lbl0Position7.Location = new System.Drawing.Point(2, 184);
             this.lbl0Position7.Name = "lbl0Position7";
-            this.lbl0Position7.Size = new System.Drawing.Size(95, 29);
+            this.lbl0Position7.Size = new System.Drawing.Size(73, 24);
             this.lbl0Position7.TabIndex = 339;
             this.lbl0Position7.Text = "Spotlit:";
             // 
@@ -635,7 +634,7 @@
             this.lbl0Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl0Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl0Position2Flag.Name = "lbl0Position2Flag";
-            this.lbl0Position2Flag.Size = new System.Drawing.Size(34, 29);
+            this.lbl0Position2Flag.Size = new System.Drawing.Size(27, 24);
             this.lbl0Position2Flag.TabIndex = 338;
             this.lbl0Position2Flag.Text = "M";
             // 
@@ -646,7 +645,7 @@
             this.lbl0Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl0Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl0Position0Flag.Name = "lbl0Position0Flag";
-            this.lbl0Position0Flag.Size = new System.Drawing.Size(31, 29);
+            this.lbl0Position0Flag.Size = new System.Drawing.Size(24, 24);
             this.lbl0Position0Flag.TabIndex = 337;
             this.lbl0Position0Flag.Text = "D";
             // 
@@ -659,7 +658,7 @@
             this.lbl0Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position4Value.Location = new System.Drawing.Point(274, 130);
             this.lbl0Position4Value.Name = "lbl0Position4Value";
-            this.lbl0Position4Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl0Position4Value.Size = new System.Drawing.Size(16, 24);
             this.lbl0Position4Value.TabIndex = 336;
             this.lbl0Position4Value.Text = ".";
             this.lbl0Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -673,7 +672,7 @@
             this.lbl0Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position5Value.Location = new System.Drawing.Point(97, 157);
             this.lbl0Position5Value.Name = "lbl0Position5Value";
-            this.lbl0Position5Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl0Position5Value.Size = new System.Drawing.Size(16, 24);
             this.lbl0Position5Value.TabIndex = 334;
             this.lbl0Position5Value.Text = ".";
             this.lbl0Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -685,7 +684,7 @@
             this.lbl0Position6.ForeColor = System.Drawing.Color.White;
             this.lbl0Position6.Location = new System.Drawing.Point(202, 158);
             this.lbl0Position6.Name = "lbl0Position6";
-            this.lbl0Position6.Size = new System.Drawing.Size(74, 29);
+            this.lbl0Position6.Size = new System.Drawing.Size(57, 24);
             this.lbl0Position6.TabIndex = 331;
             this.lbl0Position6.Text = "Strat:";
             // 
@@ -697,7 +696,7 @@
             this.lbl0Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl0Position2Value.Name = "lbl0Position2Value";
-            this.lbl0Position2Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl0Position2Value.Size = new System.Drawing.Size(32, 24);
             this.lbl0Position2Value.TabIndex = 330;
             this.lbl0Position2Value.Text = "$$";
             this.lbl0Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -710,7 +709,7 @@
             this.lbl0Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position1Value.Location = new System.Drawing.Point(243, 50);
             this.lbl0Position1Value.Name = "lbl0Position1Value";
-            this.lbl0Position1Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl0Position1Value.Size = new System.Drawing.Size(32, 24);
             this.lbl0Position1Value.TabIndex = 329;
             this.lbl0Position1Value.Text = "$$";
             this.lbl0Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -732,7 +731,7 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label4.Location = new System.Drawing.Point(418, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 31);
+            this.label4.Size = new System.Drawing.Size(38, 26);
             this.label4.TabIndex = 277;
             this.label4.Text = "00";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -754,7 +753,7 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label3.Location = new System.Drawing.Point(418, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 31);
+            this.label3.Size = new System.Drawing.Size(38, 26);
             this.label3.TabIndex = 277;
             this.label3.Text = "00";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -766,7 +765,7 @@
             this.lbl0Position5.ForeColor = System.Drawing.Color.White;
             this.lbl0Position5.Location = new System.Drawing.Point(2, 158);
             this.lbl0Position5.Name = "lbl0Position5";
-            this.lbl0Position5.Size = new System.Drawing.Size(121, 29);
+            this.lbl0Position5.Size = new System.Drawing.Size(99, 24);
             this.lbl0Position5.TabIndex = 328;
             this.lbl0Position5.Text = "HP Amp: ";
             // 
@@ -777,7 +776,7 @@
             this.lbl0Position4.ForeColor = System.Drawing.Color.White;
             this.lbl0Position4.Location = new System.Drawing.Point(202, 130);
             this.lbl0Position4.Name = "lbl0Position4";
-            this.lbl0Position4.Size = new System.Drawing.Size(90, 29);
+            this.lbl0Position4.Size = new System.Drawing.Size(72, 24);
             this.lbl0Position4.TabIndex = 322;
             this.lbl0Position4.Text = "Leave:";
             // 
@@ -789,7 +788,7 @@
             this.lbl0Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position8Value.Location = new System.Drawing.Point(246, 185);
             this.lbl0Position8Value.Name = "lbl0Position8Value";
-            this.lbl0Position8Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl0Position8Value.Size = new System.Drawing.Size(21, 24);
             this.lbl0Position8Value.TabIndex = 324;
             this.lbl0Position8Value.Text = "0";
             this.lbl0Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -801,7 +800,7 @@
             this.lbl0Position0.ForeColor = System.Drawing.Color.White;
             this.lbl0Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl0Position0.Name = "lbl0Position0";
-            this.lbl0Position0.Size = new System.Drawing.Size(64, 29);
+            this.lbl0Position0.Size = new System.Drawing.Size(53, 24);
             this.lbl0Position0.TabIndex = 322;
             this.lbl0Position0.Text = "Acq:";
             // 
@@ -813,7 +812,7 @@
             this.lbl0Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl0Position3Value.Name = "lbl0Position3Value";
-            this.lbl0Position3Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl0Position3Value.Size = new System.Drawing.Size(21, 24);
             this.lbl0Position3Value.TabIndex = 317;
             this.lbl0Position3Value.Text = "#";
             this.lbl0Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -825,7 +824,7 @@
             this.lbl0Position3.ForeColor = System.Drawing.Color.White;
             this.lbl0Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl0Position3.Name = "lbl0Position3";
-            this.lbl0Position3.Size = new System.Drawing.Size(88, 29);
+            this.lbl0Position3.Size = new System.Drawing.Size(70, 24);
             this.lbl0Position3.TabIndex = 321;
             this.lbl0Position3.Text = "Setup:";
             // 
@@ -836,7 +835,7 @@
             this.lbl0Position8.ForeColor = System.Drawing.Color.White;
             this.lbl0Position8.Location = new System.Drawing.Point(202, 184);
             this.lbl0Position8.Name = "lbl0Position8";
-            this.lbl0Position8.Size = new System.Drawing.Size(60, 29);
+            this.lbl0Position8.Size = new System.Drawing.Size(47, 24);
             this.lbl0Position8.TabIndex = 266;
             this.lbl0Position8.Text = "Def:";
             // 
@@ -847,7 +846,7 @@
             this.lbl0Position1.ForeColor = System.Drawing.Color.White;
             this.lbl0Position1.Location = new System.Drawing.Point(188, 50);
             this.lbl0Position1.Name = "lbl0Position1";
-            this.lbl0Position1.Size = new System.Drawing.Size(71, 29);
+            this.lbl0Position1.Size = new System.Drawing.Size(56, 24);
             this.lbl0Position1.TabIndex = 327;
             this.lbl0Position1.Text = "Orig:";
             // 
@@ -858,7 +857,7 @@
             this.lbl0Position2.ForeColor = System.Drawing.Color.White;
             this.lbl0Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl0Position2.Name = "lbl0Position2";
-            this.lbl0Position2.Size = new System.Drawing.Size(60, 29);
+            this.lbl0Position2.Size = new System.Drawing.Size(47, 24);
             this.lbl0Position2.TabIndex = 318;
             this.lbl0Position2.Text = "Del:";
             // 
@@ -869,7 +868,7 @@
             this.lbl0Position11.ForeColor = System.Drawing.Color.White;
             this.lbl0Position11.Location = new System.Drawing.Point(3, 261);
             this.lbl0Position11.Name = "lbl0Position11";
-            this.lbl0Position11.Size = new System.Drawing.Size(154, 29);
+            this.lbl0Position11.Size = new System.Drawing.Size(125, 24);
             this.lbl0Position11.TabIndex = 291;
             this.lbl0Position11.Text = "Match Event";
             // 
@@ -881,7 +880,7 @@
             this.lbl0Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl0Position0Value.Name = "lbl0Position0Value";
-            this.lbl0Position0Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl0Position0Value.Size = new System.Drawing.Size(32, 24);
             this.lbl0Position0Value.TabIndex = 274;
             this.lbl0Position0Value.Text = "$$";
             this.lbl0Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -921,7 +920,7 @@
             this.lbl0ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl0ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl0ModeValue.Name = "lbl0ModeValue";
-            this.lbl0ModeValue.Size = new System.Drawing.Size(86, 36);
+            this.lbl0ModeValue.Size = new System.Drawing.Size(67, 29);
             this.lbl0ModeValue.TabIndex = 2;
             this.lbl0ModeValue.Text = "Auto:";
             // 
@@ -942,7 +941,7 @@
             this.label28.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label28.Location = new System.Drawing.Point(418, 214);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(46, 31);
+            this.label28.Size = new System.Drawing.Size(38, 26);
             this.label28.TabIndex = 277;
             this.label28.Text = "00";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1016,7 +1015,7 @@
             this.label30.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label30.Location = new System.Drawing.Point(418, 214);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(46, 31);
+            this.label30.Size = new System.Drawing.Size(38, 26);
             this.label30.TabIndex = 277;
             this.label30.Text = "00";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1029,7 +1028,7 @@
             this.lbl2Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position6Value.Location = new System.Drawing.Point(263, 159);
             this.lbl2Position6Value.Name = "lbl2Position6Value";
-            this.lbl2Position6Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl2Position6Value.Size = new System.Drawing.Size(32, 24);
             this.lbl2Position6Value.TabIndex = 345;
             this.lbl2Position6Value.Text = "$$";
             this.lbl2Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1042,7 +1041,7 @@
             this.lbl2Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position10Value.Location = new System.Drawing.Point(246, 211);
             this.lbl2Position10Value.Name = "lbl2Position10Value";
-            this.lbl2Position10Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl2Position10Value.Size = new System.Drawing.Size(21, 24);
             this.lbl2Position10Value.TabIndex = 344;
             this.lbl2Position10Value.Text = "0";
             this.lbl2Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1054,7 +1053,7 @@
             this.lbl2Position10.ForeColor = System.Drawing.Color.White;
             this.lbl2Position10.Location = new System.Drawing.Point(202, 210);
             this.lbl2Position10.Name = "lbl2Position10";
-            this.lbl2Position10.Size = new System.Drawing.Size(63, 29);
+            this.lbl2Position10.Size = new System.Drawing.Size(52, 24);
             this.lbl2Position10.TabIndex = 343;
             this.lbl2Position10.Text = "Avo:";
             // 
@@ -1067,7 +1066,7 @@
             this.lbl2Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position7Value.Location = new System.Drawing.Point(97, 184);
             this.lbl2Position7Value.Name = "lbl2Position7Value";
-            this.lbl2Position7Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl2Position7Value.Size = new System.Drawing.Size(16, 24);
             this.lbl2Position7Value.TabIndex = 342;
             this.lbl2Position7Value.Text = ".";
             this.lbl2Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1080,7 +1079,7 @@
             this.lbl2Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position9Value.Location = new System.Drawing.Point(68, 213);
             this.lbl2Position9Value.Name = "lbl2Position9Value";
-            this.lbl2Position9Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl2Position9Value.Size = new System.Drawing.Size(21, 24);
             this.lbl2Position9Value.TabIndex = 341;
             this.lbl2Position9Value.Text = "#";
             this.lbl2Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1092,7 +1091,7 @@
             this.lbl2Position9.ForeColor = System.Drawing.Color.White;
             this.lbl2Position9.Location = new System.Drawing.Point(3, 213);
             this.lbl2Position9.Name = "lbl2Position9";
-            this.lbl2Position9.Size = new System.Drawing.Size(74, 29);
+            this.lbl2Position9.Size = new System.Drawing.Size(59, 24);
             this.lbl2Position9.TabIndex = 340;
             this.lbl2Position9.Text = "Mics:";
             // 
@@ -1103,7 +1102,7 @@
             this.lbl2Position7.ForeColor = System.Drawing.Color.White;
             this.lbl2Position7.Location = new System.Drawing.Point(2, 184);
             this.lbl2Position7.Name = "lbl2Position7";
-            this.lbl2Position7.Size = new System.Drawing.Size(95, 29);
+            this.lbl2Position7.Size = new System.Drawing.Size(73, 24);
             this.lbl2Position7.TabIndex = 339;
             this.lbl2Position7.Text = "Spotlit:";
             // 
@@ -1114,7 +1113,7 @@
             this.lbl2Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl2Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl2Position2Flag.Name = "lbl2Position2Flag";
-            this.lbl2Position2Flag.Size = new System.Drawing.Size(34, 29);
+            this.lbl2Position2Flag.Size = new System.Drawing.Size(27, 24);
             this.lbl2Position2Flag.TabIndex = 338;
             this.lbl2Position2Flag.Text = "M";
             // 
@@ -1125,7 +1124,7 @@
             this.lbl2Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl2Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl2Position0Flag.Name = "lbl2Position0Flag";
-            this.lbl2Position0Flag.Size = new System.Drawing.Size(31, 29);
+            this.lbl2Position0Flag.Size = new System.Drawing.Size(24, 24);
             this.lbl2Position0Flag.TabIndex = 337;
             this.lbl2Position0Flag.Text = "D";
             // 
@@ -1138,7 +1137,7 @@
             this.lbl2Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position4Value.Location = new System.Drawing.Point(274, 130);
             this.lbl2Position4Value.Name = "lbl2Position4Value";
-            this.lbl2Position4Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl2Position4Value.Size = new System.Drawing.Size(16, 24);
             this.lbl2Position4Value.TabIndex = 336;
             this.lbl2Position4Value.Text = ".";
             this.lbl2Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1152,7 +1151,7 @@
             this.lbl2Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position5Value.Location = new System.Drawing.Point(97, 157);
             this.lbl2Position5Value.Name = "lbl2Position5Value";
-            this.lbl2Position5Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl2Position5Value.Size = new System.Drawing.Size(16, 24);
             this.lbl2Position5Value.TabIndex = 334;
             this.lbl2Position5Value.Text = ".";
             this.lbl2Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1164,7 +1163,7 @@
             this.lbl2Position6.ForeColor = System.Drawing.Color.White;
             this.lbl2Position6.Location = new System.Drawing.Point(202, 158);
             this.lbl2Position6.Name = "lbl2Position6";
-            this.lbl2Position6.Size = new System.Drawing.Size(74, 29);
+            this.lbl2Position6.Size = new System.Drawing.Size(57, 24);
             this.lbl2Position6.TabIndex = 331;
             this.lbl2Position6.Text = "Strat:";
             // 
@@ -1176,7 +1175,7 @@
             this.lbl2Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl2Position2Value.Name = "lbl2Position2Value";
-            this.lbl2Position2Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl2Position2Value.Size = new System.Drawing.Size(32, 24);
             this.lbl2Position2Value.TabIndex = 330;
             this.lbl2Position2Value.Text = "$$";
             this.lbl2Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1189,7 +1188,7 @@
             this.lbl2Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position1Value.Location = new System.Drawing.Point(243, 50);
             this.lbl2Position1Value.Name = "lbl2Position1Value";
-            this.lbl2Position1Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl2Position1Value.Size = new System.Drawing.Size(32, 24);
             this.lbl2Position1Value.TabIndex = 329;
             this.lbl2Position1Value.Text = "$$";
             this.lbl2Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1211,7 +1210,7 @@
             this.label49.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label49.Location = new System.Drawing.Point(418, 214);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(46, 31);
+            this.label49.Size = new System.Drawing.Size(38, 26);
             this.label49.TabIndex = 277;
             this.label49.Text = "00";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1233,7 +1232,7 @@
             this.label50.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label50.Location = new System.Drawing.Point(418, 214);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(46, 31);
+            this.label50.Size = new System.Drawing.Size(38, 26);
             this.label50.TabIndex = 277;
             this.label50.Text = "00";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1245,7 +1244,7 @@
             this.lbl2Position5.ForeColor = System.Drawing.Color.White;
             this.lbl2Position5.Location = new System.Drawing.Point(2, 158);
             this.lbl2Position5.Name = "lbl2Position5";
-            this.lbl2Position5.Size = new System.Drawing.Size(121, 29);
+            this.lbl2Position5.Size = new System.Drawing.Size(99, 24);
             this.lbl2Position5.TabIndex = 328;
             this.lbl2Position5.Text = "HP Amp: ";
             // 
@@ -1256,7 +1255,7 @@
             this.lbl2Position4.ForeColor = System.Drawing.Color.White;
             this.lbl2Position4.Location = new System.Drawing.Point(202, 130);
             this.lbl2Position4.Name = "lbl2Position4";
-            this.lbl2Position4.Size = new System.Drawing.Size(90, 29);
+            this.lbl2Position4.Size = new System.Drawing.Size(72, 24);
             this.lbl2Position4.TabIndex = 322;
             this.lbl2Position4.Text = "Leave:";
             // 
@@ -1268,7 +1267,7 @@
             this.lbl2Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position8Value.Location = new System.Drawing.Point(246, 185);
             this.lbl2Position8Value.Name = "lbl2Position8Value";
-            this.lbl2Position8Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl2Position8Value.Size = new System.Drawing.Size(21, 24);
             this.lbl2Position8Value.TabIndex = 324;
             this.lbl2Position8Value.Text = "0";
             this.lbl2Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1280,7 +1279,7 @@
             this.lbl2Position0.ForeColor = System.Drawing.Color.White;
             this.lbl2Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl2Position0.Name = "lbl2Position0";
-            this.lbl2Position0.Size = new System.Drawing.Size(64, 29);
+            this.lbl2Position0.Size = new System.Drawing.Size(53, 24);
             this.lbl2Position0.TabIndex = 322;
             this.lbl2Position0.Text = "Acq:";
             // 
@@ -1292,7 +1291,7 @@
             this.lbl2Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl2Position3Value.Name = "lbl2Position3Value";
-            this.lbl2Position3Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl2Position3Value.Size = new System.Drawing.Size(21, 24);
             this.lbl2Position3Value.TabIndex = 317;
             this.lbl2Position3Value.Text = "#";
             this.lbl2Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1304,7 +1303,7 @@
             this.lbl2Position3.ForeColor = System.Drawing.Color.White;
             this.lbl2Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl2Position3.Name = "lbl2Position3";
-            this.lbl2Position3.Size = new System.Drawing.Size(88, 29);
+            this.lbl2Position3.Size = new System.Drawing.Size(70, 24);
             this.lbl2Position3.TabIndex = 321;
             this.lbl2Position3.Text = "Setup:";
             // 
@@ -1315,7 +1314,7 @@
             this.lbl2Position8.ForeColor = System.Drawing.Color.White;
             this.lbl2Position8.Location = new System.Drawing.Point(202, 184);
             this.lbl2Position8.Name = "lbl2Position8";
-            this.lbl2Position8.Size = new System.Drawing.Size(60, 29);
+            this.lbl2Position8.Size = new System.Drawing.Size(47, 24);
             this.lbl2Position8.TabIndex = 266;
             this.lbl2Position8.Text = "Def:";
             // 
@@ -1326,7 +1325,7 @@
             this.lbl2Position1.ForeColor = System.Drawing.Color.White;
             this.lbl2Position1.Location = new System.Drawing.Point(188, 50);
             this.lbl2Position1.Name = "lbl2Position1";
-            this.lbl2Position1.Size = new System.Drawing.Size(71, 29);
+            this.lbl2Position1.Size = new System.Drawing.Size(56, 24);
             this.lbl2Position1.TabIndex = 327;
             this.lbl2Position1.Text = "Orig:";
             // 
@@ -1337,7 +1336,7 @@
             this.lbl2Position2.ForeColor = System.Drawing.Color.White;
             this.lbl2Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl2Position2.Name = "lbl2Position2";
-            this.lbl2Position2.Size = new System.Drawing.Size(60, 29);
+            this.lbl2Position2.Size = new System.Drawing.Size(47, 24);
             this.lbl2Position2.TabIndex = 318;
             this.lbl2Position2.Text = "Del:";
             // 
@@ -1348,7 +1347,7 @@
             this.lbl2Position11.ForeColor = System.Drawing.Color.White;
             this.lbl2Position11.Location = new System.Drawing.Point(3, 261);
             this.lbl2Position11.Name = "lbl2Position11";
-            this.lbl2Position11.Size = new System.Drawing.Size(154, 29);
+            this.lbl2Position11.Size = new System.Drawing.Size(125, 24);
             this.lbl2Position11.TabIndex = 291;
             this.lbl2Position11.Text = "Match Event";
             // 
@@ -1360,7 +1359,7 @@
             this.lbl2Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl2Position0Value.Name = "lbl2Position0Value";
-            this.lbl2Position0Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl2Position0Value.Size = new System.Drawing.Size(32, 24);
             this.lbl2Position0Value.TabIndex = 274;
             this.lbl2Position0Value.Text = "$$";
             this.lbl2Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1400,7 +1399,7 @@
             this.lbl2ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl2ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl2ModeValue.Name = "lbl2ModeValue";
-            this.lbl2ModeValue.Size = new System.Drawing.Size(86, 36);
+            this.lbl2ModeValue.Size = new System.Drawing.Size(67, 29);
             this.lbl2ModeValue.TabIndex = 2;
             this.lbl2ModeValue.Text = "Auto:";
             // 
@@ -1460,7 +1459,7 @@
             this.label23.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label23.Location = new System.Drawing.Point(418, 214);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(46, 31);
+            this.label23.Size = new System.Drawing.Size(38, 26);
             this.label23.TabIndex = 277;
             this.label23.Text = "00";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1473,7 +1472,7 @@
             this.lbl1Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position6Value.Location = new System.Drawing.Point(263, 159);
             this.lbl1Position6Value.Name = "lbl1Position6Value";
-            this.lbl1Position6Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl1Position6Value.Size = new System.Drawing.Size(32, 24);
             this.lbl1Position6Value.TabIndex = 345;
             this.lbl1Position6Value.Text = "$$";
             this.lbl1Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1486,7 +1485,7 @@
             this.lbl1Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position10Value.Location = new System.Drawing.Point(246, 211);
             this.lbl1Position10Value.Name = "lbl1Position10Value";
-            this.lbl1Position10Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl1Position10Value.Size = new System.Drawing.Size(21, 24);
             this.lbl1Position10Value.TabIndex = 344;
             this.lbl1Position10Value.Text = "0";
             this.lbl1Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1498,7 +1497,7 @@
             this.lbl1Position10.ForeColor = System.Drawing.Color.White;
             this.lbl1Position10.Location = new System.Drawing.Point(202, 210);
             this.lbl1Position10.Name = "lbl1Position10";
-            this.lbl1Position10.Size = new System.Drawing.Size(63, 29);
+            this.lbl1Position10.Size = new System.Drawing.Size(52, 24);
             this.lbl1Position10.TabIndex = 343;
             this.lbl1Position10.Text = "Avo:";
             // 
@@ -1511,7 +1510,7 @@
             this.lbl1Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position7Value.Location = new System.Drawing.Point(97, 184);
             this.lbl1Position7Value.Name = "lbl1Position7Value";
-            this.lbl1Position7Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl1Position7Value.Size = new System.Drawing.Size(16, 24);
             this.lbl1Position7Value.TabIndex = 342;
             this.lbl1Position7Value.Text = ".";
             this.lbl1Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1524,7 +1523,7 @@
             this.lbl1Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position9Value.Location = new System.Drawing.Point(68, 213);
             this.lbl1Position9Value.Name = "lbl1Position9Value";
-            this.lbl1Position9Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl1Position9Value.Size = new System.Drawing.Size(21, 24);
             this.lbl1Position9Value.TabIndex = 341;
             this.lbl1Position9Value.Text = "#";
             this.lbl1Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1536,7 +1535,7 @@
             this.lbl1Position9.ForeColor = System.Drawing.Color.White;
             this.lbl1Position9.Location = new System.Drawing.Point(3, 213);
             this.lbl1Position9.Name = "lbl1Position9";
-            this.lbl1Position9.Size = new System.Drawing.Size(74, 29);
+            this.lbl1Position9.Size = new System.Drawing.Size(59, 24);
             this.lbl1Position9.TabIndex = 340;
             this.lbl1Position9.Text = "Mics:";
             // 
@@ -1547,7 +1546,7 @@
             this.lbl1Position7.ForeColor = System.Drawing.Color.White;
             this.lbl1Position7.Location = new System.Drawing.Point(2, 184);
             this.lbl1Position7.Name = "lbl1Position7";
-            this.lbl1Position7.Size = new System.Drawing.Size(95, 29);
+            this.lbl1Position7.Size = new System.Drawing.Size(73, 24);
             this.lbl1Position7.TabIndex = 339;
             this.lbl1Position7.Text = "Spotlit:";
             // 
@@ -1558,7 +1557,7 @@
             this.lbl1Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl1Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl1Position2Flag.Name = "lbl1Position2Flag";
-            this.lbl1Position2Flag.Size = new System.Drawing.Size(34, 29);
+            this.lbl1Position2Flag.Size = new System.Drawing.Size(27, 24);
             this.lbl1Position2Flag.TabIndex = 338;
             this.lbl1Position2Flag.Text = "M";
             // 
@@ -1569,7 +1568,7 @@
             this.lbl1Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl1Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl1Position0Flag.Name = "lbl1Position0Flag";
-            this.lbl1Position0Flag.Size = new System.Drawing.Size(31, 29);
+            this.lbl1Position0Flag.Size = new System.Drawing.Size(24, 24);
             this.lbl1Position0Flag.TabIndex = 337;
             this.lbl1Position0Flag.Text = "D";
             // 
@@ -1582,7 +1581,7 @@
             this.lbl1Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position4Value.Location = new System.Drawing.Point(274, 130);
             this.lbl1Position4Value.Name = "lbl1Position4Value";
-            this.lbl1Position4Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl1Position4Value.Size = new System.Drawing.Size(16, 24);
             this.lbl1Position4Value.TabIndex = 336;
             this.lbl1Position4Value.Text = ".";
             this.lbl1Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1596,7 +1595,7 @@
             this.lbl1Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position5Value.Location = new System.Drawing.Point(97, 157);
             this.lbl1Position5Value.Name = "lbl1Position5Value";
-            this.lbl1Position5Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl1Position5Value.Size = new System.Drawing.Size(16, 24);
             this.lbl1Position5Value.TabIndex = 334;
             this.lbl1Position5Value.Text = ".";
             this.lbl1Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1608,7 +1607,7 @@
             this.lbl1Position6.ForeColor = System.Drawing.Color.White;
             this.lbl1Position6.Location = new System.Drawing.Point(202, 158);
             this.lbl1Position6.Name = "lbl1Position6";
-            this.lbl1Position6.Size = new System.Drawing.Size(74, 29);
+            this.lbl1Position6.Size = new System.Drawing.Size(57, 24);
             this.lbl1Position6.TabIndex = 331;
             this.lbl1Position6.Text = "Strat:";
             // 
@@ -1620,7 +1619,7 @@
             this.lbl1Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl1Position2Value.Name = "lbl1Position2Value";
-            this.lbl1Position2Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl1Position2Value.Size = new System.Drawing.Size(32, 24);
             this.lbl1Position2Value.TabIndex = 330;
             this.lbl1Position2Value.Text = "$$";
             this.lbl1Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1633,7 +1632,7 @@
             this.lbl1Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position1Value.Location = new System.Drawing.Point(243, 50);
             this.lbl1Position1Value.Name = "lbl1Position1Value";
-            this.lbl1Position1Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl1Position1Value.Size = new System.Drawing.Size(32, 24);
             this.lbl1Position1Value.TabIndex = 329;
             this.lbl1Position1Value.Text = "$$";
             this.lbl1Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1655,7 +1654,7 @@
             this.label18.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label18.Location = new System.Drawing.Point(418, 214);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(46, 31);
+            this.label18.Size = new System.Drawing.Size(38, 26);
             this.label18.TabIndex = 277;
             this.label18.Text = "00";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1677,7 +1676,7 @@
             this.label19.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label19.Location = new System.Drawing.Point(418, 214);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(46, 31);
+            this.label19.Size = new System.Drawing.Size(38, 26);
             this.label19.TabIndex = 277;
             this.label19.Text = "00";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1689,7 +1688,7 @@
             this.lbl1Position5.ForeColor = System.Drawing.Color.White;
             this.lbl1Position5.Location = new System.Drawing.Point(2, 158);
             this.lbl1Position5.Name = "lbl1Position5";
-            this.lbl1Position5.Size = new System.Drawing.Size(121, 29);
+            this.lbl1Position5.Size = new System.Drawing.Size(99, 24);
             this.lbl1Position5.TabIndex = 328;
             this.lbl1Position5.Text = "HP Amp: ";
             // 
@@ -1700,7 +1699,7 @@
             this.lbl1Position4.ForeColor = System.Drawing.Color.White;
             this.lbl1Position4.Location = new System.Drawing.Point(202, 130);
             this.lbl1Position4.Name = "lbl1Position4";
-            this.lbl1Position4.Size = new System.Drawing.Size(90, 29);
+            this.lbl1Position4.Size = new System.Drawing.Size(72, 24);
             this.lbl1Position4.TabIndex = 322;
             this.lbl1Position4.Text = "Leave:";
             // 
@@ -1712,7 +1711,7 @@
             this.lbl1Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position8Value.Location = new System.Drawing.Point(246, 185);
             this.lbl1Position8Value.Name = "lbl1Position8Value";
-            this.lbl1Position8Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl1Position8Value.Size = new System.Drawing.Size(21, 24);
             this.lbl1Position8Value.TabIndex = 324;
             this.lbl1Position8Value.Text = "0";
             this.lbl1Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1724,7 +1723,7 @@
             this.lbl1Position0.ForeColor = System.Drawing.Color.White;
             this.lbl1Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl1Position0.Name = "lbl1Position0";
-            this.lbl1Position0.Size = new System.Drawing.Size(64, 29);
+            this.lbl1Position0.Size = new System.Drawing.Size(53, 24);
             this.lbl1Position0.TabIndex = 322;
             this.lbl1Position0.Text = "Acq:";
             // 
@@ -1736,7 +1735,7 @@
             this.lbl1Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl1Position3Value.Name = "lbl1Position3Value";
-            this.lbl1Position3Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl1Position3Value.Size = new System.Drawing.Size(21, 24);
             this.lbl1Position3Value.TabIndex = 317;
             this.lbl1Position3Value.Text = "#";
             this.lbl1Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1748,7 +1747,7 @@
             this.lbl1Position3.ForeColor = System.Drawing.Color.White;
             this.lbl1Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl1Position3.Name = "lbl1Position3";
-            this.lbl1Position3.Size = new System.Drawing.Size(88, 29);
+            this.lbl1Position3.Size = new System.Drawing.Size(70, 24);
             this.lbl1Position3.TabIndex = 321;
             this.lbl1Position3.Text = "Setup:";
             // 
@@ -1759,7 +1758,7 @@
             this.lbl1Position8.ForeColor = System.Drawing.Color.White;
             this.lbl1Position8.Location = new System.Drawing.Point(202, 184);
             this.lbl1Position8.Name = "lbl1Position8";
-            this.lbl1Position8.Size = new System.Drawing.Size(60, 29);
+            this.lbl1Position8.Size = new System.Drawing.Size(47, 24);
             this.lbl1Position8.TabIndex = 266;
             this.lbl1Position8.Text = "Def:";
             // 
@@ -1770,7 +1769,7 @@
             this.lbl1Position1.ForeColor = System.Drawing.Color.White;
             this.lbl1Position1.Location = new System.Drawing.Point(188, 50);
             this.lbl1Position1.Name = "lbl1Position1";
-            this.lbl1Position1.Size = new System.Drawing.Size(71, 29);
+            this.lbl1Position1.Size = new System.Drawing.Size(56, 24);
             this.lbl1Position1.TabIndex = 327;
             this.lbl1Position1.Text = "Orig:";
             // 
@@ -1781,7 +1780,7 @@
             this.lbl1Position2.ForeColor = System.Drawing.Color.White;
             this.lbl1Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl1Position2.Name = "lbl1Position2";
-            this.lbl1Position2.Size = new System.Drawing.Size(60, 29);
+            this.lbl1Position2.Size = new System.Drawing.Size(47, 24);
             this.lbl1Position2.TabIndex = 318;
             this.lbl1Position2.Text = "Del:";
             // 
@@ -1792,7 +1791,7 @@
             this.lbl1Position11.ForeColor = System.Drawing.Color.White;
             this.lbl1Position11.Location = new System.Drawing.Point(3, 261);
             this.lbl1Position11.Name = "lbl1Position11";
-            this.lbl1Position11.Size = new System.Drawing.Size(154, 29);
+            this.lbl1Position11.Size = new System.Drawing.Size(125, 24);
             this.lbl1Position11.TabIndex = 291;
             this.lbl1Position11.Text = "Match Event";
             // 
@@ -1804,7 +1803,7 @@
             this.lbl1Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl1Position0Value.Name = "lbl1Position0Value";
-            this.lbl1Position0Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl1Position0Value.Size = new System.Drawing.Size(32, 24);
             this.lbl1Position0Value.TabIndex = 274;
             this.lbl1Position0Value.Text = "$$";
             this.lbl1Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1844,9 +1843,10 @@
             this.lbl1ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl1ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl1ModeValue.Name = "lbl1ModeValue";
-            this.lbl1ModeValue.Size = new System.Drawing.Size(86, 36);
+            this.lbl1ModeValue.Size = new System.Drawing.Size(67, 29);
             this.lbl1ModeValue.TabIndex = 2;
             this.lbl1ModeValue.Text = "Auto:";
+            this.lbl1ModeValue.Click += new System.EventHandler(this.lbl1ModeValue_Click);
             // 
             // panel2
             // 
@@ -1915,7 +1915,7 @@
             this.label34.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label34.Location = new System.Drawing.Point(418, 214);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(46, 31);
+            this.label34.Size = new System.Drawing.Size(38, 26);
             this.label34.TabIndex = 277;
             this.label34.Text = "00";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1928,7 +1928,7 @@
             this.lbl5Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position6Value.Location = new System.Drawing.Point(263, 159);
             this.lbl5Position6Value.Name = "lbl5Position6Value";
-            this.lbl5Position6Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl5Position6Value.Size = new System.Drawing.Size(32, 24);
             this.lbl5Position6Value.TabIndex = 345;
             this.lbl5Position6Value.Text = "$$";
             this.lbl5Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1941,7 +1941,7 @@
             this.lbl5Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position10Value.Location = new System.Drawing.Point(246, 211);
             this.lbl5Position10Value.Name = "lbl5Position10Value";
-            this.lbl5Position10Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl5Position10Value.Size = new System.Drawing.Size(21, 24);
             this.lbl5Position10Value.TabIndex = 344;
             this.lbl5Position10Value.Text = "0";
             this.lbl5Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1953,7 +1953,7 @@
             this.lbl5Position10.ForeColor = System.Drawing.Color.White;
             this.lbl5Position10.Location = new System.Drawing.Point(202, 210);
             this.lbl5Position10.Name = "lbl5Position10";
-            this.lbl5Position10.Size = new System.Drawing.Size(63, 29);
+            this.lbl5Position10.Size = new System.Drawing.Size(52, 24);
             this.lbl5Position10.TabIndex = 343;
             this.lbl5Position10.Text = "Avo:";
             // 
@@ -1966,7 +1966,7 @@
             this.lbl5Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position7Value.Location = new System.Drawing.Point(97, 184);
             this.lbl5Position7Value.Name = "lbl5Position7Value";
-            this.lbl5Position7Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl5Position7Value.Size = new System.Drawing.Size(16, 24);
             this.lbl5Position7Value.TabIndex = 342;
             this.lbl5Position7Value.Text = ".";
             this.lbl5Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1979,7 +1979,7 @@
             this.lbl5Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position9Value.Location = new System.Drawing.Point(68, 213);
             this.lbl5Position9Value.Name = "lbl5Position9Value";
-            this.lbl5Position9Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl5Position9Value.Size = new System.Drawing.Size(21, 24);
             this.lbl5Position9Value.TabIndex = 341;
             this.lbl5Position9Value.Text = "#";
             this.lbl5Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1991,7 +1991,7 @@
             this.lbl5Position9.ForeColor = System.Drawing.Color.White;
             this.lbl5Position9.Location = new System.Drawing.Point(3, 213);
             this.lbl5Position9.Name = "lbl5Position9";
-            this.lbl5Position9.Size = new System.Drawing.Size(74, 29);
+            this.lbl5Position9.Size = new System.Drawing.Size(59, 24);
             this.lbl5Position9.TabIndex = 340;
             this.lbl5Position9.Text = "Mics:";
             // 
@@ -2002,7 +2002,7 @@
             this.lbl5Position7.ForeColor = System.Drawing.Color.White;
             this.lbl5Position7.Location = new System.Drawing.Point(2, 184);
             this.lbl5Position7.Name = "lbl5Position7";
-            this.lbl5Position7.Size = new System.Drawing.Size(95, 29);
+            this.lbl5Position7.Size = new System.Drawing.Size(73, 24);
             this.lbl5Position7.TabIndex = 339;
             this.lbl5Position7.Text = "Spotlit:";
             // 
@@ -2013,7 +2013,7 @@
             this.lbl5Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl5Position2Flag.Name = "lbl5Position2Flag";
-            this.lbl5Position2Flag.Size = new System.Drawing.Size(34, 29);
+            this.lbl5Position2Flag.Size = new System.Drawing.Size(27, 24);
             this.lbl5Position2Flag.TabIndex = 338;
             this.lbl5Position2Flag.Text = "M";
             // 
@@ -2024,7 +2024,7 @@
             this.lbl5Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl5Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl5Position0Flag.Name = "lbl5Position0Flag";
-            this.lbl5Position0Flag.Size = new System.Drawing.Size(31, 29);
+            this.lbl5Position0Flag.Size = new System.Drawing.Size(24, 24);
             this.lbl5Position0Flag.TabIndex = 337;
             this.lbl5Position0Flag.Text = "D";
             // 
@@ -2037,7 +2037,7 @@
             this.lbl5Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position4Value.Location = new System.Drawing.Point(274, 130);
             this.lbl5Position4Value.Name = "lbl5Position4Value";
-            this.lbl5Position4Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl5Position4Value.Size = new System.Drawing.Size(16, 24);
             this.lbl5Position4Value.TabIndex = 336;
             this.lbl5Position4Value.Text = ".";
             this.lbl5Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2051,7 +2051,7 @@
             this.lbl5Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position5Value.Location = new System.Drawing.Point(97, 157);
             this.lbl5Position5Value.Name = "lbl5Position5Value";
-            this.lbl5Position5Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl5Position5Value.Size = new System.Drawing.Size(16, 24);
             this.lbl5Position5Value.TabIndex = 334;
             this.lbl5Position5Value.Text = ".";
             this.lbl5Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2063,7 +2063,7 @@
             this.lbl5Position6.ForeColor = System.Drawing.Color.White;
             this.lbl5Position6.Location = new System.Drawing.Point(202, 158);
             this.lbl5Position6.Name = "lbl5Position6";
-            this.lbl5Position6.Size = new System.Drawing.Size(74, 29);
+            this.lbl5Position6.Size = new System.Drawing.Size(57, 24);
             this.lbl5Position6.TabIndex = 331;
             this.lbl5Position6.Text = "Strat:";
             // 
@@ -2075,7 +2075,7 @@
             this.lbl5Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl5Position2Value.Name = "lbl5Position2Value";
-            this.lbl5Position2Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl5Position2Value.Size = new System.Drawing.Size(32, 24);
             this.lbl5Position2Value.TabIndex = 330;
             this.lbl5Position2Value.Text = "$$";
             this.lbl5Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2088,7 +2088,7 @@
             this.lbl5Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position1Value.Location = new System.Drawing.Point(243, 50);
             this.lbl5Position1Value.Name = "lbl5Position1Value";
-            this.lbl5Position1Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl5Position1Value.Size = new System.Drawing.Size(32, 24);
             this.lbl5Position1Value.TabIndex = 329;
             this.lbl5Position1Value.Text = "$$";
             this.lbl5Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2110,7 +2110,7 @@
             this.label139.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label139.Location = new System.Drawing.Point(418, 214);
             this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(46, 31);
+            this.label139.Size = new System.Drawing.Size(38, 26);
             this.label139.TabIndex = 277;
             this.label139.Text = "00";
             this.label139.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2132,7 +2132,7 @@
             this.label140.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label140.Location = new System.Drawing.Point(418, 214);
             this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(46, 31);
+            this.label140.Size = new System.Drawing.Size(38, 26);
             this.label140.TabIndex = 277;
             this.label140.Text = "00";
             this.label140.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2144,7 +2144,7 @@
             this.lbl5Position5.ForeColor = System.Drawing.Color.White;
             this.lbl5Position5.Location = new System.Drawing.Point(2, 158);
             this.lbl5Position5.Name = "lbl5Position5";
-            this.lbl5Position5.Size = new System.Drawing.Size(121, 29);
+            this.lbl5Position5.Size = new System.Drawing.Size(99, 24);
             this.lbl5Position5.TabIndex = 328;
             this.lbl5Position5.Text = "HP Amp: ";
             // 
@@ -2155,7 +2155,7 @@
             this.lbl5Position4.ForeColor = System.Drawing.Color.White;
             this.lbl5Position4.Location = new System.Drawing.Point(202, 130);
             this.lbl5Position4.Name = "lbl5Position4";
-            this.lbl5Position4.Size = new System.Drawing.Size(90, 29);
+            this.lbl5Position4.Size = new System.Drawing.Size(72, 24);
             this.lbl5Position4.TabIndex = 322;
             this.lbl5Position4.Text = "Leave:";
             // 
@@ -2167,7 +2167,7 @@
             this.lbl5Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position8Value.Location = new System.Drawing.Point(246, 185);
             this.lbl5Position8Value.Name = "lbl5Position8Value";
-            this.lbl5Position8Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl5Position8Value.Size = new System.Drawing.Size(21, 24);
             this.lbl5Position8Value.TabIndex = 324;
             this.lbl5Position8Value.Text = "0";
             this.lbl5Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2179,7 +2179,7 @@
             this.lbl5Position0.ForeColor = System.Drawing.Color.White;
             this.lbl5Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl5Position0.Name = "lbl5Position0";
-            this.lbl5Position0.Size = new System.Drawing.Size(64, 29);
+            this.lbl5Position0.Size = new System.Drawing.Size(53, 24);
             this.lbl5Position0.TabIndex = 322;
             this.lbl5Position0.Text = "Acq:";
             // 
@@ -2191,7 +2191,7 @@
             this.lbl5Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl5Position3Value.Name = "lbl5Position3Value";
-            this.lbl5Position3Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl5Position3Value.Size = new System.Drawing.Size(21, 24);
             this.lbl5Position3Value.TabIndex = 317;
             this.lbl5Position3Value.Text = "#";
             this.lbl5Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2203,7 +2203,7 @@
             this.lbl5Position3.ForeColor = System.Drawing.Color.White;
             this.lbl5Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl5Position3.Name = "lbl5Position3";
-            this.lbl5Position3.Size = new System.Drawing.Size(88, 29);
+            this.lbl5Position3.Size = new System.Drawing.Size(70, 24);
             this.lbl5Position3.TabIndex = 321;
             this.lbl5Position3.Text = "Setup:";
             // 
@@ -2214,7 +2214,7 @@
             this.lbl5Position8.ForeColor = System.Drawing.Color.White;
             this.lbl5Position8.Location = new System.Drawing.Point(202, 184);
             this.lbl5Position8.Name = "lbl5Position8";
-            this.lbl5Position8.Size = new System.Drawing.Size(60, 29);
+            this.lbl5Position8.Size = new System.Drawing.Size(47, 24);
             this.lbl5Position8.TabIndex = 266;
             this.lbl5Position8.Text = "Def:";
             // 
@@ -2225,7 +2225,7 @@
             this.lbl5Position1.ForeColor = System.Drawing.Color.White;
             this.lbl5Position1.Location = new System.Drawing.Point(188, 50);
             this.lbl5Position1.Name = "lbl5Position1";
-            this.lbl5Position1.Size = new System.Drawing.Size(71, 29);
+            this.lbl5Position1.Size = new System.Drawing.Size(56, 24);
             this.lbl5Position1.TabIndex = 327;
             this.lbl5Position1.Text = "Orig:";
             // 
@@ -2236,7 +2236,7 @@
             this.lbl5Position2.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl5Position2.Name = "lbl5Position2";
-            this.lbl5Position2.Size = new System.Drawing.Size(60, 29);
+            this.lbl5Position2.Size = new System.Drawing.Size(47, 24);
             this.lbl5Position2.TabIndex = 318;
             this.lbl5Position2.Text = "Del:";
             // 
@@ -2247,7 +2247,7 @@
             this.lbl5Position11.ForeColor = System.Drawing.Color.White;
             this.lbl5Position11.Location = new System.Drawing.Point(3, 261);
             this.lbl5Position11.Name = "lbl5Position11";
-            this.lbl5Position11.Size = new System.Drawing.Size(154, 29);
+            this.lbl5Position11.Size = new System.Drawing.Size(125, 24);
             this.lbl5Position11.TabIndex = 291;
             this.lbl5Position11.Text = "Match Event";
             // 
@@ -2259,7 +2259,7 @@
             this.lbl5Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl5Position0Value.Name = "lbl5Position0Value";
-            this.lbl5Position0Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl5Position0Value.Size = new System.Drawing.Size(32, 24);
             this.lbl5Position0Value.TabIndex = 274;
             this.lbl5Position0Value.Text = "$$";
             this.lbl5Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2299,7 +2299,7 @@
             this.lbl5ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl5ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl5ModeValue.Name = "lbl5ModeValue";
-            this.lbl5ModeValue.Size = new System.Drawing.Size(86, 36);
+            this.lbl5ModeValue.Size = new System.Drawing.Size(67, 29);
             this.lbl5ModeValue.TabIndex = 2;
             this.lbl5ModeValue.Text = "Auto:";
             // 
@@ -2359,7 +2359,7 @@
             this.label33.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label33.Location = new System.Drawing.Point(418, 214);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(46, 31);
+            this.label33.Size = new System.Drawing.Size(38, 26);
             this.label33.TabIndex = 277;
             this.label33.Text = "00";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2372,7 +2372,7 @@
             this.lbl4Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position6Value.Location = new System.Drawing.Point(263, 159);
             this.lbl4Position6Value.Name = "lbl4Position6Value";
-            this.lbl4Position6Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl4Position6Value.Size = new System.Drawing.Size(32, 24);
             this.lbl4Position6Value.TabIndex = 345;
             this.lbl4Position6Value.Text = "$$";
             this.lbl4Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2385,7 +2385,7 @@
             this.lbl4Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position10Value.Location = new System.Drawing.Point(246, 211);
             this.lbl4Position10Value.Name = "lbl4Position10Value";
-            this.lbl4Position10Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl4Position10Value.Size = new System.Drawing.Size(21, 24);
             this.lbl4Position10Value.TabIndex = 344;
             this.lbl4Position10Value.Text = "0";
             this.lbl4Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2397,7 +2397,7 @@
             this.lbl4Position10.ForeColor = System.Drawing.Color.White;
             this.lbl4Position10.Location = new System.Drawing.Point(202, 210);
             this.lbl4Position10.Name = "lbl4Position10";
-            this.lbl4Position10.Size = new System.Drawing.Size(63, 29);
+            this.lbl4Position10.Size = new System.Drawing.Size(52, 24);
             this.lbl4Position10.TabIndex = 343;
             this.lbl4Position10.Text = "Avo:";
             // 
@@ -2410,7 +2410,7 @@
             this.lbl4Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position7Value.Location = new System.Drawing.Point(97, 184);
             this.lbl4Position7Value.Name = "lbl4Position7Value";
-            this.lbl4Position7Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl4Position7Value.Size = new System.Drawing.Size(16, 24);
             this.lbl4Position7Value.TabIndex = 342;
             this.lbl4Position7Value.Text = ".";
             this.lbl4Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2423,7 +2423,7 @@
             this.lbl4Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position9Value.Location = new System.Drawing.Point(68, 213);
             this.lbl4Position9Value.Name = "lbl4Position9Value";
-            this.lbl4Position9Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl4Position9Value.Size = new System.Drawing.Size(21, 24);
             this.lbl4Position9Value.TabIndex = 341;
             this.lbl4Position9Value.Text = "#";
             this.lbl4Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2435,7 +2435,7 @@
             this.lbl4Position9.ForeColor = System.Drawing.Color.White;
             this.lbl4Position9.Location = new System.Drawing.Point(3, 213);
             this.lbl4Position9.Name = "lbl4Position9";
-            this.lbl4Position9.Size = new System.Drawing.Size(74, 29);
+            this.lbl4Position9.Size = new System.Drawing.Size(59, 24);
             this.lbl4Position9.TabIndex = 340;
             this.lbl4Position9.Text = "Mics:";
             // 
@@ -2446,7 +2446,7 @@
             this.lbl4Position7.ForeColor = System.Drawing.Color.White;
             this.lbl4Position7.Location = new System.Drawing.Point(2, 184);
             this.lbl4Position7.Name = "lbl4Position7";
-            this.lbl4Position7.Size = new System.Drawing.Size(95, 29);
+            this.lbl4Position7.Size = new System.Drawing.Size(73, 24);
             this.lbl4Position7.TabIndex = 339;
             this.lbl4Position7.Text = "Spotlit:";
             // 
@@ -2457,7 +2457,7 @@
             this.lbl4Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl4Position2Flag.Name = "lbl4Position2Flag";
-            this.lbl4Position2Flag.Size = new System.Drawing.Size(34, 29);
+            this.lbl4Position2Flag.Size = new System.Drawing.Size(27, 24);
             this.lbl4Position2Flag.TabIndex = 338;
             this.lbl4Position2Flag.Text = "M";
             // 
@@ -2468,7 +2468,7 @@
             this.lbl4Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl4Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl4Position0Flag.Name = "lbl4Position0Flag";
-            this.lbl4Position0Flag.Size = new System.Drawing.Size(31, 29);
+            this.lbl4Position0Flag.Size = new System.Drawing.Size(24, 24);
             this.lbl4Position0Flag.TabIndex = 337;
             this.lbl4Position0Flag.Text = "D";
             // 
@@ -2481,7 +2481,7 @@
             this.lbl4Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position4Value.Location = new System.Drawing.Point(274, 130);
             this.lbl4Position4Value.Name = "lbl4Position4Value";
-            this.lbl4Position4Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl4Position4Value.Size = new System.Drawing.Size(16, 24);
             this.lbl4Position4Value.TabIndex = 336;
             this.lbl4Position4Value.Text = ".";
             this.lbl4Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2495,7 +2495,7 @@
             this.lbl4Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position5Value.Location = new System.Drawing.Point(97, 157);
             this.lbl4Position5Value.Name = "lbl4Position5Value";
-            this.lbl4Position5Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl4Position5Value.Size = new System.Drawing.Size(16, 24);
             this.lbl4Position5Value.TabIndex = 334;
             this.lbl4Position5Value.Text = ".";
             this.lbl4Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2507,7 +2507,7 @@
             this.lbl4Position6.ForeColor = System.Drawing.Color.White;
             this.lbl4Position6.Location = new System.Drawing.Point(202, 158);
             this.lbl4Position6.Name = "lbl4Position6";
-            this.lbl4Position6.Size = new System.Drawing.Size(74, 29);
+            this.lbl4Position6.Size = new System.Drawing.Size(57, 24);
             this.lbl4Position6.TabIndex = 331;
             this.lbl4Position6.Text = "Strat:";
             // 
@@ -2519,7 +2519,7 @@
             this.lbl4Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl4Position2Value.Name = "lbl4Position2Value";
-            this.lbl4Position2Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl4Position2Value.Size = new System.Drawing.Size(32, 24);
             this.lbl4Position2Value.TabIndex = 330;
             this.lbl4Position2Value.Text = "$$";
             this.lbl4Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2532,7 +2532,7 @@
             this.lbl4Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position1Value.Location = new System.Drawing.Point(243, 50);
             this.lbl4Position1Value.Name = "lbl4Position1Value";
-            this.lbl4Position1Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl4Position1Value.Size = new System.Drawing.Size(32, 24);
             this.lbl4Position1Value.TabIndex = 329;
             this.lbl4Position1Value.Text = "$$";
             this.lbl4Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2554,7 +2554,7 @@
             this.label109.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label109.Location = new System.Drawing.Point(418, 214);
             this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(46, 31);
+            this.label109.Size = new System.Drawing.Size(38, 26);
             this.label109.TabIndex = 277;
             this.label109.Text = "00";
             this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2576,7 +2576,7 @@
             this.label110.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label110.Location = new System.Drawing.Point(418, 214);
             this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(46, 31);
+            this.label110.Size = new System.Drawing.Size(38, 26);
             this.label110.TabIndex = 277;
             this.label110.Text = "00";
             this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2588,7 +2588,7 @@
             this.lbl4Position5.ForeColor = System.Drawing.Color.White;
             this.lbl4Position5.Location = new System.Drawing.Point(2, 158);
             this.lbl4Position5.Name = "lbl4Position5";
-            this.lbl4Position5.Size = new System.Drawing.Size(121, 29);
+            this.lbl4Position5.Size = new System.Drawing.Size(99, 24);
             this.lbl4Position5.TabIndex = 328;
             this.lbl4Position5.Text = "HP Amp: ";
             // 
@@ -2599,7 +2599,7 @@
             this.lbl4Position4.ForeColor = System.Drawing.Color.White;
             this.lbl4Position4.Location = new System.Drawing.Point(202, 130);
             this.lbl4Position4.Name = "lbl4Position4";
-            this.lbl4Position4.Size = new System.Drawing.Size(90, 29);
+            this.lbl4Position4.Size = new System.Drawing.Size(72, 24);
             this.lbl4Position4.TabIndex = 322;
             this.lbl4Position4.Text = "Leave:";
             // 
@@ -2611,7 +2611,7 @@
             this.lbl4Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position8Value.Location = new System.Drawing.Point(246, 185);
             this.lbl4Position8Value.Name = "lbl4Position8Value";
-            this.lbl4Position8Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl4Position8Value.Size = new System.Drawing.Size(21, 24);
             this.lbl4Position8Value.TabIndex = 324;
             this.lbl4Position8Value.Text = "0";
             this.lbl4Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2623,7 +2623,7 @@
             this.lbl4Position0.ForeColor = System.Drawing.Color.White;
             this.lbl4Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl4Position0.Name = "lbl4Position0";
-            this.lbl4Position0.Size = new System.Drawing.Size(64, 29);
+            this.lbl4Position0.Size = new System.Drawing.Size(53, 24);
             this.lbl4Position0.TabIndex = 322;
             this.lbl4Position0.Text = "Acq:";
             // 
@@ -2635,7 +2635,7 @@
             this.lbl4Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl4Position3Value.Name = "lbl4Position3Value";
-            this.lbl4Position3Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl4Position3Value.Size = new System.Drawing.Size(21, 24);
             this.lbl4Position3Value.TabIndex = 317;
             this.lbl4Position3Value.Text = "#";
             this.lbl4Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2647,7 +2647,7 @@
             this.lbl4Position3.ForeColor = System.Drawing.Color.White;
             this.lbl4Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl4Position3.Name = "lbl4Position3";
-            this.lbl4Position3.Size = new System.Drawing.Size(88, 29);
+            this.lbl4Position3.Size = new System.Drawing.Size(70, 24);
             this.lbl4Position3.TabIndex = 321;
             this.lbl4Position3.Text = "Setup:";
             // 
@@ -2658,7 +2658,7 @@
             this.lbl4Position8.ForeColor = System.Drawing.Color.White;
             this.lbl4Position8.Location = new System.Drawing.Point(202, 184);
             this.lbl4Position8.Name = "lbl4Position8";
-            this.lbl4Position8.Size = new System.Drawing.Size(60, 29);
+            this.lbl4Position8.Size = new System.Drawing.Size(47, 24);
             this.lbl4Position8.TabIndex = 266;
             this.lbl4Position8.Text = "Def:";
             // 
@@ -2669,7 +2669,7 @@
             this.lbl4Position1.ForeColor = System.Drawing.Color.White;
             this.lbl4Position1.Location = new System.Drawing.Point(188, 50);
             this.lbl4Position1.Name = "lbl4Position1";
-            this.lbl4Position1.Size = new System.Drawing.Size(71, 29);
+            this.lbl4Position1.Size = new System.Drawing.Size(56, 24);
             this.lbl4Position1.TabIndex = 327;
             this.lbl4Position1.Text = "Orig:";
             // 
@@ -2680,7 +2680,7 @@
             this.lbl4Position2.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl4Position2.Name = "lbl4Position2";
-            this.lbl4Position2.Size = new System.Drawing.Size(60, 29);
+            this.lbl4Position2.Size = new System.Drawing.Size(47, 24);
             this.lbl4Position2.TabIndex = 318;
             this.lbl4Position2.Text = "Del:";
             // 
@@ -2691,7 +2691,7 @@
             this.lbl4Position11.ForeColor = System.Drawing.Color.White;
             this.lbl4Position11.Location = new System.Drawing.Point(3, 261);
             this.lbl4Position11.Name = "lbl4Position11";
-            this.lbl4Position11.Size = new System.Drawing.Size(154, 29);
+            this.lbl4Position11.Size = new System.Drawing.Size(125, 24);
             this.lbl4Position11.TabIndex = 291;
             this.lbl4Position11.Text = "Match Event";
             // 
@@ -2703,7 +2703,7 @@
             this.lbl4Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl4Position0Value.Name = "lbl4Position0Value";
-            this.lbl4Position0Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl4Position0Value.Size = new System.Drawing.Size(32, 24);
             this.lbl4Position0Value.TabIndex = 274;
             this.lbl4Position0Value.Text = "$$";
             this.lbl4Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2743,7 +2743,7 @@
             this.lbl4ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl4ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl4ModeValue.Name = "lbl4ModeValue";
-            this.lbl4ModeValue.Size = new System.Drawing.Size(86, 36);
+            this.lbl4ModeValue.Size = new System.Drawing.Size(67, 29);
             this.lbl4ModeValue.TabIndex = 2;
             this.lbl4ModeValue.Text = "Auto:";
             // 
@@ -2805,7 +2805,7 @@
             this.label11.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label11.Location = new System.Drawing.Point(418, 214);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 31);
+            this.label11.Size = new System.Drawing.Size(38, 26);
             this.label11.TabIndex = 277;
             this.label11.Text = "00";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2827,7 +2827,7 @@
             this.label31.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label31.Location = new System.Drawing.Point(418, 214);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(46, 31);
+            this.label31.Size = new System.Drawing.Size(38, 26);
             this.label31.TabIndex = 277;
             this.label31.Text = "00";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2840,7 +2840,7 @@
             this.lbl3Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position6Value.Location = new System.Drawing.Point(263, 159);
             this.lbl3Position6Value.Name = "lbl3Position6Value";
-            this.lbl3Position6Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl3Position6Value.Size = new System.Drawing.Size(32, 24);
             this.lbl3Position6Value.TabIndex = 345;
             this.lbl3Position6Value.Text = "$$";
             this.lbl3Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2862,7 +2862,7 @@
             this.label32.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label32.Location = new System.Drawing.Point(418, 214);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(46, 31);
+            this.label32.Size = new System.Drawing.Size(38, 26);
             this.label32.TabIndex = 277;
             this.label32.Text = "00";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2875,7 +2875,7 @@
             this.lbl3Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position10Value.Location = new System.Drawing.Point(246, 211);
             this.lbl3Position10Value.Name = "lbl3Position10Value";
-            this.lbl3Position10Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl3Position10Value.Size = new System.Drawing.Size(21, 24);
             this.lbl3Position10Value.TabIndex = 344;
             this.lbl3Position10Value.Text = "0";
             this.lbl3Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2887,7 +2887,7 @@
             this.lbl3Position10.ForeColor = System.Drawing.Color.White;
             this.lbl3Position10.Location = new System.Drawing.Point(202, 210);
             this.lbl3Position10.Name = "lbl3Position10";
-            this.lbl3Position10.Size = new System.Drawing.Size(63, 29);
+            this.lbl3Position10.Size = new System.Drawing.Size(52, 24);
             this.lbl3Position10.TabIndex = 343;
             this.lbl3Position10.Text = "Avo:";
             // 
@@ -2900,7 +2900,7 @@
             this.lbl3Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position7Value.Location = new System.Drawing.Point(97, 184);
             this.lbl3Position7Value.Name = "lbl3Position7Value";
-            this.lbl3Position7Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl3Position7Value.Size = new System.Drawing.Size(16, 24);
             this.lbl3Position7Value.TabIndex = 342;
             this.lbl3Position7Value.Text = ".";
             this.lbl3Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2913,7 +2913,7 @@
             this.lbl3Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position9Value.Location = new System.Drawing.Point(68, 213);
             this.lbl3Position9Value.Name = "lbl3Position9Value";
-            this.lbl3Position9Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl3Position9Value.Size = new System.Drawing.Size(21, 24);
             this.lbl3Position9Value.TabIndex = 341;
             this.lbl3Position9Value.Text = "#";
             this.lbl3Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2925,7 +2925,7 @@
             this.lbl3Position9.ForeColor = System.Drawing.Color.White;
             this.lbl3Position9.Location = new System.Drawing.Point(3, 213);
             this.lbl3Position9.Name = "lbl3Position9";
-            this.lbl3Position9.Size = new System.Drawing.Size(74, 29);
+            this.lbl3Position9.Size = new System.Drawing.Size(59, 24);
             this.lbl3Position9.TabIndex = 340;
             this.lbl3Position9.Text = "Mics:";
             // 
@@ -2936,7 +2936,7 @@
             this.lbl3Position7.ForeColor = System.Drawing.Color.White;
             this.lbl3Position7.Location = new System.Drawing.Point(2, 184);
             this.lbl3Position7.Name = "lbl3Position7";
-            this.lbl3Position7.Size = new System.Drawing.Size(95, 29);
+            this.lbl3Position7.Size = new System.Drawing.Size(73, 24);
             this.lbl3Position7.TabIndex = 339;
             this.lbl3Position7.Text = "Spotlit:";
             // 
@@ -2947,7 +2947,7 @@
             this.lbl3Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl3Position2Flag.Name = "lbl3Position2Flag";
-            this.lbl3Position2Flag.Size = new System.Drawing.Size(34, 29);
+            this.lbl3Position2Flag.Size = new System.Drawing.Size(27, 24);
             this.lbl3Position2Flag.TabIndex = 338;
             this.lbl3Position2Flag.Text = "M";
             // 
@@ -2958,7 +2958,7 @@
             this.lbl3Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl3Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl3Position0Flag.Name = "lbl3Position0Flag";
-            this.lbl3Position0Flag.Size = new System.Drawing.Size(31, 29);
+            this.lbl3Position0Flag.Size = new System.Drawing.Size(24, 24);
             this.lbl3Position0Flag.TabIndex = 337;
             this.lbl3Position0Flag.Text = "D";
             // 
@@ -2971,7 +2971,7 @@
             this.lbl3Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position4Value.Location = new System.Drawing.Point(274, 130);
             this.lbl3Position4Value.Name = "lbl3Position4Value";
-            this.lbl3Position4Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl3Position4Value.Size = new System.Drawing.Size(16, 24);
             this.lbl3Position4Value.TabIndex = 336;
             this.lbl3Position4Value.Text = ".";
             this.lbl3Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2985,7 +2985,7 @@
             this.lbl3Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position5Value.Location = new System.Drawing.Point(97, 157);
             this.lbl3Position5Value.Name = "lbl3Position5Value";
-            this.lbl3Position5Value.Size = new System.Drawing.Size(20, 29);
+            this.lbl3Position5Value.Size = new System.Drawing.Size(16, 24);
             this.lbl3Position5Value.TabIndex = 334;
             this.lbl3Position5Value.Text = ".";
             this.lbl3Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2997,7 +2997,7 @@
             this.lbl3Position6.ForeColor = System.Drawing.Color.White;
             this.lbl3Position6.Location = new System.Drawing.Point(202, 158);
             this.lbl3Position6.Name = "lbl3Position6";
-            this.lbl3Position6.Size = new System.Drawing.Size(74, 29);
+            this.lbl3Position6.Size = new System.Drawing.Size(57, 24);
             this.lbl3Position6.TabIndex = 331;
             this.lbl3Position6.Text = "Strat:";
             // 
@@ -3009,7 +3009,7 @@
             this.lbl3Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl3Position2Value.Name = "lbl3Position2Value";
-            this.lbl3Position2Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl3Position2Value.Size = new System.Drawing.Size(32, 24);
             this.lbl3Position2Value.TabIndex = 330;
             this.lbl3Position2Value.Text = "$$";
             this.lbl3Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3022,7 +3022,7 @@
             this.lbl3Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position1Value.Location = new System.Drawing.Point(243, 50);
             this.lbl3Position1Value.Name = "lbl3Position1Value";
-            this.lbl3Position1Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl3Position1Value.Size = new System.Drawing.Size(32, 24);
             this.lbl3Position1Value.TabIndex = 329;
             this.lbl3Position1Value.Text = "$$";
             this.lbl3Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3044,7 +3044,7 @@
             this.label79.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label79.Location = new System.Drawing.Point(418, 214);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(46, 31);
+            this.label79.Size = new System.Drawing.Size(38, 26);
             this.label79.TabIndex = 277;
             this.label79.Text = "00";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3066,7 +3066,7 @@
             this.label80.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label80.Location = new System.Drawing.Point(418, 214);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(46, 31);
+            this.label80.Size = new System.Drawing.Size(38, 26);
             this.label80.TabIndex = 277;
             this.label80.Text = "00";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3078,7 +3078,7 @@
             this.lbl3Position5.ForeColor = System.Drawing.Color.White;
             this.lbl3Position5.Location = new System.Drawing.Point(2, 158);
             this.lbl3Position5.Name = "lbl3Position5";
-            this.lbl3Position5.Size = new System.Drawing.Size(121, 29);
+            this.lbl3Position5.Size = new System.Drawing.Size(99, 24);
             this.lbl3Position5.TabIndex = 328;
             this.lbl3Position5.Text = "HP Amp: ";
             // 
@@ -3089,7 +3089,7 @@
             this.lbl3Position4.ForeColor = System.Drawing.Color.White;
             this.lbl3Position4.Location = new System.Drawing.Point(202, 130);
             this.lbl3Position4.Name = "lbl3Position4";
-            this.lbl3Position4.Size = new System.Drawing.Size(90, 29);
+            this.lbl3Position4.Size = new System.Drawing.Size(72, 24);
             this.lbl3Position4.TabIndex = 322;
             this.lbl3Position4.Text = "Leave:";
             // 
@@ -3101,7 +3101,7 @@
             this.lbl3Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position8Value.Location = new System.Drawing.Point(246, 185);
             this.lbl3Position8Value.Name = "lbl3Position8Value";
-            this.lbl3Position8Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl3Position8Value.Size = new System.Drawing.Size(21, 24);
             this.lbl3Position8Value.TabIndex = 324;
             this.lbl3Position8Value.Text = "0";
             this.lbl3Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3113,7 +3113,7 @@
             this.lbl3Position0.ForeColor = System.Drawing.Color.White;
             this.lbl3Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl3Position0.Name = "lbl3Position0";
-            this.lbl3Position0.Size = new System.Drawing.Size(64, 29);
+            this.lbl3Position0.Size = new System.Drawing.Size(53, 24);
             this.lbl3Position0.TabIndex = 322;
             this.lbl3Position0.Text = "Acq:";
             // 
@@ -3125,7 +3125,7 @@
             this.lbl3Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl3Position3Value.Name = "lbl3Position3Value";
-            this.lbl3Position3Value.Size = new System.Drawing.Size(27, 29);
+            this.lbl3Position3Value.Size = new System.Drawing.Size(21, 24);
             this.lbl3Position3Value.TabIndex = 317;
             this.lbl3Position3Value.Text = "#";
             this.lbl3Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3137,7 +3137,7 @@
             this.lbl3Position3.ForeColor = System.Drawing.Color.White;
             this.lbl3Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl3Position3.Name = "lbl3Position3";
-            this.lbl3Position3.Size = new System.Drawing.Size(88, 29);
+            this.lbl3Position3.Size = new System.Drawing.Size(70, 24);
             this.lbl3Position3.TabIndex = 321;
             this.lbl3Position3.Text = "Setup:";
             // 
@@ -3148,7 +3148,7 @@
             this.lbl3Position8.ForeColor = System.Drawing.Color.White;
             this.lbl3Position8.Location = new System.Drawing.Point(202, 184);
             this.lbl3Position8.Name = "lbl3Position8";
-            this.lbl3Position8.Size = new System.Drawing.Size(60, 29);
+            this.lbl3Position8.Size = new System.Drawing.Size(47, 24);
             this.lbl3Position8.TabIndex = 266;
             this.lbl3Position8.Text = "Def:";
             // 
@@ -3159,7 +3159,7 @@
             this.lbl3Position1.ForeColor = System.Drawing.Color.White;
             this.lbl3Position1.Location = new System.Drawing.Point(188, 50);
             this.lbl3Position1.Name = "lbl3Position1";
-            this.lbl3Position1.Size = new System.Drawing.Size(71, 29);
+            this.lbl3Position1.Size = new System.Drawing.Size(56, 24);
             this.lbl3Position1.TabIndex = 327;
             this.lbl3Position1.Text = "Orig:";
             // 
@@ -3170,7 +3170,7 @@
             this.lbl3Position2.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl3Position2.Name = "lbl3Position2";
-            this.lbl3Position2.Size = new System.Drawing.Size(60, 29);
+            this.lbl3Position2.Size = new System.Drawing.Size(47, 24);
             this.lbl3Position2.TabIndex = 318;
             this.lbl3Position2.Text = "Del:";
             // 
@@ -3181,7 +3181,7 @@
             this.lbl3Position11.ForeColor = System.Drawing.Color.White;
             this.lbl3Position11.Location = new System.Drawing.Point(3, 261);
             this.lbl3Position11.Name = "lbl3Position11";
-            this.lbl3Position11.Size = new System.Drawing.Size(154, 29);
+            this.lbl3Position11.Size = new System.Drawing.Size(125, 24);
             this.lbl3Position11.TabIndex = 291;
             this.lbl3Position11.Text = "Match Event";
             // 
@@ -3193,7 +3193,7 @@
             this.lbl3Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl3Position0Value.Name = "lbl3Position0Value";
-            this.lbl3Position0Value.Size = new System.Drawing.Size(41, 29);
+            this.lbl3Position0Value.Size = new System.Drawing.Size(32, 24);
             this.lbl3Position0Value.TabIndex = 274;
             this.lbl3Position0Value.Text = "$$";
             this.lbl3Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3233,7 +3233,7 @@
             this.lbl3ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl3ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl3ModeValue.Name = "lbl3ModeValue";
-            this.lbl3ModeValue.Size = new System.Drawing.Size(86, 36);
+            this.lbl3ModeValue.Size = new System.Drawing.Size(67, 29);
             this.lbl3ModeValue.TabIndex = 2;
             this.lbl3ModeValue.Text = "Auto:";
             // 

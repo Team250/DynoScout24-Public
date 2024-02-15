@@ -120,7 +120,7 @@ namespace T250DynoScout_v2023
                         }
                     }
 
-                    if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+                    if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name && Robots[i].NoSho == false)
                     {
                         activity_record.Team = Robots[i].TeamName;
                         activity_record.Match = Robots[i].Current_Match;
@@ -138,7 +138,31 @@ namespace T250DynoScout_v2023
                         activity_record.DelOrig = "-";
                         activity_record.DelDest = "-";
                         activity_record.DelMiss = 0;
-                        activity_record.DriveSta = Robots[i].Drive_Sta;
+
+                        if (Robots[i] == Robots[0])
+                        {
+                            activity_record.DriveSta = "red0";
+                        }
+                        else if (Robots[i] == Robots[1])
+                        {
+                            activity_record.DriveSta = "red1";
+                        }
+                        else if (Robots[i] == Robots[2])
+                        {
+                            activity_record.DriveSta = "red2";
+                        }
+                        else if (Robots[i] == Robots[3])
+                        {
+                            activity_record.DriveSta = "blue0";
+                        }
+                        else if (Robots[i] == Robots[4])
+                        {
+                            activity_record.DriveSta = "blue1";
+                        }
+                        else if (Robots[i] == Robots[5])
+                        {
+                            activity_record.DriveSta = "blue2";
+                        }
 
                         if (Robots[i].App_Strat == RobotState.APP_STRAT.Select)
                         {
@@ -298,6 +322,92 @@ namespace T250DynoScout_v2023
                         activity_record.ScouterError = Robots[i].ScouterError;
 
                         //Save changes
+                        seasonframework.ActivitySet.Add(activity_record);
+                        seasonframework.SaveChanges();
+                    }
+                    else if (Robots[i].NoSho == true)
+                    {
+                        activity_record.Team = Robots[i].TeamName;
+                        activity_record.Match = Robots[i].Current_Match;
+                        activity_record.Time = DateTime.Now;
+                        activity_record.Mode = Robots[i].Current_Mode.ToString();
+                        Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
+                        activity_record.ScouterName = Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                        activity_record.RecordType = "EndMatch";
+                        activity_record.match_event = "-";
+                        activity_record.Leave = 0;
+                        activity_record.AcqLoc = "-";
+                        activity_record.AcqCenter = 0;
+                        activity_record.AcqDis = 0;
+                        activity_record.AcqDrp = 0;
+                        activity_record.DelMiss = 0;
+                        activity_record.DelOrig = "-";
+                        activity_record.DelDest = "-";
+
+                        if (Robots[i] == Robots[0])
+                        {
+                            activity_record.DriveSta = "red0";
+                        }
+                        else if (Robots[i] == Robots[1])
+                        {
+                            activity_record.DriveSta = "red1";
+                        }
+                        else if (Robots[i] == Robots[2])
+                        {
+                            activity_record.DriveSta = "red2";
+                        }
+                        else if (Robots[i] == Robots[3])
+                        {
+                            activity_record.DriveSta = "blue0";
+                        }
+                        else if (Robots[i] == Robots[4])
+                        {
+                            activity_record.DriveSta = "blue1";
+                        }
+                        else if (Robots[i] == Robots[5])
+                        {
+                            activity_record.DriveSta = "blue2";
+                        }
+
+                        activity_record.RobotSta = "-";
+
+                        if (Robots[i].HP_Amp == RobotState.HP_AMP.Select)
+                        {
+                            activity_record.HPAmp = "Z";
+                        }
+                        else
+                        {
+                            activity_record.HPAmp = Robots[i].HP_Amp.ToString();
+                        }
+
+                        activity_record.StageStat = "-";
+                        activity_record.StageAtt = 9;
+                        activity_record.StageLoc = "-";
+                        activity_record.Harmony = 9;
+                        activity_record.Spotlit = 9;
+                        activity_record.ClimbT = 0;
+                        activity_record.OZTime = 0;
+                        activity_record.AZTime = 0;
+                        activity_record.NZTime = 0;
+
+                        if (Robots[i].Mic == 9)
+                        {
+                            activity_record.Mics = 10;
+                        }
+                        else
+                        {
+                            activity_record.Mics = Robots[i].Mic;
+                        }
+
+                        if (Robots[i].HP_Amp == RobotState.HP_AMP.N)
+                        {
+                            activity_record.Mics = 9;
+                        }
+
+                        activity_record.Defense = 9;
+                        activity_record.Avoidance = 9;
+                        activity_record.Strategy = "-";
+
                         seasonframework.ActivitySet.Add(activity_record);
                         seasonframework.SaveChanges();
                     }
@@ -714,7 +824,7 @@ namespace T250DynoScout_v2023
                     Robots[i].Stage_Stat = RobotState.STAGE_STAT.Select;
                     Robots[i].Stage_Att = RobotState.STAGE_ATT.Select;
                     Robots[i].Stage_Loc = RobotState.STAGE_LOC.Select;
-                    Robots[i].Harm = 9;
+                    Robots[i].Harm = 10;
                     Robots[i].Lit = RobotState.LIT.Select;
                     Robots[i].ClimbT_StopWatch.Reset();
                     Robots[i].AllyT_StopWatch.Reset();
@@ -724,10 +834,10 @@ namespace T250DynoScout_v2023
                     Robots[i].AllyTDouble = 0;
                     Robots[i].OpptTDouble = 0;
                     Robots[i].NeutTDouble = 0;
-                    Robots[i].Def_Rat = 9;
-                    Robots[i].Avo_Rat = 9;
+                    Robots[i].Def_Rat = 10;
+                    Robots[i].Avo_Rat = 10;
                     Robots[i].App_Strat = RobotState.APP_STRAT.Select;
-                    Robots[i].Mic = 9;
+                    Robots[i].Mic = 10;
                     Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
                 }
 
@@ -1061,6 +1171,14 @@ namespace T250DynoScout_v2023
                                         string red1 = redteamsobj[0];
                                         string red2 = redteamsobj[1];
                                         string red3 = redteamsobj[2];
+
+                                        RobotState.blue0 = blueteamsobj[0];
+                                        RobotState.blue1 = blueteamsobj[1];
+                                        RobotState.blue2 = blueteamsobj[2];
+                                        RobotState.red0 = redteamsobj[0];
+                                        RobotState.red1 = redteamsobj[1];
+                                        RobotState.red2 = redteamsobj[2];
+
 
                                         if (PostTime != null)
                                         {
@@ -1424,6 +1542,11 @@ namespace T250DynoScout_v2023
         {
             ScouterAssignment frm = new ScouterAssignment();
             frm.Show();
+        }
+
+        private void lbl1ModeValue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
