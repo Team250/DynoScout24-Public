@@ -15,14 +15,13 @@ Our task is to break down the game each year and provide our team with how we th
 ## Setup
 To use the software, you need at least one Xbox Controller plugged into the laptop running the software, a maximum of 6 controllers. Need SQL server installed onto the laptop for the code to connect to and Excel getting the data from the database.
 
-To get the data from The Blue Alliance you will need to create a Read Me API Key from https://www.thebluealliance.com/account. After that, to replace all locations Ctrl + F and look for *YOUR_API_KEY_HERE* in the entire solution.
-![Visual Studio Search](https://i.imgur.com/6yGt4FD.png)
+To get the data from The Blue Alliance you will need to create a Read Me API Key from https://www.thebluealliance.com/account. After that, in the 1.Model folder create a file called HiddenVariable.cs. Then add the code below and add your api key between the quotes
+![Visual Studio](https://i.imgur.com/XcaBxDC.png)
 
 ## Usage
-![Auto](https://i.imgur.com/t9gEicX.png)     ![Teleop](https://i.imgur.com/CeKyL8E.png[/img])
-![Showtime](https://i.imgur.com/f8c1HPt.png[/img])
+![UI](https://i.imgur.com/prbS71r.png)
 
-Currently, all 3 modes work and you can input the correct controls. All the data should be recorded to the database correctly. Next is to reset all the variables, make the other 5 boxes, and then create the update database form. The text below is what will happen when the code is complete. 
+Currently, all 3 modes work and you can input the correct controls. All the data should be recorded to the database correctly and should reset the variables at the proper points. We have a few more database things to add and some logic if a robot is a no show. Then we will create the update database form to help fix errors during use. The text below is what will happen when the code is complete. 
 
 When the code starts up, the interface will be prompted.
 The user will need to load the events through the **Load** button at the top. This connects to The Blue Alliance API. After the code gets the events, the user will need to find the name of the event in the list of events, sorted by event code. 
