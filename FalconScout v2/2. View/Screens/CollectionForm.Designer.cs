@@ -1847,6 +1847,7 @@
             this.lbl1ModeValue.Size = new System.Drawing.Size(67, 29);
             this.lbl1ModeValue.TabIndex = 2;
             this.lbl1ModeValue.Text = "Auto:";
+            this.lbl1ModeValue.Click += new System.EventHandler(this.lbl1ModeValue_Click);
             // 
             // panel2
             // 

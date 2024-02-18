@@ -904,5 +904,10 @@ namespace T250DynoScout_v2024
             ScouterAssignment frm = new ScouterAssignment();
             frm.Show();
         }
+
+        private void lbl1ModeValue_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1540,6 +1540,7 @@ namespace T250DynoScout_v2024
                 rs[controllerNumberMap[controllerNumber]].Acq_Center = 0;
                 rs[controllerNumberMap[controllerNumber]].Flag = 0;
                 rs[controllerNumberMap[controllerNumber]].TransactionCheck = false;
+                rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp = 0;
 
             }
             else if (gamepad.RightTrigger_Press && !rs[controllerNumberMap[controllerNumber]].NoSho && rs[controllerNumberMap[controllerNumber]].TransactionCheck == false)
