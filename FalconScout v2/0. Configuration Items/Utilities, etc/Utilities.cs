@@ -23,7 +23,7 @@ using System.IO;
 using System.Data.SqlTypes;
 using System.Data.Entity.Core.EntityClient;
 
-namespace T250DynoScout_v2023
+namespace T250DynoScout_v2024
 {
     public class Utilities
     {

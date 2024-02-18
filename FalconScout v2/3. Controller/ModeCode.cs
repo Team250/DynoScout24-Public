@@ -4,8 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Diagnostics.Eventing.Reader;
+using T250DynoScout_v2024.Model.HiddenVariable;
 
-namespace T250DynoScout_v2023
+namespace T250DynoScout_v2024
 {
     public partial class MainScreen : Form
     {
@@ -76,7 +77,7 @@ namespace T250DynoScout_v2023
         private void InAutoMode(int Controller_Number)
         {
             //Scouter Name
-            ((Label)this.Controls.Find("lbl" + Controller_Number + "ScoutName", true)[0]).Text = Robots[Controller_Number].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+            ((Label)this.Controls.Find("lbl" + Controller_Number + "ScoutName", true)[0]).Text = Robots[Controller_Number].getScouterName(HiddenVariable.SCOUTER_NAME.Select_Name).ToString();
 
             //Mode
             ((Label)this.Controls.Find("lbl" + Controller_Number + "ModeValue", true)[0]).Text = Robots[Controller_Number].Current_Mode.ToString() + " Mode";
@@ -167,7 +168,7 @@ namespace T250DynoScout_v2023
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position4Value", true)[0]).BackColor = System.Drawing.Color.Green;
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position4Value", true)[0]).ForeColor = System.Drawing.Color.Green;
             }
-        
+
             // Hp in Amp
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5", true)[0]).Text = "HP Amp";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5", true)[0]).Visible = true;
@@ -188,8 +189,27 @@ namespace T250DynoScout_v2023
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position5Value", true)[0]).ForeColor = System.Drawing.Color.Yellow;
             }
 
-            ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Visible = false;
-            ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = false;
+            if (Robots[Controller_Number].NoSho == true)
+            {
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Text = "Mics:";
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Visible = true;
+
+                if (Robots[Controller_Number].Mic == 10 || Robots[Controller_Number].Mic == 9)
+                {
+                    ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = false;
+                }
+                else
+                {
+                    ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Text = Robots[Controller_Number].Mic.ToString();
+                    ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = true;
+                }
+            }
+            else
+            {
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6", true)[0]).Visible = false;
+                ((Label)this.Controls.Find("lbl" + Controller_Number + "Position6Value", true)[0]).Visible = false;
+            }
+
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position7", true)[0]).Visible = false;
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position7Value", true)[0]).Visible = false;
@@ -211,7 +231,7 @@ namespace T250DynoScout_v2023
         private void InTeleopMode(int Controller_Number)
         {
             //Scouter Name
-            ((Label)this.Controls.Find("lbl" + Controller_Number + "ScoutName", true)[0]).Text = Robots[Controller_Number].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+            ((Label)this.Controls.Find("lbl" + Controller_Number + "ScoutName", true)[0]).Text = Robots[Controller_Number].getScouterName(HiddenVariable.SCOUTER_NAME.Select_Name).ToString();
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "ModeValue", true)[0]).Text = Robots[Controller_Number].Current_Mode.ToString() + " Mode";
 
@@ -297,7 +317,7 @@ namespace T250DynoScout_v2023
         private void InShowtimeMode(int Controller_Number)
         {
             //Scouter Name
-            ((Label)this.Controls.Find("lbl" + Controller_Number + "ScoutName", true)[0]).Text = Robots[Controller_Number].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+            ((Label)this.Controls.Find("lbl" + Controller_Number + "ScoutName", true)[0]).Text = Robots[Controller_Number].getScouterName(HiddenVariable.SCOUTER_NAME.Select_Name).ToString();
 
             //Mode
             ((Label)this.Controls.Find("lbl" + Controller_Number + "ModeValue", true)[0]).Text = Robots[Controller_Number].Current_Mode.ToString() + " Mode";

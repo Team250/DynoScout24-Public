@@ -8,9 +8,9 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using T250DynoScout_v2020;
-using T250DynoScout_v2023.Model.HiddenVariable;
+using T250DynoScout_v2024.Model.HiddenVariable;
 
-namespace T250DynoScout_v2023
+namespace T250DynoScout_v2024
 {
     public partial class MainScreen : Form
     {
@@ -120,29 +120,61 @@ namespace T250DynoScout_v2023
                         }
                     }
 
-                    if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
+                    if (Robots[i]._ScouterName != HiddenVariable.SCOUTER_NAME.Select_Name && Robots[i].NoSho == false)
                     {
                         activity_record.Team = Robots[i].TeamName;
                         activity_record.Match = Robots[i].Current_Match;
                         activity_record.Time = DateTime.Now;
                         activity_record.Mode = Robots[i].Current_Mode.ToString();
                         Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
-                        activity_record.ScouterName = Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString();
+                        activity_record.ScouterName = Robots[i].getScouterName(HiddenVariable.SCOUTER_NAME.Select_Name).ToString();
                         activity_record.RecordType = "EndMatch";
                         activity_record.match_event = "-";
                         activity_record.Leave = Robots[i].Leave;
-                        activity_record.AcqLoc = "-";
+                        if (Robots[i].Acq_Loc_Temp != "Select" && Robots[i].Acq_Loc_Temp != "Pre")
+                        {
+                            activity_record.AcqLoc = Robots[i].Acq_Loc_Temp;
+                        }
+                        else
+                        {
+                            activity_record.AcqLoc = "-";
+                        }
                         activity_record.AcqCenter = 0;
                         activity_record.AcqDis = 0;
                         activity_record.AcqDrp = 0;
                         activity_record.DelOrig = "-";
                         activity_record.DelDest = "-";
                         activity_record.DelMiss = 0;
-                        activity_record.DriveSta = Robots[i].Drive_Sta;
+
+                        if (Robots[i] == Robots[0])
+                        {
+                            activity_record.DriveSta = "red0";
+                        }
+                        else if (Robots[i] == Robots[1])
+                        {
+                            activity_record.DriveSta = "red1";
+                        }
+                        else if (Robots[i] == Robots[2])
+                        {
+                            activity_record.DriveSta = "red2";
+                        }
+                        else if (Robots[i] == Robots[3])
+                        {
+                            activity_record.DriveSta = "blue0";
+                        }
+                        else if (Robots[i] == Robots[4])
+                        {
+                            activity_record.DriveSta = "blue1";
+                        }
+                        else if (Robots[i] == Robots[5])
+                        {
+                            activity_record.DriveSta = "blue2";
+                        }
 
                         if (Robots[i].App_Strat == RobotState.APP_STRAT.Select)
                         {
                             activity_record.Strategy = "Z";
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
                         }
                         else
                         {
@@ -170,21 +202,31 @@ namespace T250DynoScout_v2023
                         if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Select)
                         {
                             activity_record.StageStat = "Z";
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
                         }
-                        else
+                        else if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Onstage)
                         {
-                            activity_record.StageStat = Robots[i].Stage_Stat.ToString();
+                            activity_record.StageStat = "On";
+                        }
+                        else if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                        {
+                            activity_record.StageStat = "Else";
+                        }
+                        else if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park)
+                        {
+                            activity_record.StageStat = "Park";
                         }
 
                         if (Robots[i].Stage_Loc == RobotState.STAGE_LOC.Select)
                         {
-                            if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                            if (Robots[i].Stage_Stat != RobotState.STAGE_STAT.Onstage)
                             {
                                 activity_record.StageLoc = "A";
                             }
                             else
                             {
                                 activity_record.StageLoc = "Z";
+                                Robots[i].ScouterError = Robots[i].ScouterError + 10;
                             }
                         }
                         else
@@ -201,6 +243,7 @@ namespace T250DynoScout_v2023
                             if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Select)
                             {
                                 activity_record.StageAtt = 10;
+                                Robots[i].ScouterError = Robots[i].ScouterError + 10;
                             }
                             else if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Y)
                             {
@@ -216,6 +259,7 @@ namespace T250DynoScout_v2023
                             if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Select)
                             {
                                 activity_record.StageAtt = 10;
+                                Robots[i].ScouterError = Robots[i].ScouterError + 10;
                             }
                             else if (Robots[i].Stage_Att == RobotState.STAGE_ATT.Y)
                             {
@@ -228,7 +272,7 @@ namespace T250DynoScout_v2023
                         }
                         else if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Select)
                         {
-                            activity_record.StageAtt = 10;
+                            activity_record.StageAtt = 9;
                         }
 
                         // Harmony
@@ -236,15 +280,25 @@ namespace T250DynoScout_v2023
                         {
                             activity_record.Harmony = 9;
                         }
+                        else if (Robots[i].Harm == 10)
+                        {
+                            activity_record.Harmony = Robots[i].Harm;
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
+                        }
                         else
                         {
                             activity_record.Harmony = Robots[i].Harm;
                         }
 
                         // Spot lit
-                        if (Robots[i].Lit == RobotState.LIT.Select)
+                        if (Robots[i].Stage_Stat != RobotState.STAGE_STAT.Onstage)
+                        {
+                            activity_record.Spotlit = 9;
+                        }
+                        else if (Robots[i].Lit == RobotState.LIT.Select)
                         {
                             activity_record.Spotlit = 10;
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
                         }
                         else if (Robots[i].Lit == RobotState.LIT.Y)
                         {
@@ -253,11 +307,6 @@ namespace T250DynoScout_v2023
                         else if (Robots[i].Lit == RobotState.LIT.N)
                         {
                             activity_record.Spotlit = 0;
-                        }
-
-                        if (Robots[i].Stage_Stat != RobotState.STAGE_STAT.Onstage)
-                        {
-                            activity_record.Spotlit = 9;
                         }
 
                         if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
@@ -279,417 +328,115 @@ namespace T250DynoScout_v2023
                             activity_record.NZTime = Robots[i].NeutTDouble;
                         }
 
-                        if (Robots[i].Mic == 9)
-                        {
-                            activity_record.Mics = 10;
-                        }
-                        else
-                        {
-                            activity_record.Mics = Robots[i].Mic;
-                        }
-
+                        activity_record.Mics = Robots[i].Mic;
                         if (Robots[i].HP_Amp == RobotState.HP_AMP.N)
                         {
                             activity_record.Mics = 9;
                         }
+                        else if (Robots[i].Mic == 10)
+                        {
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
+                        }
 
                         activity_record.Defense = Robots[i].Def_Rat;
+                        if (Robots[i].Def_Rat == 10)
+                        {
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
+                        }
                         activity_record.Avoidance = Robots[i].Avo_Rat;
+                        if (Robots[i].Avo_Rat == 10)
+                        {
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
+                        }
+
                         activity_record.ScouterError = Robots[i].ScouterError;
 
                         //Save changes
                         seasonframework.ActivitySet.Add(activity_record);
                         seasonframework.SaveChanges();
                     }
-
-                    using (var db = new SeasonContext())
+                    else if (Robots[i].NoSho == true)
                     {
-                        var teamNumber = Robots[i].TeamName;
-                        var result = db.Teamset.FirstOrDefault(b => b.team_key == teamNumber);
+                        activity_record.Team = Robots[i].TeamName;
+                        activity_record.Match = Robots[i].Current_Match;
+                        activity_record.Time = DateTime.Now;
+                        activity_record.Mode = Robots[i].Current_Mode.ToString();
+                        Robots[i].Current_Mode = RobotState.ROBOT_MODE.Auto;
+                        activity_record.ScouterName = Robots[i].getScouterName(HiddenVariable.SCOUTER_NAME.Select_Name).ToString();
+                        activity_record.RecordType = "EndMatch";
+                        activity_record.match_event = "-";
+                        activity_record.Leave = 0;
+                        activity_record.AcqLoc = "-";
+                        activity_record.AcqCenter = 0;
+                        activity_record.AcqDis = 0;
+                        activity_record.AcqDrp = 0;
+                        activity_record.DelMiss = 0;
+                        activity_record.DelOrig = "-";
+                        activity_record.DelDest = "-";
 
-                        int checkallresults = 500;
-
-                        seasonframework.Database.ExecuteSqlCommand("IF OBJECT_ID ('ScoutedMatches') IS NOT NULL DROP TABLE ScoutedMatches");
-                        seasonframework.Database.ExecuteSqlCommand("Select [Id], [Team], [Match] INTO ScoutedMatches FROM Activities WHERE RecordType = 'EndMatch'");
-
-                        var activityresult = db.ActivitySet.FirstOrDefault(a => a.Team == teamNumber && a.Match == currentmatch + 1 && a.RecordType == "EndMatch");
-
-                        if (prevmatchcheck == 1)
+                        if (Robots[i] == Robots[0])
                         {
-                            int IndexNumber = 0;
+                            activity_record.DriveSta = "red0";
+                        }
+                        else if (Robots[i] == Robots[1])
+                        {
+                            activity_record.DriveSta = "red1";
+                        }
+                        else if (Robots[i] == Robots[2])
+                        {
+                            activity_record.DriveSta = "red2";
+                        }
+                        else if (Robots[i] == Robots[3])
+                        {
+                            activity_record.DriveSta = "blue0";
+                        }
+                        else if (Robots[i] == Robots[4])
+                        {
+                            activity_record.DriveSta = "blue1";
+                        }
+                        else if (Robots[i] == Robots[5])
+                        {
+                            activity_record.DriveSta = "blue2";
+                        }
 
-                            for (int j = 0; j < checkallresults; j++)
-                            {
-                                var scoutresult = db.ScoutedMatchSet.FirstOrDefault(s => s.Team == teamNumber && s.Id == j);
-                                if (scoutresult != null)
-                                {
-                                    if (scoutresult.Match < currentmatch + 1)
-                                    {
-                                        IndexNumber++;
-                                    }
-                                }
-                            }
+                        activity_record.RobotSta = "-";
 
-                            if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
-                            {
-                                //var cone_top_total = result.cone_top;
-                                //cone_top_total = cone_top_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeTop.ToString());
-                                //string Query = "UPDATE TeamSummaries SET cone_top = '" + cone_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var cone_mid_total = result.cone_mid;
-                                //cone_mid_total = cone_mid_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeMid.ToString());
-                                //Query = "UPDATE TeamSummaries SET cone_mid = '" + cone_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var cone_hyb_total = result.cone_hyb;
-                                //cone_hyb_total = cone_hyb_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelConeHyb.ToString());
-                                //Query = "UPDATE TeamSummaries SET cone_hyb = '" + cone_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var cube_top_total = result.cube_top;
-                                //cube_top_total = cube_top_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeTop.ToString());
-                                //Query = "UPDATE TeamSummaries SET cube_top = '" + cube_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var cube_mid_total = result.cube_mid;
-                                //cube_mid_total = cube_mid_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeMid.ToString());
-                                //Query = "UPDATE TeamSummaries SET cube_mid = '" + cube_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var cube_hyb_total = result.cube_hyb;
-                                //cube_hyb_total = cube_hyb_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCubeHyb.ToString());
-                                //Query = "UPDATE TeamSummaries SET cube_hyb = '" + cube_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var grid_out_total = result.grid_out;
-                                //if (Robots[i].TotDelOut > 18)
-                                //{
-                                //    grid_out_total = grid_out_total.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                //}
-                                //else
-                                //{
-                                //    grid_out_total = grid_out_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].enneadecimal[Robots[i].TotDelOut]);
-                                //}
-                                //Query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var grid_coop_total = result.grid_coop;
-                                //grid_coop_total = grid_coop_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotDelCoop.ToString());
-                                //Query = "UPDATE TeamSummaries SET grid_coop = '" + grid_coop_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var auto_cones_total = result.auto_cones;
-                                //auto_cones_total = auto_cones_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotAutoCone.ToString());
-                                //Query = "UPDATE TeamSummaries SET auto_cones = '" + auto_cones_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var auto_cubes_total = result.auto_cubes;
-                                //auto_cubes_total = auto_cubes_total.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].TotAutoCube.ToString());
-                                //Query = "UPDATE TeamSummaries SET auto_cubes = '" + auto_cubes_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var auto_pts_total = result.auto_pts;
-                                //int prevautopts = activityresult.AutoPts;
-                                //auto_pts_total = auto_pts_total - prevautopts + Robots[i].APoints;
-                                //Query = "UPDATE TeamSummaries SET auto_pts = '" + auto_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var grid_pts_total = result.grid_pts;
-                                //int prevgridpts = activityresult.GridPts;
-                                //grid_pts_total = grid_pts_total - prevgridpts + Robots[i].GPoints;
-                                //Query = "UPDATE TeamSummaries SET grid_pts = '" + grid_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var charge_pts_total = result.charge_pts;
-                                //int prevchargepts = activityresult.ChargePts;
-                                //charge_pts_total = charge_pts_total - prevchargepts + Robots[i].CPoints;
-                                //Query = "UPDATE TeamSummaries SET charge_pts = '" + charge_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_setup = result.trend_setup;
-                                //if (Robots[i].SetLoc == RobotState.SETLOC.Q_)
-                                //{
-                                //    trend_setup = trend_setup.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                //}
-                                //else
-                                //{
-                                //    trend_setup = trend_setup.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].SetLoc.ToString()[1].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_setup = '" + trend_setup + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_csauto = result.trend_csauto;
-                                //if (Robots[i].ChargeStatusAuto == RobotState.CHARGESTATUS.Select)
-                                //{
-                                //    //charge_pts_total = charge_pts_total + 9;
-                                //    trend_csauto = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                //}
-                                //else
-                                //{
-                                //    trend_csauto = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].ChargeStatusAuto.ToString()[0].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_csauto = '" + trend_csauto + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_csend = result.trend_csend;
-                                //if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Select)
-                                //{
-                                //    //charge_pts_total = charge_pts_total + 9;
-                                //    trend_csend = trend_csend.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                //}
-                                //else
-                                //{
-                                //    trend_csend = trend_csend.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].ChargeStatus.ToString()[0].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_csend = '" + trend_csend + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_cspartner = result.trend_cspartner;
-                                //if (Robots[i].CSTeams == RobotState.CSTEAMS.T_)
-                                //{
-                                //    trend_cspartner = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                //}
-                                //else
-                                //{
-                                //    trend_cspartner = trend_csauto.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].CSTeams.ToString()[1].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_cspartner = '" + trend_cspartner + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_csfails = result.trend_csfails;
-                                //if (Robots[i].EngageFail == RobotState.ENGAGEFAIL.Select)
-                                //{
-                                //    trend_csfails = trend_csfails.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                //}
-                                //else
-                                //{
-                                //    trend_csfails = trend_csfails.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].EngageFail.ToString()[0].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_csfails = '" + trend_csfails + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_defense = result.trend_defense;
-                                //if (Robots[i].DefRate == RobotState.DEFRATE.D_)
-                                //{
-                                //    trend_defense = trend_defense.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                //}
-                                //else
-                                //{
-                                //    trend_defense = trend_defense.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].DefRate.ToString()[1].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_defense = '" + trend_defense + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_avoidance = result.trend_avoidance;
-                                //if (Robots[i].AvoRate == RobotState.AVORATE.A_)
-                                //{
-                                //    trend_avoidance = trend_avoidance.Remove(IndexNumber, 1).Insert(IndexNumber, "9");
-                                //}
-                                //else
-                                //{
-                                //    trend_avoidance = trend_avoidance.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].AvoRate.ToString()[1].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_avoidance = '" + trend_avoidance + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-
-                                //var trend_appstrat = result.trend_appstrat;
-                                //if (Robots[i].Strategy == RobotState.STRATEGY.Select)
-                                //{
-                                //    trend_appstrat = trend_appstrat.Remove(IndexNumber, 1).Insert(IndexNumber, "Z");
-                                //}
-                                //else
-                                //{
-                                //    trend_appstrat = trend_appstrat.Remove(IndexNumber, 1).Insert(IndexNumber, Robots[i].Strategy.ToString()[0].ToString());
-                                //}
-                                //Query = "UPDATE TeamSummaries SET trend_appstrat = '" + trend_appstrat + "' WHERE team_key = '" + result.team_key + "';";
-                                //seasonframework.Database.ExecuteSqlCommand(Query);
-                            }
+                        if (Robots[i].HP_Amp == RobotState.HP_AMP.Select)
+                        {
+                            activity_record.HPAmp = "Z";
                         }
                         else
                         {
-                            //var matches_total = result.matches;
-                            //matches_total++;
-                            //string query = "UPDATE TeamSummaries SET matches = '" + matches_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //if (Robots[i]._ScouterName != RobotState.SCOUTER_NAME.Select_Name)
-                            //{
-                            //    var scouted_total = result.scouted;
-                            //    scouted_total++;
-                            //    query = "UPDATE TeamSummaries SET scouted = '" + scouted_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var cone_top_total = result.cone_top;
-                            //    cone_top_total = cone_top_total + Robots[i].TotDelConeTop.ToString();
-                            //    query = "UPDATE TeamSummaries SET cone_top = '" + cone_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var cone_mid_total = result.cone_mid;
-                            //    cone_mid_total = cone_mid_total + Robots[i].TotDelConeMid.ToString();
-                            //    query = "UPDATE TeamSummaries SET cone_mid = '" + cone_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var cone_hyb_total = result.cone_hyb;
-                            //    cone_hyb_total = cone_hyb_total + Robots[i].TotDelConeHyb.ToString();
-                            //    query = "UPDATE TeamSummaries SET cone_hyb = '" + cone_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var cube_top_total = result.cube_top;
-                            //    cube_top_total = cube_top_total + Robots[i].TotDelCubeTop.ToString();
-                            //    query = "UPDATE TeamSummaries SET cube_top = '" + cube_top_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var cube_mid_total = result.cube_mid;
-                            //    cube_mid_total = cube_mid_total + Robots[i].TotDelCubeMid.ToString();
-                            //    query = "UPDATE TeamSummaries SET cube_mid = '" + cube_mid_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var cube_hyb_total = result.cube_hyb;
-                            //    cube_hyb_total = cube_hyb_total + Robots[i].TotDelCubeHyb.ToString();
-                            //    query = "UPDATE TeamSummaries SET cube_hyb = '" + cube_hyb_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var grid_out_total = result.grid_out;
-                            //    if (Robots[i].TotDelOut > 18)
-                            //    {
-                            //        query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + "Z" + "' WHERE team_key = '" + result.team_key + "';";
-                            //    }
-                            //    else
-                            //    {
-                            //        query = "UPDATE TeamSummaries SET grid_out = '" + grid_out_total + Robots[i].enneadecimal[Robots[i].TotDelOut] + "' WHERE team_key = '" + result.team_key + "';";
-                            //    }
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var grid_coop_total = result.grid_coop;
-                            //    grid_coop_total = grid_coop_total + Robots[i].TotDelCoop.ToString();
-                            //    query = "UPDATE TeamSummaries SET grid_coop = '" + grid_coop_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var auto_cones_total = result.auto_cones;
-                            //    auto_cones_total = auto_cones_total + Robots[i].TotAutoCone.ToString();
-                            //    query = "UPDATE TeamSummaries SET auto_cones = '" + auto_cones_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var auto_cubes_total = result.auto_cubes;
-                            //    auto_cubes_total = auto_cubes_total + Robots[i].TotAutoCube.ToString();
-                            //    query = "UPDATE TeamSummaries SET auto_cubes = '" + auto_cubes_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var auto_pts_total = result.auto_pts;
-                            //    auto_pts_total = auto_pts_total + Robots[i].APoints;
-                            //    query = "UPDATE TeamSummaries SET auto_pts = '" + auto_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var grid_pts_total = result.grid_pts;
-                            //    grid_pts_total = grid_pts_total + Robots[i].GPoints;
-                            //    query = "UPDATE TeamSummaries SET grid_pts = '" + grid_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var charge_pts_total = result.charge_pts;
-                            //    charge_pts_total = charge_pts_total + Robots[i].CPoints;
-                            //    query = "UPDATE TeamSummaries SET charge_pts = '" + charge_pts_total + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_setup = result.trend_setup;
-                            //    if (Robots[i].SetLoc == RobotState.SETLOC.Q_)
-                            //    {
-                            //        trend_setup = trend_setup + 9;
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_setup = trend_setup + (int)Robots[i].SetLoc;
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_setup = '" + trend_setup + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_csauto = result.trend_csauto;
-                            //    if (Robots[i].ChargeStatusAuto == RobotState.CHARGESTATUS.Select)
-                            //    {
-                            //        trend_csauto = trend_csauto + "Z";
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_csauto = trend_csauto + Robots[i].ChargeStatusAuto.ToString()[0];
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_csauto = '" + trend_csauto + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_csend = result.trend_csend;
-                            //    if (Robots[i].ChargeStatus == RobotState.CHARGESTATUS.Select)
-                            //    {
-                            //        charge_pts_total = charge_pts_total + 9;
-                            //        trend_csend = trend_csend + "Z";
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_csend = trend_csend + Robots[i].ChargeStatus.ToString()[0];
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_csend = '" + trend_csend + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_cspartner = result.trend_cspartner;
-                            //    if (Robots[i].CSTeams == RobotState.CSTEAMS.T_)
-                            //    {
-                            //        trend_cspartner = trend_cspartner + 9;
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_cspartner = trend_cspartner + (int)Robots[i].CSTeams;
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_cspartner = '" + trend_cspartner + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_csfails = result.trend_csfails;
-                            //    if (Robots[i].EngageFail == RobotState.ENGAGEFAIL.Select)
-                            //    {
-                            //        trend_csfails = trend_csfails + "Z";
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_csfails = trend_csfails + Robots[i].EngageFail.ToString()[0];
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_csfails = '" + trend_csfails + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_defense = result.trend_defense;
-                            //    if (Robots[i].DefRate == RobotState.DEFRATE.D_)
-                            //    {
-                            //        trend_defense = trend_defense + 9;
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_defense = trend_defense + (int)Robots[i].DefRate;
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_defense = '" + trend_defense + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_avoidance = result.trend_avoidance;
-
-                            //    if (Robots[i].AvoRate == RobotState.AVORATE.A_)
-                            //    {
-                            //        trend_avoidance = trend_avoidance + 9;
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_avoidance = trend_avoidance + (int)Robots[i].AvoRate;
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_avoidance = '" + trend_avoidance + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-
-                            //    var trend_appstrat = result.trend_appstrat;
-                            //    if (Robots[i].Strategy == RobotState.STRATEGY.Select)
-                            //    {
-                            //        trend_appstrat = trend_appstrat + "Z";
-                            //    }
-                            //    else
-                            //    {
-                            //        trend_appstrat = trend_appstrat + Robots[i].Strategy.ToString()[0];
-                            //    }
-                            //    query = "UPDATE TeamSummaries SET trend_appstrat = '" + trend_appstrat + "' WHERE team_key = '" + result.team_key + "';";
-                            //    seasonframework.Database.ExecuteSqlCommand(query);
-                            //}
+                            activity_record.HPAmp = Robots[i].HP_Amp.ToString();
                         }
+
+                        activity_record.StageStat = "-";
+                        activity_record.StageAtt = 9;
+                        activity_record.StageLoc = "-";
+                        activity_record.Harmony = 9;
+                        activity_record.Spotlit = 9;
+                        activity_record.ClimbT = 0;
+                        activity_record.OZTime = 0;
+                        activity_record.AZTime = 0;
+                        activity_record.NZTime = 0;
+                        activity_record.Mics = Robots[i].Mic;
+
+                        if (Robots[i].HP_Amp == RobotState.HP_AMP.N)
+                        {
+                            activity_record.Mics = 9;
+                        }
+                        else if (Robots[i].Mic == 10)
+                        {
+                            Robots[i].ScouterError = Robots[i].ScouterError + 10;
+                        }
+
+                        activity_record.Defense = 9;
+                        activity_record.Avoidance = 9;
+                        activity_record.Strategy = "-";
+                        activity_record.ScouterError = Robots[i].ScouterError;
+
+                        seasonframework.ActivitySet.Add(activity_record);
+                        seasonframework.SaveChanges();
                     }
                     cbxEndMatch.Checked = false;
                 }
@@ -705,7 +452,7 @@ namespace T250DynoScout_v2023
                     Robots[i].Leave = 0;
                     Robots[i].Acq_Loc = "Select";
                     Robots[i].Acq_Center = 0;
-                    Robots[i].Acq_Loc_Temp = "Preload";
+                    Robots[i].Acq_Loc_Temp = "Pre";
                     Robots[i].Flag = 0;
                     Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
                     Robots[i].Drive_Sta = "Select";
@@ -714,7 +461,7 @@ namespace T250DynoScout_v2023
                     Robots[i].Stage_Stat = RobotState.STAGE_STAT.Select;
                     Robots[i].Stage_Att = RobotState.STAGE_ATT.Select;
                     Robots[i].Stage_Loc = RobotState.STAGE_LOC.Select;
-                    Robots[i].Harm = 9;
+                    Robots[i].Harm = 10;
                     Robots[i].Lit = RobotState.LIT.Select;
                     Robots[i].ClimbT_StopWatch.Reset();
                     Robots[i].AllyT_StopWatch.Reset();
@@ -724,10 +471,10 @@ namespace T250DynoScout_v2023
                     Robots[i].AllyTDouble = 0;
                     Robots[i].OpptTDouble = 0;
                     Robots[i].NeutTDouble = 0;
-                    Robots[i].Def_Rat = 9;
-                    Robots[i].Avo_Rat = 9;
+                    Robots[i].Def_Rat = 10;
+                    Robots[i].Avo_Rat = 10;
                     Robots[i].App_Strat = RobotState.APP_STRAT.Select;
-                    Robots[i].Mic = 9;
+                    Robots[i].Mic = 10;
                     Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
                 }
 
@@ -751,7 +498,7 @@ namespace T250DynoScout_v2023
 
                 for (int i = 0; i < Robots.Length; i++)
                 {
-                    ScoutList.Add(Robots[i].getScouterName(RobotState.SCOUTER_NAME.Select_Name).ToString());
+                    ScoutList.Add(Robots[i].getScouterName(HiddenVariable.SCOUTER_NAME.Select_Name).ToString());
                 }
             }
             else
@@ -784,7 +531,7 @@ namespace T250DynoScout_v2023
                         Robots[i].Leave = 0;
                         Robots[i].Acq_Loc = "Select";
                         Robots[i].Acq_Center = 0;
-                        Robots[i].Acq_Loc_Temp = "Preload";
+                        Robots[i].Acq_Loc_Temp = "Pre";
                         Robots[i].Flag = 0;
                         Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
                         Robots[i].Drive_Sta = "Select";
@@ -844,7 +591,7 @@ namespace T250DynoScout_v2023
                 Robots[i].Leave = 0;
                 Robots[i].Acq_Loc = "Select";
                 Robots[i].Acq_Center = 0;
-                Robots[i].Acq_Loc_Temp = "Preload";
+                Robots[i].Acq_Loc_Temp = "Pre";
                 Robots[i].Flag = 0;
                 Robots[i].Del_Dest = RobotState.DEL_DEST.Select;
                 Robots[i].Drive_Sta = "Select";
@@ -905,7 +652,7 @@ namespace T250DynoScout_v2023
                 Log("Event Code -> " + eventcode);
 
                 //#AuthKey
-                string uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/teams?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
+                string uri = "http://www.thebluealliance.com/api/v3/event/2024" + eventcode + "/teams?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
 
                 req = WebRequest.Create(uri);
 
@@ -977,7 +724,7 @@ namespace T250DynoScout_v2023
                 //Get the matches from the Blue Alliance API
 
                 //#AuthKey
-                uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/matches?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
+                uri = "http://www.thebluealliance.com/api/v3/event/2024" + eventcode + "/matches?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
 
                 try
                 {
@@ -1022,15 +769,6 @@ namespace T250DynoScout_v2023
                                 int MatchCount = 0;
                                 MatchNumbers.Clear();
 
-                                int m_auto_pts = 0;
-                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_auto_pts = '" + m_auto_pts + "';");
-                                int m_grid_pts = 0;
-                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_grid_pts = '" + m_grid_pts + "';");
-                                int m_charge_pts = 0;
-                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_charge_pts = '" + m_charge_pts + "';");
-                                double m_fouls = 0;
-                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "';");
-
                                 for (int i = 0; i < JSONmatches.Count; i++)
                                 {
                                     // #Playoffs to download playoff matches and alliances
@@ -1062,204 +800,13 @@ namespace T250DynoScout_v2023
                                         string red2 = redteamsobj[1];
                                         string red3 = redteamsobj[2];
 
-                                        if (PostTime != null)
-                                        {
-                                            dynamic blueauto = scorebreakdown.blue.autoPoints;
-                                            dynamic redauto = scorebreakdown.red.autoPoints;
+                                        RobotState.blue0 = blueteamsobj[0];
+                                        RobotState.blue1 = blueteamsobj[1];
+                                        RobotState.blue2 = blueteamsobj[2];
+                                        RobotState.red0 = redteamsobj[0];
+                                        RobotState.red1 = redteamsobj[1];
+                                        RobotState.red2 = redteamsobj[2];
 
-                                            dynamic bluecharge = scorebreakdown.blue.totalChargeStationPoints;
-                                            dynamic redcharge = scorebreakdown.red.totalChargeStationPoints;
-
-                                            dynamic blueautodel = scorebreakdown.blue.autoGamePiecePoints;
-                                            dynamic redautodel = scorebreakdown.red.autoGamePiecePoints;
-
-                                            dynamic blueteleopdel = scorebreakdown.blue.teleopGamePiecePoints;
-                                            dynamic redteleopdel = scorebreakdown.red.teleopGamePiecePoints;
-
-                                            int bluetotaldel = blueautodel + blueteleopdel;
-                                            int redtotaldel = redautodel + redteleopdel;
-
-                                            dynamic bluefouls = scorebreakdown.red.foulPoints; //Switched because blue alliance gives foul points awarded to alliance but we want to record foul points caused by an alliance
-                                            dynamic redfouls = scorebreakdown.blue.foulPoints; //Switched because blue alliance gives foul points awarded to alliance but we want to record foul points caused by an alliance
-
-                                            dynamic bluescore = bluealliance.score;
-                                            dynamic redscore = redalliance.score;
-
-                                            int blueautoint = blueauto;
-                                            int redautoint = redauto;
-                                            int bluetotaldelint = bluetotaldel;
-                                            int redtotaldelint = redtotaldel;
-                                            int bluechargeint = bluecharge;
-                                            int redchargeint = redcharge;
-                                            int bluefoulsint = bluefouls;
-                                            int redfoulsint = redfouls;
-
-
-                                            int teststop = 0;
-
-                                            using (var db = new SeasonContext())
-                                            {
-                                                seasonframework.Database.ExecuteSqlCommand("IF OBJECT_ID ('ScoutedMatches') IS NOT NULL DROP TABLE ScoutedMatches");
-                                                seasonframework.Database.ExecuteSqlCommand("Select [Id], [Team], [Match] INTO ScoutedMatches FROM Activities WHERE RecordType = 'EndMatch'");
-
-                                                var result = db.Teamset.FirstOrDefault(b => b.team_key == blue1);
-                                                if (result.team_key == "frc250")
-                                                {
-                                                    teststop = 1;
-                                                }
-                                                m_fouls = result.m_fouls + bluefoulsint;
-                                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "' WHERE team_key = '" + result.team_key + "';");
-                                                var scoutresult = db.ScoutedMatchSet.FirstOrDefault(s => s.Team == blue1 && s.Match == MatchNumber);
-                                                if (scoutresult != null)
-                                                {
-                                                    if (scoutresult.Match == MatchNumber)
-                                                    {
-                                                        m_auto_pts = result.m_auto_pts + blueautoint;
-                                                        m_grid_pts = result.m_grid_pts + bluetotaldelint;
-                                                        m_charge_pts = result.m_charge_pts + bluechargeint;
-                                                        string query = "UPDATE TeamSummaries SET m_auto_pts = '" + m_auto_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_grid_pts = '" + m_grid_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_charge_pts = '" + m_charge_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                    }
-                                                }
-
-                                                result = db.Teamset.FirstOrDefault(b => b.team_key == blue2);
-                                                if (result.team_key == "frc250")
-                                                {
-                                                    teststop = 1;
-                                                }
-                                                m_fouls = result.m_fouls + bluefoulsint;
-                                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "' WHERE team_key = '" + result.team_key + "';");
-                                                scoutresult = db.ScoutedMatchSet.FirstOrDefault(s => s.Team == blue2 && s.Match == MatchNumber);
-                                                if (scoutresult != null)
-                                                {
-                                                    if (scoutresult.Match == MatchNumber)
-                                                    {
-                                                        m_auto_pts = result.m_auto_pts + blueautoint;
-                                                        m_grid_pts = result.m_grid_pts + bluetotaldelint;
-                                                        m_charge_pts = result.m_charge_pts + bluechargeint;
-                                                        string query = "UPDATE TeamSummaries SET m_auto_pts = '" + m_auto_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_grid_pts = '" + m_grid_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_charge_pts = '" + m_charge_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                    }
-                                                }
-
-                                                result = db.Teamset.FirstOrDefault(b => b.team_key == blue3);
-                                                if (result.team_key == "frc250")
-                                                {
-                                                    teststop = 1;
-                                                }
-                                                m_fouls = result.m_fouls + bluefoulsint;
-                                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "' WHERE team_key = '" + result.team_key + "';");
-                                                scoutresult = db.ScoutedMatchSet.FirstOrDefault(s => s.Team == blue3 && s.Match == MatchNumber);
-                                                if (scoutresult != null)
-                                                {
-                                                    if (scoutresult.Match == MatchNumber)
-                                                    {
-                                                        m_auto_pts = result.m_auto_pts + blueautoint;
-                                                        m_grid_pts = result.m_grid_pts + bluetotaldelint;
-                                                        m_charge_pts = result.m_charge_pts + bluechargeint;
-                                                        string query = "UPDATE TeamSummaries SET m_auto_pts = '" + m_auto_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_grid_pts = '" + m_grid_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_charge_pts = '" + m_charge_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                    }
-                                                }
-
-                                                result = db.Teamset.FirstOrDefault(b => b.team_key == red1);
-                                                if (result.team_key == "frc250")
-                                                {
-                                                    teststop = 1;
-                                                }
-                                                m_fouls = result.m_fouls + redfoulsint;
-                                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "' WHERE team_key = '" + result.team_key + "';");
-                                                scoutresult = db.ScoutedMatchSet.FirstOrDefault(s => s.Team == red1 && s.Match == MatchNumber);
-                                                if (scoutresult != null)
-                                                {
-                                                    if (scoutresult.Match == MatchNumber)
-                                                    {
-                                                        m_auto_pts = result.m_auto_pts + redautoint;
-                                                        m_grid_pts = result.m_grid_pts + redtotaldelint;
-                                                        m_charge_pts = result.m_charge_pts + redchargeint;
-                                                        string query = "UPDATE TeamSummaries SET m_auto_pts = '" + m_auto_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_grid_pts = '" + m_grid_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_charge_pts = '" + m_charge_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                    }
-                                                }
-
-
-                                                result = db.Teamset.FirstOrDefault(b => b.team_key == red2);
-                                                if (result.team_key == "frc250")
-                                                {
-                                                    teststop = 1;
-                                                }
-                                                m_fouls = result.m_fouls + redfoulsint;
-                                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "' WHERE team_key = '" + result.team_key + "';");
-                                                scoutresult = db.ScoutedMatchSet.FirstOrDefault(s => s.Team == red2 && s.Match == MatchNumber);
-                                                if (scoutresult != null)
-                                                {
-                                                    if (scoutresult.Match == MatchNumber)
-                                                    {
-                                                        m_auto_pts = result.m_auto_pts + redautoint;
-                                                        m_grid_pts = result.m_grid_pts + redtotaldelint;
-                                                        m_charge_pts = result.m_charge_pts + redchargeint;
-                                                        string query = "UPDATE TeamSummaries SET m_auto_pts = '" + m_auto_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_grid_pts = '" + m_grid_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_charge_pts = '" + m_charge_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                    }
-                                                }
-
-                                                result = db.Teamset.FirstOrDefault(b => b.team_key == red3);
-                                                if (result.team_key == "frc250")
-                                                {
-                                                    teststop = 1;
-                                                }
-                                                m_fouls = result.m_fouls + redfoulsint;
-                                                seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "' WHERE team_key = '" + result.team_key + "';");
-                                                scoutresult = db.ScoutedMatchSet.FirstOrDefault(s => s.Team == red3 && s.Match == MatchNumber);
-                                                if (scoutresult != null)
-                                                {
-                                                    if (scoutresult.Match == MatchNumber)
-                                                    {
-                                                        m_auto_pts = result.m_auto_pts + redautoint;
-                                                        m_grid_pts = result.m_grid_pts + redtotaldelint;
-                                                        m_charge_pts = result.m_charge_pts + redchargeint;
-                                                        string query = "UPDATE TeamSummaries SET m_auto_pts = '" + m_auto_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_grid_pts = '" + m_grid_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                        query = "UPDATE TeamSummaries SET m_charge_pts = '" + m_charge_pts + "' WHERE team_key = '" + result.team_key + "';";
-                                                        seasonframework.Database.ExecuteSqlCommand(query);
-                                                    }
-                                                }
-                                            }
-
-                                            match_record.blueauto = blueauto;
-                                            match_record.redauto = redauto;
-                                            match_record.bluecharge = bluecharge;
-                                            match_record.redcharge = redcharge;
-                                            match_record.bluetotaldel = bluetotaldel;
-                                            match_record.redtotaldel = redtotaldel;
-
-                                            match_record.pointscoreblue = bluescore;
-                                            match_record.pointscorered = redscore;
-                                            match_record.bluefouls = redfouls; //Switched because switched when defined
-                                            match_record.redfouls = bluefouls; //Switched because switched when defined
-                                        }
                                         //Record List of matches
                                         match_record.match_number = (int)obj[i].match_number;
 
@@ -1337,87 +884,19 @@ namespace T250DynoScout_v2023
                         }
                     }
                 }
-
-                //#AuthKey
-                uri = "http://www.thebluealliance.com/api/v3/event/2023" + eventcode + "/rankings?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
-                try
-                {
-                    req = WebRequest.Create(uri);
-                    response = (HttpWebResponse)req.GetResponse();
-
-                    using (var resp = req.GetResponse())
-                    {
-                        using (var responseStream = response.GetResponseStream())
-                        {
-                            dataStream = response.GetResponseStream();
-                            //Open the stream using a StreamReader for easy access.
-                            reader = new StreamReader(dataStream);
-
-                            //Read the content. 
-                            responseFromServer = reader.ReadToEnd();
-
-                            //Display the content.
-                            Log("Response from Server -> " + responseFromServer);
-                            //Cleanup the streams and the response.
-
-                            //Get root objects
-                            //JSONmatches = (List<Match>)Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer, typeof(List<Match>));
-
-                            int teststop = 0;
-
-                            double m_fouls = 0;
-                            dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(responseFromServer);
-                            dynamic rankings = obj.rankings;
-                            for (int i = 0; i < 150; i++)
-                            {
-                                try
-                                {
-                                    dynamic dynamicmatchesplayed = rankings[i].matches_played;
-                                    int matches_played = dynamicmatchesplayed;
-                                    dynamic dynamicteamkey = rankings[i].team_key;
-                                    string team_key = dynamicteamkey;
-
-                                    using (var db = new SeasonContext())
-                                    {
-                                        var result = db.Teamset.FirstOrDefault(b => b.team_key == team_key);
-                                        if (team_key == "frc250")
-                                        {
-                                            teststop = 1;
-                                        }
-                                        m_fouls = result.m_fouls / matches_played;
-                                        seasonframework.Database.ExecuteSqlCommand("UPDATE TeamSummaries SET m_fouls = '" + m_fouls + "' WHERE team_key = '" + result.team_key + "';");
-                                    }
-                                }
-                                catch
-                                {
-                                    i = i + 150;
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (WebException ex)
-                {
-                    if (ex.Status == WebExceptionStatus.ProtocolError &&
-                        ex.Response != null)
-                    {
-                        var resp = (HttpWebResponse)ex.Response;
-                        if ((resp.StatusCode == HttpStatusCode.NotFound))
-                        {
-                            MessageBox.Show("Sorry, but there is no ranking data currently available for the event you selected.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sorry, something went very wrong!");
-                        }
-                    }
-                }
             }
         }
         private void btnUpdateDB_Click(object sender, EventArgs e)
         {
-            UpdateDatabase frm = new UpdateDatabase(teamlist, MatchNumbers);
-            frm.Show();
+            if (DBExists)
+            {
+                UpdateDatabase frm = new UpdateDatabase(teamlist, MatchNumbers);
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please load The Blue Aliance to create the database or create the database in a different way");
+            }
         }
 
         private void SwapScouters_Click(object sender, EventArgs e)

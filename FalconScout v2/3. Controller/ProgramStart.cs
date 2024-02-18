@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace T250DynoScout_v2023
+namespace T250DynoScout_v2024
 {
     static class Program
     {

@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System;
 
-namespace T250DynoScout_v2023
+namespace T250DynoScout_v2024
 {
     public abstract class BaseEntity
     {
@@ -32,15 +32,7 @@ namespace T250DynoScout_v2023
         public DbSet<TeamSummary> Teamset { get; set; }
         public DbSet<Match> Matchset { get; set; }
         public DbSet<Activity> ActivitySet { get; set; }
-        public DbSet<ScoutedMatch> ScoutedMatchSet { get; set; }
         public DbSet<UpdatePreview> UpdatePreviewSet { get; set; }
-    }
-
-    public class MatchEvents
-    {
-        public string team;
-        public string match;
-        public string matchevent;
     }
 
     public class EventSummary : BaseEntity
@@ -90,35 +82,8 @@ namespace T250DynoScout_v2023
         public string team_key { get; set; }
         public string team_number { get; set; }
         public string nickname { get; set; }
-        // Totals and trends for #2023
-        public int matches { get; set; }
-        public int scouted { get; set; }
-        public string cone_top { get; set; }
-        public string cone_mid { get; set; }
-        public string cone_hyb { get; set; }
-        public string cube_top { get; set; }
-        public string cube_mid { get; set; }
-        public string cube_hyb { get; set; }
-        public string grid_out { get; set; }
-        public string grid_coop { get; set; }
-        public string auto_cones { get; set; }
-        public string auto_cubes { get; set; }
-        public int auto_pts { get; set; }
-        public int m_auto_pts { get; set; }
-        public int grid_pts { get; set; }
-        public int m_grid_pts { get; set; }
-        public int charge_pts { get; set; }
-        public int m_charge_pts { get; set; }
-        public string trend_setup { get; set; }
-        public string trend_csauto { get; set; }
-        public string trend_csend { get; set; }
-        public string trend_cspartner { get; set; }
-        public string trend_csfails { get; set; }
-        public string trend_defense { get; set; }
-        public string trend_avoidance { get; set; }
-        public string trend_appstrat { get; set; }
-        public double m_fouls { get; set; }
     }
+
     public class Match : BaseEntity
     {
         public string comp_level { get; set; }
@@ -193,52 +158,40 @@ namespace T250DynoScout_v2023
         //public Decimal score_contribution { get; set; }
     }
 
-    public class ScoutedMatch : BaseEntity
-    {
-        public string Team { get; set; }
-        public int Match { get; set; }
-    }
-
     public class UpdatePreview : BaseEntity
     {
+        //2024
         public string Team { get; set; }
         public int Match { get; set; }
         public DateTime Time { get; set; }
         public string RecordType { get; set; }
         public string Mode { get; set; }
-        public int Mobility { get; set; }
-        public int AcqSub1 { get; set; }
-        public int AcqSub2 { get; set; }
-        public int AcqFComm { get; set; }
-        public int AcqFLoad { get; set; }
-        public int AcqFOther { get; set; }
-        public int AcqFOpps { get; set; }
-        public int DelTop { get; set; }
-        public int DelMid { get; set; }
-        public int DelBot { get; set; }
-        public int DelFloor { get; set; }
-        public int DelOut { get; set; }
-        public int DelCoop { get; set; }
-        public int DelDrop { get; set; }
-        public int Cone { get; set; }
-        public int Cube { get; set; }
-        public int No_Attempt { get; set; }
-        public int Tried_And_Failed { get; set; }
-        public int Parked { get; set; }
-        public int Docked { get; set; }
-        public int Engaged { get; set; }
-        public int ChargePart { get; set; }
-        public double EngageT { get; set; }
-        public string EngageFail { get; set; }
-        public int Setup { get; set; }
-        public int AutoPts { get; set; }
-        public int GridPts { get; set; }
-        public int ChargePts { get; set; }
-        public string ScouterName { get; set; }
-        public int ScouterError { get; set; }
+        public int Leave { get; set; }
+        public string AcqLoc { get; set; }
+        public int AcqCenter { get; set; }
+        public int AcqDis { get; set; }
+        public int AcqDrp { get; set; }
+        public string DelOrig { get; set; }
+        public string DelDest { get; set; }
+        public int DelMiss { get; set; }
+        public string DriveSta { get; set; }
+        public string RobotSta { get; set; }
+        public string HPAmp { get; set; }
+        public string StageStat { get; set; }
+        public int StageAtt { get; set; }
+        public string StageLoc { get; set; }
+        public int Harmony { get; set; }
+        public int Spotlit { get; set; }
+        public double ClimbT { get; set; }
+        public double OZTime { get; set; }
+        public double NZTime { get; set; }
+        public double AZTime { get; set; }
         public int Defense { get; set; }
         public int Avoidance { get; set; }
         public string Strategy { get; set; }
+        public int Mics { get; set; }
+        public string ScouterName { get; set; }
+        public int ScouterError { get; set; }
         public string match_event { get; set; }
     }
 }

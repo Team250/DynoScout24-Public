@@ -6,7 +6,7 @@ using System.Net;
 using System.Windows.Forms;
 
 
-namespace T250DynoScout_v2023
+namespace T250DynoScout_v2024
 {
     public partial class MainScreen
     {
@@ -21,9 +21,10 @@ namespace T250DynoScout_v2023
              Teams Table             Match Table
                  |                        |
                  |---- Activity Table ----|
-            */            
-            
+            */
+
             seasonframework.Database.CreateIfNotExists();
+            DatabaseExists(seasonframework.Database.Exists());
 
             Log("Cleaning databases...");
             //seasonframework.Database.Initialize(true);
@@ -45,7 +46,7 @@ namespace T250DynoScout_v2023
             //string uri = "http://www.thebluealliance.com/api/v2/events/2023?X-TBA-App-Id=frc250:T250DynoScoutClient:v2020";
 
             //#AuthKey
-            string uri = "https://www.thebluealliance.com/api/v3/events/2023?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
+            string uri = "https://www.thebluealliance.com/api/v3/events/2024?X-TBA-Auth-Key=" + hidden_variable.YOUR_API_KEY_HERE;
             System.Net.WebRequest req = WebRequest.Create(uri);
 
             HttpWebResponse response = (HttpWebResponse)req.GetResponse();      //Make the request
@@ -75,7 +76,18 @@ namespace T250DynoScout_v2023
             reader.Close();         //Close the reader, we're done with events.
             dataStream.Close();     //Close the data stream to the web.
             response.Close();       //Close the response.
-            
+        }
+        public static bool DBExists;
+        public void DatabaseExists(bool DatabaseExists)
+        {
+            if (DatabaseExists)
+            {
+                DBExists = true;
+            }
+            else
+            {
+                DBExists = false;
+            }
         }
     }
 }

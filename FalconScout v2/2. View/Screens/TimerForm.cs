@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
 
-namespace T250DynoScout_v2023
+namespace T250DynoScout_v2024
 {
     public partial class TimerForm : Form
     {

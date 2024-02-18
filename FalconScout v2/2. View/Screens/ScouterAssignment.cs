@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using T250DynoScout_v2023;
+using T250DynoScout_v2024;
 using SlimDX.DirectInput;
+using T250DynoScout_v2024.Model.HiddenVariable;
 
 namespace T250DynoScout_v2020
 {
     public partial class ScouterAssignment : Form
     {
-
         public ScouterAssignment()
         {
             InitializeComponent();
@@ -61,36 +61,6 @@ namespace T250DynoScout_v2020
                                                              Controllers.ScouterNameMap[3],
                                                              Controllers.ScouterNameMap[4],
                                                              Controllers.ScouterNameMap[5] });
-
-        }
-
-        private void ScoutDrop0_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ScoutDrop1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ScoutDrop2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ScoutDrop3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ScoutDrop4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ScoutDrop5_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -206,7 +176,7 @@ namespace T250DynoScout_v2020
                 for (int i = 0; i < 6; i++)
                 {
                     Controllers.controllerNumberMap[i] = i;
-                    Controllers.rs[i]._ScouterName = RobotState.SCOUTER_NAME.Select_Name;
+                    Controllers.rs[i]._ScouterName = HiddenVariable.SCOUTER_NAME.Select_Name;
                 }
 
                 var locations = new List<int>() { 0, 1, 2, 3, 4, 5 };
@@ -214,8 +184,8 @@ namespace T250DynoScout_v2020
                 for (int i = 0; i < 6; i++) //for each of the new positions
                 {
                     //get the key associated with the name, ignoring Select_Name
-                    Enum.TryParse<RobotState.SCOUTER_NAME>(newPositions[i], true, out RobotState.SCOUTER_NAME Result);
-                    if (Result != RobotState.SCOUTER_NAME.Select_Name)
+                    Enum.TryParse<HiddenVariable.SCOUTER_NAME>(newPositions[i], true, out HiddenVariable.SCOUTER_NAME Result);
+                    if (Result != HiddenVariable.SCOUTER_NAME.Select_Name)
                     {
                         var key = Controllers.ScouterNameMap.FirstOrDefault(x => x.Value == Result).Key;
                         Controllers.controllerNumberMap[key] = i;
