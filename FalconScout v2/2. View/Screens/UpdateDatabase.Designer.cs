@@ -1014,7 +1014,6 @@
             this.comboAcqCenter.Name = "comboAcqCenter";
             this.comboAcqCenter.Size = new System.Drawing.Size(60, 25);
             this.comboAcqCenter.TabIndex = 355;
-            this.comboAcqCenter.SelectedIndexChanged += new System.EventHandler(this.comboAcqCenter_SelectedIndexChanged);
             // 
             // comboAcqLoc
             // 
@@ -1031,7 +1030,6 @@
             this.comboAcqLoc.Name = "comboAcqLoc";
             this.comboAcqLoc.Size = new System.Drawing.Size(90, 25);
             this.comboAcqLoc.TabIndex = 354;
-            this.comboAcqLoc.SelectedIndexChanged += new System.EventHandler(this.comboAcqLoc_SelectedIndexChanged);
             // 
             // label14
             // 

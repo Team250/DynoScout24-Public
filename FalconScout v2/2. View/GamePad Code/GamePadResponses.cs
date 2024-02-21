@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using SlimDX.DirectInput;
 using System.Diagnostics;
 using SharpDX.XInput;
-using System.Diagnostics.Eventing.Reader;
-using System.Web.Configuration;
-using System.Security.Policy;
-using System.Threading;
-using SlimDX.DirectSound;
-using System.Resources;
 using T250DynoScout_v2024.Model.HiddenVariable;
 
 
@@ -49,6 +43,7 @@ namespace T250DynoScout_v2024
             {4, 4},
             {5, 5},
         };
+
         public static Dictionary<int, HiddenVariable.SCOUTER_NAME> ScouterNameMap = new Dictionary<int, HiddenVariable.SCOUTER_NAME>
         {
             {0, HiddenVariable.SCOUTER_NAME.Select_Name},
@@ -248,7 +243,7 @@ namespace T250DynoScout_v2024
                 }
                 else if (rs[controllerNumberMap[controllerNumber]].match_event == RobotState.MATCHEVENT_NAME.Match_Event)
                 {
-                    rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError+ 1000;
+                    rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError + 100000;
                 }
             }
 
@@ -431,32 +426,37 @@ namespace T250DynoScout_v2024
                 if (gamepad.LeftTrigger_Down)
                 {
                     rs[controllerNumberMap[controllerNumber]].Del_Dest = RobotState.DEL_DEST.Select;
-                    if (gamepad.DpadUp_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 1;
-                    }
-                    else if (gamepad.DpadDown_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 5;
-                    }
-                    else if (gamepad.DpadRight_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 4;
-                    }
-                    else if (gamepad.DpadLeft_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 2;
-                    }
-                    else if (gamepad.L3_Press)
+                    rs[controllerNumberMap[controllerNumber]].Acq_Loc = rs[controllerNumberMap[controllerNumber]].Current_Loc.ToString();
+                }
+                if (!gamepad.RightButton_Down)
+                {
+                    if (gamepad.DpadUp_Press || gamepad.DpadDown_Press)
                     {
                         rs[controllerNumberMap[controllerNumber]].Acq_Center = 3;
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc = "Select";
                     }
-                    else
+                    else if (gamepad.DpadRight_Press && rs[controllerNumberMap[controllerNumber]].Acq_Center < 4)
                     {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Loc = rs[controllerNumberMap[controllerNumber]].Current_Loc.ToString();
+                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 4;
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc = "Select";
+                    }
+                    else if (gamepad.DpadRight_Press && rs[controllerNumberMap[controllerNumber]].Acq_Center == 4)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 5;
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc = "Select";
+                    }
+                    else if (gamepad.DpadLeft_Press && rs[controllerNumberMap[controllerNumber]].Acq_Center > 2)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 2;
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc = "Select";
+                    }
+                    else if (gamepad.DpadLeft_Press && rs[controllerNumberMap[controllerNumber]].Acq_Center == 2)
+                    {
+                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 1;
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc = "Select";
                     }
                 }
-
+               
                 // 2024 deliver destination
                 if (gamepad.RightButton_Down)
                 {
@@ -594,37 +594,10 @@ namespace T250DynoScout_v2024
                 }
 
                 //2024 acq loc 
-                if (gamepad.LeftTrigger_Press)
-                {
-                    rs[controllerNumberMap[controllerNumber]].Acq_Center = 0;
-                }
                 if (gamepad.LeftTrigger_Down)
                 {
                     rs[controllerNumberMap[controllerNumber]].Del_Dest = RobotState.DEL_DEST.Select;
-                    if (gamepad.DpadUp_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 1;
-                    }
-                    else if (gamepad.DpadDown_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 5;
-                    }
-                    else if (gamepad.DpadRight_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 4;
-                    }
-                    else if (gamepad.DpadLeft_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 2;
-                    }
-                    else if (gamepad.L3_Press)
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Center = 3;
-                    }
-                    else
-                    {
-                        rs[controllerNumberMap[controllerNumber]].Acq_Loc = rs[controllerNumberMap[controllerNumber]].Current_Loc.ToString();
-                    }
+                    rs[controllerNumberMap[controllerNumber]].Acq_Loc = rs[controllerNumberMap[controllerNumber]].Current_Loc.ToString();
                 }
 
                 // 2024 flag 
@@ -1002,7 +975,10 @@ namespace T250DynoScout_v2024
             // **************************************************************
             // ***  TRANSACT TO DATABASE  ***
             // **************************************************************
-            if (rs[controllerNumberMap[controllerNumber]]._ScouterName != HiddenVariable.SCOUTER_NAME.Select_Name && (rs[controllerNumberMap[controllerNumber]].Acq_Loc != "Select" || rs[controllerNumberMap[controllerNumber]].Del_Dest != RobotState.DEL_DEST.Select))
+            if (rs[controllerNumberMap[controllerNumber]]._ScouterName != HiddenVariable.SCOUTER_NAME.Select_Name &&
+                (rs[controllerNumberMap[controllerNumber]].Acq_Loc != "Select" ||
+                rs[controllerNumberMap[controllerNumber]].Del_Dest != RobotState.DEL_DEST.Select ||
+                rs[controllerNumberMap[controllerNumber]].Acq_Center != 0))
             {
                 rs[controllerNumberMap[controllerNumber]].TransactionCheck = true;
             }
@@ -1016,7 +992,7 @@ namespace T250DynoScout_v2024
                 (rs[controllerNumberMap[controllerNumber]]._ScouterName != HiddenVariable.SCOUTER_NAME.Select_Name
                 || rs[controllerNumberMap[controllerNumber]]._ScouterName != HiddenVariable.SCOUTER_NAME.Select_Name))
             {
-                // Record start match time
+                //Record start match time
                 activity_record.RecordType = "StartMatch";
                 rs[controllerNumberMap[controllerNumber]].Auto_Time = DateTime.Now;
                 activity_record.Time = rs[controllerNumberMap[controllerNumber]].Auto_Time.AddSeconds(-15);
@@ -1165,7 +1141,7 @@ namespace T250DynoScout_v2024
             }
             else if (gamepad.RightTrigger_Press && !rs[controllerNumberMap[controllerNumber]].NoSho && rs[controllerNumberMap[controllerNumber]].TransactionCheck == true)
             {
-                if (rs[controllerNumberMap[controllerNumber]].Acq_Loc != RobotState.CURRENT_LOC.Select.ToString())
+                if (rs[controllerNumberMap[controllerNumber]].Acq_Loc != RobotState.CURRENT_LOC.Select.ToString() || rs[controllerNumberMap[controllerNumber]].Acq_Center != 0)
                 {
                     if (RobotState.Red_Right == true)
                     {
@@ -1246,7 +1222,7 @@ namespace T250DynoScout_v2024
 
                         if (rs[controllerNumberMap[controllerNumber]].Acq_Center != 0)
                         {
-                            activity_record.AcqDis = 1;
+                            activity_record.AcqDis = -1;
                             activity_record.AcqDrp = 0;
                         }
                         else
@@ -1317,17 +1293,13 @@ namespace T250DynoScout_v2024
                     else if (rs[controllerNumberMap[controllerNumber]].Flag == 0 && rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp != 0 && rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp != "Neutral")
                     {
                         activity_record.Leave = 0;
-
-                        if (rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp != "Neutral")
-                        {
-                            rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Neutral";
-                            rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError+ 1000;
-                        }
+                        rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Neutral";
+                        rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError + 1000;
                         activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
                         activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
 
                         activity_record.AcqDrp = 0;
-                        activity_record.AcqDis = 0;
+                        activity_record.AcqDis = 1;
                         activity_record.DelMiss = 0;
                         activity_record.DelOrig = "-";
                         activity_record.DelDest = "-";
@@ -1468,7 +1440,7 @@ namespace T250DynoScout_v2024
                     if (rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp == "Select")
                     {
                         activity_record.AcqLoc = "Z";
-                        rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError + 1000;
+                        rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError + 100000;
                     }
                     else
                     {
@@ -1545,7 +1517,7 @@ namespace T250DynoScout_v2024
             }
             else if (gamepad.RightTrigger_Press && !rs[controllerNumberMap[controllerNumber]].NoSho && rs[controllerNumberMap[controllerNumber]].TransactionCheck == false)
             {
-                rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError+ 1000;
+                rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError + 100000;
             }
 
             // 2023 Changing modes

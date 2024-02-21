@@ -86,7 +86,7 @@ namespace T250DynoScout_v2024
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0", true)[0]).Text = "Acq:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0", true)[0]).Visible = true;
 
-            if (Robots[Controller_Number].Acq_Loc == RobotState.CURRENT_LOC.Select.ToString())
+            if (Robots[Controller_Number].Acq_Loc == RobotState.CURRENT_LOC.Select.ToString() && Robots[Controller_Number].Acq_Center == 0)
             {
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0Value", true)[0]).Visible = false;
             }
