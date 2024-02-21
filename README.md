@@ -33,6 +33,6 @@ At the end of the match, when every scouter is ready to go to the next match. Th
 In case of code exiting during an event, just re-open the code, load the event and matches, then just click the right arrow without checking the End Match box until you get to the next match.
 
 ## Controls
-![Auto Mode Controls](https://i.imgur.com/aaHGLxW.png)
+![Auto Mode Controls](https://i.imgur.com/aaHGLxW.png?1)
 ![Teleop Mode Controls](https://i.imgur.com/SaYmYmg.png)
 ![Endgame Mode Controls](https://i.imgur.com/8mVOZt8.png)
