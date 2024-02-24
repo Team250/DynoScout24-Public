@@ -56,7 +56,9 @@ namespace T250DynoScout_v2024
         public string Acq_Loc_Temp = "Pre";
         public int Acq_Center_Temp;
 
+
         public DateTime Auto_Time;
+        public DateTime CenteNoteTimeTemp;
 
         public static string blue0;
         public static string blue1;
