@@ -161,7 +161,6 @@
     <Compile Include="3. Controller\RobotState.cs" />
     <Compile Include="1. Model\DatabaseSchema.cs" />
     <Compile Include="3. Controller\ProgramStart.cs" />
-    <Compile Include="ReadMe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="2. View\Screens\UpdateDatabase.cs">
       <SubType>Form</SubType>

@@ -11,7 +11,7 @@ namespace T250DynoScout_v2024
         public enum TEAM_ENUM { };
         public enum ROBOT_MODE { Auto, Teleop, Showtime };
         public enum CYCLE_DIRECTION { Up, Down }
-        public enum MATCHEVENT_NAME { Match_Event, Fumbled, BrokeDown, CrossedCenter, GotStuck, JammedPiece, LostParts, RingToss, NoShow, StageInt, TippedOver }
+        public enum MATCHEVENT_NAME { Match_Event, Fumbled, BrokeDown, CrossedCenter, LostParts, RingToss, MultiClimb, NoShow, StageInt, TippedOver, JammedPiece }
         public enum SCOUTER_NAME { Select_Name, Scouter1, Scouter2, Scouter3, Scouter4, Scouter5, Scouter6, Scouter7, Scouter8, Scouter9, Scouter10, Scouter11, Scouter12 }
 
         // Year to Year ints
@@ -40,7 +40,7 @@ namespace T250DynoScout_v2024
         public enum STAGE_ATT { Select, Y, N }
         public enum STAGE_LOC { Select, L, C, R }
         public enum LIT { Select, Y, N, }
-        public enum APP_STRAT { Select, None, Defense, Mover, Shooter, Hybrid, Celeberity }
+        public enum APP_STRAT { Select, None, Defense, Mover, Shooter, Hybrid, Celebrity }
         public enum CURRENT_LOC { Select, Left, Right, Neutral, SubW, Source }
 
         //2024 PUBLIC INT
@@ -56,7 +56,9 @@ namespace T250DynoScout_v2024
         public string Acq_Loc_Temp = "Pre";
         public int Acq_Center_Temp;
 
+
         public DateTime Auto_Time;
+        public DateTime CenteNoteTimeTemp;
 
         public static string blue0;
         public static string blue1;

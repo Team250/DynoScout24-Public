@@ -334,15 +334,5 @@ namespace T250DynoScout_v2024
                 }
             }
         }
-
-        private void comboAcqLoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboAcqCenter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -309,25 +309,23 @@ namespace T250DynoScout_v2024
                             activity_record.Spotlit = 0;
                         }
 
-                        if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                        if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Onstage ||
+                            ((Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere) && 
+                            Robots[i].Stage_Att == RobotState.STAGE_ATT.Y))
                         {
-                            activity_record.ClimbT = 0;
-                            activity_record.OZTime = 0;
-                            activity_record.AZTime = 0;
-                            activity_record.NZTime = 0;
+                            Robots[i].ClimbTDouble = Robots[i].ClimbT_StopWatch.Elapsed.TotalSeconds;
+                            activity_record.ClimbT = Robots[i].ClimbTDouble;
                         }
                         else
                         {
-                            Robots[i].ClimbTDouble = Robots[i].ClimbT_StopWatch.Elapsed.TotalSeconds;
-                            Robots[i].AllyTDouble = Robots[i].AllyT_StopWatch.Elapsed.TotalSeconds;
-                            Robots[i].OpptTDouble = Robots[i].OpptT_StopWatch.Elapsed.TotalSeconds;
-                            Robots[i].NeutTDouble = Robots[i].NeutT_StopWatch.Elapsed.TotalSeconds;
-                            activity_record.ClimbT = Robots[i].ClimbTDouble;
-                            activity_record.OZTime = Robots[i].OpptTDouble;
-                            activity_record.AZTime = Robots[i].AllyTDouble;
-                            activity_record.NZTime = Robots[i].NeutTDouble;
+                            activity_record.ClimbT = 0;
                         }
-
+                        Robots[i].AllyTDouble = Robots[i].AllyT_StopWatch.Elapsed.TotalSeconds;
+                        Robots[i].OpptTDouble = Robots[i].OpptT_StopWatch.Elapsed.TotalSeconds;
+                        Robots[i].NeutTDouble = Robots[i].NeutT_StopWatch.Elapsed.TotalSeconds;
+                        activity_record.OZTime = Robots[i].OpptTDouble;
+                        activity_record.AZTime = Robots[i].AllyTDouble;
+                        activity_record.NZTime = Robots[i].NeutTDouble;
                         activity_record.Mics = Robots[i].Mic;
                         if (Robots[i].HP_Amp == RobotState.HP_AMP.N)
                         {
