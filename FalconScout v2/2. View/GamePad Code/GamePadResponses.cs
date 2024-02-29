@@ -984,18 +984,7 @@ namespace T250DynoScout_v2024
             if (rs[controllerNumberMap[controllerNumber]].AUTO && gamepad.BackButton_Press && !rs[controllerNumberMap[controllerNumber]].NoSho &&
                 rs[controllerNumberMap[controllerNumber]]._ScouterName != HiddenVariable.SCOUTER_NAME.Select_Name)
             {
-                if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Source)
-                {
-                    rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch.Start();
-                    rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch_running = true;
-                }
-                else if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.SubW)
-                {
-                    rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch.Start();
-                    rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch_running = true;
-                }
-
-                //Record start match time
+                // Record start match time
                 activity_record.RecordType = "StartMatch";
                 rs[controllerNumberMap[controllerNumber]].Auto_Time = DateTime.Now;
                 activity_record.Time = rs[controllerNumberMap[controllerNumber]].Auto_Time.AddSeconds(-18);
@@ -1224,14 +1213,6 @@ namespace T250DynoScout_v2024
                         }
                         activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
                         activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
-                        if (rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp != 0)
-                        {
-                            activity_record.Time = rs[controllerNumberMap[controllerNumber]].CenteNoteTimeTemp;
-                        }
-                        else
-                        {
-                            activity_record.Time = DateTime.Now;
-                        }
 
                         if (rs[controllerNumberMap[controllerNumber]].Acq_Center != 0)
                         {
@@ -1312,7 +1293,6 @@ namespace T250DynoScout_v2024
                         }
                         activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
                         activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
-                        activity_record.Time = rs[controllerNumberMap[controllerNumber]].CenteNoteTimeTemp;
 
                         activity_record.AcqDrp = 0;
                         activity_record.AcqDis = 1;
@@ -1376,14 +1356,6 @@ namespace T250DynoScout_v2024
                     activity_record.Leave = 0;
 
                     activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
-                    if (rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp != 0)
-                    {
-                        activity_record.Time = rs[controllerNumberMap[controllerNumber]].CenteNoteTimeTemp;
-                    }
-                    else
-                    {
-                        activity_record.Time = DateTime.Now;
-                    }
                     activity_record.AcqDis = 0;
                     activity_record.AcqDrp = 0;
                     activity_record.DelMiss = rs[controllerNumberMap[controllerNumber]].Flag;
