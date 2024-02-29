@@ -1224,6 +1224,14 @@ namespace T250DynoScout_v2024
                         }
                         activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
                         activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
+                        if (rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp != 0)
+                        {
+                            activity_record.Time = rs[controllerNumberMap[controllerNumber]].CenteNoteTimeTemp;
+                        }
+                        else
+                        {
+                            activity_record.Time = DateTime.Now;
+                        }
 
                         if (rs[controllerNumberMap[controllerNumber]].Acq_Center != 0)
                         {
@@ -1302,8 +1310,10 @@ namespace T250DynoScout_v2024
                             rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Neutral";
                             rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError + 1000;
                         }
+
                         activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
                         activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
+                        activity_record.Time = rs[controllerNumberMap[controllerNumber]].CenteNoteTimeTemp;
 
                         activity_record.AcqDrp = 0;
                         activity_record.AcqDis = 1;
@@ -1367,6 +1377,14 @@ namespace T250DynoScout_v2024
                     activity_record.Leave = 0;
 
                     activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
+                    if (rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp != 0)
+                    {
+                        activity_record.Time = rs[controllerNumberMap[controllerNumber]].CenteNoteTimeTemp;
+                    }
+                    else
+                    {
+                        activity_record.Time = DateTime.Now;
+                    }
                     activity_record.AcqDis = 0;
                     activity_record.AcqDrp = 0;
                     activity_record.DelMiss = rs[controllerNumberMap[controllerNumber]].Flag;
