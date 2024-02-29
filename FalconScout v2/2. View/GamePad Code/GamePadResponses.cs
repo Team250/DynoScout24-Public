@@ -984,6 +984,17 @@ namespace T250DynoScout_v2024
             if (rs[controllerNumberMap[controllerNumber]].AUTO && gamepad.BackButton_Press && !rs[controllerNumberMap[controllerNumber]].NoSho &&
                 rs[controllerNumberMap[controllerNumber]]._ScouterName != HiddenVariable.SCOUTER_NAME.Select_Name)
             {
+                if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.Source)
+                {
+                    rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch.Start();
+                    rs[controllerNumberMap[controllerNumber]].OpptT_StopWatch_running = true;
+                }
+                else if (rs[controllerNumberMap[controllerNumber]].Current_Loc == RobotState.CURRENT_LOC.SubW)
+                {
+                    rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch.Start();
+                    rs[controllerNumberMap[controllerNumber]].AllyT_StopWatch_running = true;
+                }
+
                 // Record start match time
                 activity_record.RecordType = "StartMatch";
                 rs[controllerNumberMap[controllerNumber]].Auto_Time = DateTime.Now;
