@@ -21,8 +21,6 @@ To get the data from The Blue Alliance you will need to create a Read Me API Key
 ## Usage
 ![UI](https://i.imgur.com/prbS71r.png)
 
-Currently, all 3 modes work and you can input the correct controls. All the data should be recorded in the database correctly and should reset the variables at the proper points. The database's logic should be mostly correct. There are probably some errors that we will hopefully catch before Week 1. Our next step is to create the update database form to help fix errors during use. The text below is what will happen when the code is complete. 
-
 When the code starts up, the interface will be prompted.
 The user will need to load the events through the **Load** button at the top. This connects to The Blue Alliance API. After the code gets the events, the user will need to find the name of the event in the list of events, sorted by event code. 
 
