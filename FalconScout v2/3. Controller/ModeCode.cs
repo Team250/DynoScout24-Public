@@ -86,7 +86,7 @@ namespace T250DynoScout_v2024
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0", true)[0]).Text = "Acq:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0", true)[0]).Visible = true;
 
-            if (Robots[Controller_Number].Acq_Loc == RobotState.CURRENT_LOC.Select.ToString())
+            if (Robots[Controller_Number].Acq_Loc == RobotState.CURRENT_LOC.Select.ToString() && Robots[Controller_Number].Acq_Center == 0)
             {
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0Value", true)[0]).Visible = false;
             }
@@ -235,6 +235,10 @@ namespace T250DynoScout_v2024
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "ModeValue", true)[0]).Text = Robots[Controller_Number].Current_Mode.ToString() + " Mode";
 
+            //Robots[Controller_Number].AllyTDouble = Robots[Controller_Number].AllyT_StopWatch.Elapsed.TotalSeconds;
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position0Value", true)[0]).Text = Robots[Controller_Number].AllyTDouble.ToString("0.#");
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position0Value", true)[0]).Visible = true;
+
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0", true)[0]).Text = "Acq:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0", true)[0]).Visible = true;
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0Value", true)[0]).Text = Robots[Controller_Number].Acq_Loc.ToString();
@@ -260,10 +264,18 @@ namespace T250DynoScout_v2024
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position0Flag", true)[0]).Visible = false;
             }
 
+            //Robots[Controller_Number].OpptTDouble = Robots[Controller_Number].OpptT_StopWatch.Elapsed.TotalSeconds;
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position3Value", true)[0]).Text = Robots[Controller_Number].OpptTDouble.ToString("0.#");
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position3Value", true)[0]).Visible = true;
+
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position1", true)[0]).Text = "Loc:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position1", true)[0]).Visible = true;
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position1Value", true)[0]).Text = Robots[Controller_Number].Current_Loc.ToString();
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position1Value", true)[0]).Visible = true;
+
+            //Robots[Controller_Number].NeutTDouble = Robots[Controller_Number].NeutT_StopWatch.Elapsed.TotalSeconds;
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position2Value", true)[0]).Text = Robots[Controller_Number].NeutTDouble.ToString("0.#");
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position2Value", true)[0]).Visible = true;
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position2", true)[0]).Text = "Del:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position2", true)[0]).Visible = true;
@@ -352,9 +364,6 @@ namespace T250DynoScout_v2024
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position2Value", true)[0]).Text = Robots[Controller_Number].ClimbTDouble.ToString("0.#");
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position2Value", true)[0]).Visible = true;
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position2Flag", true)[0]).Visible = false;
-
-            //Robots[Controller_Number].AllyTDouble = Robots[Controller_Number].AllyT_StopWatch.Elapsed.TotalSeconds;
-            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position8Value", true)[0]).Text = Robots[Controller_Number].AllyTDouble.ToString("0.#");
 
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position3", true)[0]).Text = "Status:";
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position3", true)[0]).Visible = true;

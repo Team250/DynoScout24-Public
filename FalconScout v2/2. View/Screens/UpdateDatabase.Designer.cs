@@ -90,9 +90,9 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.comboStageLoc = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textMics = new System.Windows.Forms.TextBox();
+            this.txtMics = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textLit = new System.Windows.Forms.TextBox();
+            this.txtLit = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboStageStat = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -771,9 +771,9 @@
             this.groupBox3.Controls.Add(this.pictureBox4);
             this.groupBox3.Controls.Add(this.comboStageLoc);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textMics);
+            this.groupBox3.Controls.Add(this.txtMics);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textLit);
+            this.groupBox3.Controls.Add(this.txtLit);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.comboStageStat);
             this.groupBox3.Controls.Add(this.label16);
@@ -810,11 +810,10 @@
             this.comboStageLoc.ForeColor = System.Drawing.Color.White;
             this.comboStageLoc.FormattingEnabled = true;
             this.comboStageLoc.Items.AddRange(new object[] {
-            "N",
+            "L",
             "A",
-            "D",
-            "H",
-            "T"});
+            "R",
+            "C"});
             this.comboStageLoc.Location = new System.Drawing.Point(13, 118);
             this.comboStageLoc.Name = "comboStageLoc";
             this.comboStageLoc.Size = new System.Drawing.Size(60, 23);
@@ -830,16 +829,16 @@
             this.label10.TabIndex = 49;
             this.label10.Text = "Stage Loc";
             // 
-            // textMics
+            // txtMics
             // 
-            this.textMics.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textMics.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMics.ForeColor = System.Drawing.Color.White;
-            this.textMics.Location = new System.Drawing.Point(104, 119);
-            this.textMics.Name = "textMics";
-            this.textMics.Size = new System.Drawing.Size(32, 22);
-            this.textMics.TabIndex = 48;
-            this.textMics.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMics.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtMics.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMics.ForeColor = System.Drawing.Color.White;
+            this.txtMics.Location = new System.Drawing.Point(104, 119);
+            this.txtMics.Name = "txtMics";
+            this.txtMics.Size = new System.Drawing.Size(32, 22);
+            this.txtMics.TabIndex = 48;
+            this.txtMics.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -851,16 +850,16 @@
             this.label8.TabIndex = 47;
             this.label8.Text = "Mics";
             // 
-            // textLit
+            // txtLit
             // 
-            this.textLit.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textLit.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLit.ForeColor = System.Drawing.Color.White;
-            this.textLit.Location = new System.Drawing.Point(102, 76);
-            this.textLit.Name = "textLit";
-            this.textLit.Size = new System.Drawing.Size(32, 22);
-            this.textLit.TabIndex = 46;
-            this.textLit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLit.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtLit.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLit.ForeColor = System.Drawing.Color.White;
+            this.txtLit.Location = new System.Drawing.Point(102, 76);
+            this.txtLit.Name = "txtLit";
+            this.txtLit.Size = new System.Drawing.Size(32, 22);
+            this.txtLit.TabIndex = 46;
+            this.txtLit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -878,11 +877,9 @@
             this.comboStageStat.ForeColor = System.Drawing.Color.White;
             this.comboStageStat.FormattingEnabled = true;
             this.comboStageStat.Items.AddRange(new object[] {
-            "N",
-            "T",
-            "D",
-            "E",
-            "P"});
+            "On",
+            "Park",
+            "Else"});
             this.comboStageStat.Location = new System.Drawing.Point(12, 31);
             this.comboStageStat.Name = "comboStageStat";
             this.comboStageStat.Size = new System.Drawing.Size(60, 23);
@@ -915,11 +912,9 @@
             this.comboStageAtt.ForeColor = System.Drawing.Color.White;
             this.comboStageAtt.FormattingEnabled = true;
             this.comboStageAtt.Items.AddRange(new object[] {
-            "N",
-            "A",
-            "D",
-            "H",
-            "T"});
+            "1",
+            "0",
+            "-1"});
             this.comboStageAtt.Location = new System.Drawing.Point(13, 76);
             this.comboStageAtt.Name = "comboStageAtt";
             this.comboStageAtt.Size = new System.Drawing.Size(60, 23);
@@ -1014,7 +1009,6 @@
             this.comboAcqCenter.Name = "comboAcqCenter";
             this.comboAcqCenter.Size = new System.Drawing.Size(60, 25);
             this.comboAcqCenter.TabIndex = 355;
-            this.comboAcqCenter.SelectedIndexChanged += new System.EventHandler(this.comboAcqCenter_SelectedIndexChanged);
             // 
             // comboAcqLoc
             // 
@@ -1031,7 +1025,6 @@
             this.comboAcqLoc.Name = "comboAcqLoc";
             this.comboAcqLoc.Size = new System.Drawing.Size(90, 25);
             this.comboAcqLoc.TabIndex = 354;
-            this.comboAcqLoc.SelectedIndexChanged += new System.EventHandler(this.comboAcqLoc_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -1125,11 +1118,10 @@
             this.comboDelOrg.ForeColor = System.Drawing.Color.White;
             this.comboDelOrg.FormattingEnabled = true;
             this.comboDelOrg.Items.AddRange(new object[] {
-            "N",
-            "T",
-            "D",
-            "E",
-            "P"});
+            "SubW",
+            "AllyW",
+            "Neut",
+            "OppW"});
             this.comboDelOrg.Location = new System.Drawing.Point(96, 35);
             this.comboDelOrg.Name = "comboDelOrg";
             this.comboDelOrg.Size = new System.Drawing.Size(60, 25);
@@ -1141,11 +1133,11 @@
             this.comboDelDest.ForeColor = System.Drawing.Color.White;
             this.comboDelDest.FormattingEnabled = true;
             this.comboDelDest.Items.AddRange(new object[] {
-            "N",
-            "T",
-            "D",
-            "E",
-            "P"});
+            "Spkr",
+            "Amp",
+            "Trap",
+            "AllyW",
+            "Neut"});
             this.comboDelDest.Location = new System.Drawing.Point(9, 35);
             this.comboDelDest.Name = "comboDelDest";
             this.comboDelDest.Size = new System.Drawing.Size(60, 25);
@@ -1474,14 +1466,17 @@
             this.comboMatchEvent.ForeColor = System.Drawing.Color.White;
             this.comboMatchEvent.FormattingEnabled = true;
             this.comboMatchEvent.Items.AddRange(new object[] {
-            "F",
-            "B",
-            "G",
-            "J",
-            "L",
-            "N",
-            "P",
-            "T"});
+            "Fumbled",
+            "BrokeDown",
+            "CrossedCenter",
+            "LostParts",
+            "RingToss",
+            "AdditionalNote",
+            "MultiClimb",
+            "NoShow",
+            "StageInt",
+            "TippedOver",
+            "JammedPiece"});
             this.comboMatchEvent.Location = new System.Drawing.Point(11, 140);
             this.comboMatchEvent.Name = "comboMatchEvent";
             this.comboMatchEvent.Size = new System.Drawing.Size(72, 21);
@@ -1507,11 +1502,12 @@
             this.comboStrategy.ForeColor = System.Drawing.Color.White;
             this.comboStrategy.FormattingEnabled = true;
             this.comboStrategy.Items.AddRange(new object[] {
-            "R",
-            "P",
-            "I",
-            "D",
-            "M"});
+            "None",
+            "Defense",
+            "Mover",
+            "Shooter",
+            "Hybrid",
+            "Celebity"});
             this.comboStrategy.Location = new System.Drawing.Point(265, 139);
             this.comboStrategy.Name = "comboStrategy";
             this.comboStrategy.Size = new System.Drawing.Size(64, 21);
@@ -1845,9 +1841,9 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ComboBox comboStageLoc;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textMics;
+        private System.Windows.Forms.TextBox txtMics;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textLit;
+        private System.Windows.Forms.TextBox txtLit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboStageStat;
         private System.Windows.Forms.Label label16;
