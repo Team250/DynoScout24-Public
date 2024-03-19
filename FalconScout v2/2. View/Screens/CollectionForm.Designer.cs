@@ -308,6 +308,7 @@
             this.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstLog.ForeColor = System.Drawing.Color.White;
             this.lstLog.FormattingEnabled = true;
+            this.lstLog.ItemHeight = 16;
             this.lstLog.Location = new System.Drawing.Point(8, 728);
             this.lstLog.Name = "lstLog";
             this.lstLog.Size = new System.Drawing.Size(1010, 0);
@@ -323,7 +324,7 @@
             this.btnExit.BackColor = System.Drawing.Color.Black;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Crimson;
-            this.btnExit.Location = new System.Drawing.Point(939, 6);
+            this.btnExit.Location = new System.Drawing.Point(1038, 8);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 23);
             this.btnExit.TabIndex = 228;
@@ -336,7 +337,7 @@
             this.btnpopulateForEvent.BackColor = System.Drawing.Color.Black;
             this.btnpopulateForEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpopulateForEvent.ForeColor = System.Drawing.Color.Navy;
-            this.btnpopulateForEvent.Location = new System.Drawing.Point(447, 6);
+            this.btnpopulateForEvent.Location = new System.Drawing.Point(546, 8);
             this.btnpopulateForEvent.Name = "btnpopulateForEvent";
             this.btnpopulateForEvent.Size = new System.Drawing.Size(102, 23);
             this.btnpopulateForEvent.TabIndex = 232;
@@ -349,7 +350,7 @@
             this.btnPreviousMatch.BackColor = System.Drawing.Color.Black;
             this.btnPreviousMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreviousMatch.ForeColor = System.Drawing.Color.Navy;
-            this.btnPreviousMatch.Location = new System.Drawing.Point(551, 6);
+            this.btnPreviousMatch.Location = new System.Drawing.Point(650, 8);
             this.btnPreviousMatch.Name = "btnPreviousMatch";
             this.btnPreviousMatch.Size = new System.Drawing.Size(36, 23);
             this.btnPreviousMatch.TabIndex = 241;
@@ -363,7 +364,7 @@
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label14.Location = new System.Drawing.Point(211, 12);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 26);
+            this.label14.Size = new System.Drawing.Size(44, 32);
             this.label14.TabIndex = 244;
             this.label14.Text = "Event:\r\n\r\n";
             // 
@@ -385,7 +386,7 @@
             this.btnNextMatch.BackColor = System.Drawing.Color.Black;
             this.btnNextMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextMatch.ForeColor = System.Drawing.Color.Navy;
-            this.btnNextMatch.Location = new System.Drawing.Point(686, 6);
+            this.btnNextMatch.Location = new System.Drawing.Point(785, 8);
             this.btnNextMatch.Name = "btnNextMatch";
             this.btnNextMatch.Size = new System.Drawing.Size(36, 23);
             this.btnNextMatch.TabIndex = 253;
@@ -399,7 +400,7 @@
             this.comboBoxSelectRegional.FormattingEnabled = true;
             this.comboBoxSelectRegional.Location = new System.Drawing.Point(250, 7);
             this.comboBoxSelectRegional.Name = "comboBoxSelectRegional";
-            this.comboBoxSelectRegional.Size = new System.Drawing.Size(191, 21);
+            this.comboBoxSelectRegional.Size = new System.Drawing.Size(290, 24);
             this.comboBoxSelectRegional.TabIndex = 254;
             this.comboBoxSelectRegional.Text = "Please press the Load Events Button...";
             this.comboBoxSelectRegional.ValueMember = "event_code";
@@ -408,7 +409,7 @@
             // 
             this.lblMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMatch.Location = new System.Drawing.Point(654, 7);
+            this.lblMatch.Location = new System.Drawing.Point(753, 9);
             this.lblMatch.Name = "lblMatch";
             this.lblMatch.Size = new System.Drawing.Size(36, 23);
             this.lblMatch.TabIndex = 264;
@@ -419,9 +420,9 @@
             // 
             this.lblkey.BackColor = System.Drawing.Color.Black;
             this.lblkey.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblkey.Location = new System.Drawing.Point(1028, 144);
+            this.lblkey.Location = new System.Drawing.Point(1220, 171);
             this.lblkey.Name = "lblkey";
-            this.lblkey.Size = new System.Drawing.Size(272, 569);
+            this.lblkey.Size = new System.Drawing.Size(272, 672);
             this.lblkey.TabIndex = 265;
             this.lblkey.Text = "lblkey";
             // 
@@ -431,9 +432,9 @@
             this.labelMatch.BackColor = System.Drawing.Color.Black;
             this.labelMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMatch.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labelMatch.Location = new System.Drawing.Point(587, 6);
+            this.labelMatch.Location = new System.Drawing.Point(686, 8);
             this.labelMatch.Name = "labelMatch";
-            this.labelMatch.Size = new System.Drawing.Size(66, 24);
+            this.labelMatch.Size = new System.Drawing.Size(83, 29);
             this.labelMatch.TabIndex = 259;
             this.labelMatch.Text = "Match:";
             // 
@@ -451,10 +452,10 @@
             this.cbxEndMatch.AutoSize = true;
             this.cbxEndMatch.BackColor = System.Drawing.Color.Black;
             this.cbxEndMatch.ForeColor = System.Drawing.Color.Yellow;
-            this.cbxEndMatch.Location = new System.Drawing.Point(723, 10);
+            this.cbxEndMatch.Location = new System.Drawing.Point(822, 12);
             this.cbxEndMatch.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEndMatch.Name = "cbxEndMatch";
-            this.cbxEndMatch.Size = new System.Drawing.Size(78, 17);
+            this.cbxEndMatch.Size = new System.Drawing.Size(92, 20);
             this.cbxEndMatch.TabIndex = 280;
             this.cbxEndMatch.Text = "End Match";
             this.cbxEndMatch.UseVisualStyleBackColor = false;
@@ -462,7 +463,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(980, 2);
+            this.pictureBox14.Location = new System.Drawing.Point(1079, 4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(39, 31);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -474,7 +475,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(1024, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(1223, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(276, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -483,7 +484,7 @@
             // 
             // btnUpdateDB
             // 
-            this.btnUpdateDB.Location = new System.Drawing.Point(1024, 5);
+            this.btnUpdateDB.Location = new System.Drawing.Point(1123, 7);
             this.btnUpdateDB.Name = "btnUpdateDB";
             this.btnUpdateDB.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateDB.TabIndex = 282;
@@ -499,7 +500,7 @@
             this.lbl0Position6Value2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position6Value2.Location = new System.Drawing.Point(418, 214);
             this.lbl0Position6Value2.Name = "lbl0Position6Value2";
-            this.lbl0Position6Value2.Size = new System.Drawing.Size(38, 26);
+            this.lbl0Position6Value2.Size = new System.Drawing.Size(46, 31);
             this.lbl0Position6Value2.TabIndex = 277;
             this.lbl0Position6Value2.Text = "00";
             this.lbl0Position6Value2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -522,7 +523,6 @@
             this.team1.Controls.Add(this.lbl0Position2Value);
             this.team1.Controls.Add(this.lbl0Position1Value);
             this.team1.Controls.Add(this.panel5);
-            this.team1.Controls.Add(this.panel4);
             this.team1.Controls.Add(this.lbl0Position5);
             this.team1.Controls.Add(this.lbl0Position4);
             this.team1.Controls.Add(this.lbl0Position8Value);
@@ -539,7 +539,7 @@
             this.team1.Controls.Add(this.lbl0ModeValue);
             this.team1.Location = new System.Drawing.Point(6, 3);
             this.team1.Name = "team1";
-            this.team1.Size = new System.Drawing.Size(330, 333);
+            this.team1.Size = new System.Drawing.Size(381, 394);
             this.team1.TabIndex = 0;
             // 
             // lbl0Position6Value
@@ -548,9 +548,9 @@
             this.lbl0Position6Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position6Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl0Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position6Value.Location = new System.Drawing.Point(263, 159);
+            this.lbl0Position6Value.Location = new System.Drawing.Point(302, 184);
             this.lbl0Position6Value.Name = "lbl0Position6Value";
-            this.lbl0Position6Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl0Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl0Position6Value.TabIndex = 345;
             this.lbl0Position6Value.Text = "$$";
             this.lbl0Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -561,9 +561,9 @@
             this.lbl0Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position10Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl0Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position10Value.Location = new System.Drawing.Point(246, 211);
+            this.lbl0Position10Value.Location = new System.Drawing.Point(285, 280);
             this.lbl0Position10Value.Name = "lbl0Position10Value";
-            this.lbl0Position10Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl0Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position10Value.TabIndex = 344;
             this.lbl0Position10Value.Text = "0";
             this.lbl0Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -573,9 +573,9 @@
             this.lbl0Position10.AutoSize = true;
             this.lbl0Position10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position10.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position10.Location = new System.Drawing.Point(202, 210);
+            this.lbl0Position10.Location = new System.Drawing.Point(241, 279);
             this.lbl0Position10.Name = "lbl0Position10";
-            this.lbl0Position10.Size = new System.Drawing.Size(52, 24);
+            this.lbl0Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl0Position10.TabIndex = 343;
             this.lbl0Position10.Text = "Avo:";
             // 
@@ -586,9 +586,9 @@
             this.lbl0Position7Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position7Value.ForeColor = System.Drawing.Color.Red;
             this.lbl0Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position7Value.Location = new System.Drawing.Point(97, 184);
+            this.lbl0Position7Value.Location = new System.Drawing.Point(99, 237);
             this.lbl0Position7Value.Name = "lbl0Position7Value";
-            this.lbl0Position7Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl0Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position7Value.TabIndex = 342;
             this.lbl0Position7Value.Text = ".";
             this.lbl0Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -599,9 +599,9 @@
             this.lbl0Position9Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position9Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl0Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position9Value.Location = new System.Drawing.Point(68, 213);
+            this.lbl0Position9Value.Location = new System.Drawing.Point(69, 282);
             this.lbl0Position9Value.Name = "lbl0Position9Value";
-            this.lbl0Position9Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl0Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position9Value.TabIndex = 341;
             this.lbl0Position9Value.Text = "#";
             this.lbl0Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -611,9 +611,9 @@
             this.lbl0Position9.AutoSize = true;
             this.lbl0Position9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position9.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position9.Location = new System.Drawing.Point(3, 213);
+            this.lbl0Position9.Location = new System.Drawing.Point(4, 282);
             this.lbl0Position9.Name = "lbl0Position9";
-            this.lbl0Position9.Size = new System.Drawing.Size(59, 24);
+            this.lbl0Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl0Position9.TabIndex = 340;
             this.lbl0Position9.Text = "Mics:";
             // 
@@ -622,9 +622,9 @@
             this.lbl0Position7.AutoSize = true;
             this.lbl0Position7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position7.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position7.Location = new System.Drawing.Point(2, 184);
+            this.lbl0Position7.Location = new System.Drawing.Point(4, 237);
             this.lbl0Position7.Name = "lbl0Position7";
-            this.lbl0Position7.Size = new System.Drawing.Size(73, 24);
+            this.lbl0Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl0Position7.TabIndex = 339;
             this.lbl0Position7.Text = "Spotlit:";
             // 
@@ -635,7 +635,7 @@
             this.lbl0Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl0Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl0Position2Flag.Name = "lbl0Position2Flag";
-            this.lbl0Position2Flag.Size = new System.Drawing.Size(27, 24);
+            this.lbl0Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl0Position2Flag.TabIndex = 338;
             this.lbl0Position2Flag.Text = "M";
             // 
@@ -646,7 +646,7 @@
             this.lbl0Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl0Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl0Position0Flag.Name = "lbl0Position0Flag";
-            this.lbl0Position0Flag.Size = new System.Drawing.Size(24, 24);
+            this.lbl0Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl0Position0Flag.TabIndex = 337;
             this.lbl0Position0Flag.Text = "D";
             // 
@@ -657,9 +657,9 @@
             this.lbl0Position4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position4Value.ForeColor = System.Drawing.Color.Red;
             this.lbl0Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position4Value.Location = new System.Drawing.Point(274, 130);
+            this.lbl0Position4Value.Location = new System.Drawing.Point(313, 130);
             this.lbl0Position4Value.Name = "lbl0Position4Value";
-            this.lbl0Position4Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl0Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position4Value.TabIndex = 336;
             this.lbl0Position4Value.Text = ".";
             this.lbl0Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -671,9 +671,9 @@
             this.lbl0Position5Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position5Value.ForeColor = System.Drawing.Color.Red;
             this.lbl0Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position5Value.Location = new System.Drawing.Point(97, 157);
+            this.lbl0Position5Value.Location = new System.Drawing.Point(97, 183);
             this.lbl0Position5Value.Name = "lbl0Position5Value";
-            this.lbl0Position5Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl0Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl0Position5Value.TabIndex = 334;
             this.lbl0Position5Value.Text = ".";
             this.lbl0Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -683,9 +683,9 @@
             this.lbl0Position6.AutoSize = true;
             this.lbl0Position6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position6.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position6.Location = new System.Drawing.Point(202, 158);
+            this.lbl0Position6.Location = new System.Drawing.Point(241, 183);
             this.lbl0Position6.Name = "lbl0Position6";
-            this.lbl0Position6.Size = new System.Drawing.Size(57, 24);
+            this.lbl0Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl0Position6.TabIndex = 331;
             this.lbl0Position6.Text = "Strat:";
             // 
@@ -697,7 +697,7 @@
             this.lbl0Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl0Position2Value.Name = "lbl0Position2Value";
-            this.lbl0Position2Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl0Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl0Position2Value.TabIndex = 330;
             this.lbl0Position2Value.Text = "$$";
             this.lbl0Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -708,9 +708,9 @@
             this.lbl0Position1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position1Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl0Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position1Value.Location = new System.Drawing.Point(243, 50);
+            this.lbl0Position1Value.Location = new System.Drawing.Point(301, 50);
             this.lbl0Position1Value.Name = "lbl0Position1Value";
-            this.lbl0Position1Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl0Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl0Position1Value.TabIndex = 329;
             this.lbl0Position1Value.Text = "$$";
             this.lbl0Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -721,7 +721,7 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Location = new System.Drawing.Point(0, 34);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(330, 13);
+            this.panel5.Size = new System.Drawing.Size(378, 13);
             this.panel5.TabIndex = 279;
             // 
             // label4
@@ -732,7 +732,7 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label4.Location = new System.Drawing.Point(418, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 26);
+            this.label4.Size = new System.Drawing.Size(46, 31);
             this.label4.TabIndex = 277;
             this.label4.Text = "00";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -741,9 +741,9 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(0, 246);
+            this.panel4.Location = new System.Drawing.Point(3, 317);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(330, 11);
+            this.panel4.Size = new System.Drawing.Size(378, 11);
             this.panel4.TabIndex = 279;
             // 
             // label3
@@ -754,7 +754,7 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label3.Location = new System.Drawing.Point(418, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 26);
+            this.label3.Size = new System.Drawing.Size(46, 31);
             this.label3.TabIndex = 277;
             this.label3.Text = "00";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -764,9 +764,9 @@
             this.lbl0Position5.AutoSize = true;
             this.lbl0Position5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position5.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position5.Location = new System.Drawing.Point(2, 158);
+            this.lbl0Position5.Location = new System.Drawing.Point(2, 184);
             this.lbl0Position5.Name = "lbl0Position5";
-            this.lbl0Position5.Size = new System.Drawing.Size(99, 24);
+            this.lbl0Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl0Position5.TabIndex = 328;
             this.lbl0Position5.Text = "HP Amp: ";
             // 
@@ -775,9 +775,9 @@
             this.lbl0Position4.AutoSize = true;
             this.lbl0Position4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position4.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position4.Location = new System.Drawing.Point(202, 130);
+            this.lbl0Position4.Location = new System.Drawing.Point(241, 130);
             this.lbl0Position4.Name = "lbl0Position4";
-            this.lbl0Position4.Size = new System.Drawing.Size(72, 24);
+            this.lbl0Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl0Position4.TabIndex = 322;
             this.lbl0Position4.Text = "Leave:";
             // 
@@ -787,9 +787,9 @@
             this.lbl0Position8Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl0Position8Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl0Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0Position8Value.Location = new System.Drawing.Point(246, 185);
+            this.lbl0Position8Value.Location = new System.Drawing.Point(288, 238);
             this.lbl0Position8Value.Name = "lbl0Position8Value";
-            this.lbl0Position8Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl0Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position8Value.TabIndex = 324;
             this.lbl0Position8Value.Text = "0";
             this.lbl0Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -801,7 +801,7 @@
             this.lbl0Position0.ForeColor = System.Drawing.Color.White;
             this.lbl0Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl0Position0.Name = "lbl0Position0";
-            this.lbl0Position0.Size = new System.Drawing.Size(53, 24);
+            this.lbl0Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl0Position0.TabIndex = 322;
             this.lbl0Position0.Text = "Acq:";
             // 
@@ -813,7 +813,7 @@
             this.lbl0Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl0Position3Value.Name = "lbl0Position3Value";
-            this.lbl0Position3Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl0Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl0Position3Value.TabIndex = 317;
             this.lbl0Position3Value.Text = "#";
             this.lbl0Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -825,7 +825,7 @@
             this.lbl0Position3.ForeColor = System.Drawing.Color.White;
             this.lbl0Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl0Position3.Name = "lbl0Position3";
-            this.lbl0Position3.Size = new System.Drawing.Size(70, 24);
+            this.lbl0Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl0Position3.TabIndex = 321;
             this.lbl0Position3.Text = "Setup:";
             // 
@@ -834,9 +834,9 @@
             this.lbl0Position8.AutoSize = true;
             this.lbl0Position8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position8.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position8.Location = new System.Drawing.Point(202, 184);
+            this.lbl0Position8.Location = new System.Drawing.Point(244, 237);
             this.lbl0Position8.Name = "lbl0Position8";
-            this.lbl0Position8.Size = new System.Drawing.Size(47, 24);
+            this.lbl0Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl0Position8.TabIndex = 266;
             this.lbl0Position8.Text = "Def:";
             // 
@@ -845,9 +845,9 @@
             this.lbl0Position1.AutoSize = true;
             this.lbl0Position1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position1.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position1.Location = new System.Drawing.Point(188, 50);
+            this.lbl0Position1.Location = new System.Drawing.Point(246, 50);
             this.lbl0Position1.Name = "lbl0Position1";
-            this.lbl0Position1.Size = new System.Drawing.Size(56, 24);
+            this.lbl0Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl0Position1.TabIndex = 327;
             this.lbl0Position1.Text = "Orig:";
             // 
@@ -858,7 +858,7 @@
             this.lbl0Position2.ForeColor = System.Drawing.Color.White;
             this.lbl0Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl0Position2.Name = "lbl0Position2";
-            this.lbl0Position2.Size = new System.Drawing.Size(47, 24);
+            this.lbl0Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl0Position2.TabIndex = 318;
             this.lbl0Position2.Text = "Del:";
             // 
@@ -867,9 +867,9 @@
             this.lbl0Position11.AutoSize = true;
             this.lbl0Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl0Position11.Location = new System.Drawing.Point(3, 261);
+            this.lbl0Position11.Location = new System.Drawing.Point(2, 328);
             this.lbl0Position11.Name = "lbl0Position11";
-            this.lbl0Position11.Size = new System.Drawing.Size(125, 24);
+            this.lbl0Position11.Size = new System.Drawing.Size(154, 29);
             this.lbl0Position11.TabIndex = 291;
             this.lbl0Position11.Text = "Match Event";
             // 
@@ -881,7 +881,7 @@
             this.lbl0Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl0Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl0Position0Value.Name = "lbl0Position0Value";
-            this.lbl0Position0Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl0Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl0Position0Value.TabIndex = 274;
             this.lbl0Position0Value.Text = "$$";
             this.lbl0Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -892,7 +892,7 @@
             this.lbl0TeamName.BackColor = System.Drawing.Color.Black;
             this.lbl0TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl0TeamName.Location = new System.Drawing.Point(168, 291);
+            this.lbl0TeamName.Location = new System.Drawing.Point(219, 351);
             this.lbl0TeamName.Name = "lbl0TeamName";
             this.lbl0TeamName.Size = new System.Drawing.Size(159, 37);
             this.lbl0TeamName.TabIndex = 248;
@@ -905,7 +905,7 @@
             this.lbl0ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl0ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
             this.lbl0ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl0ScoutName.Location = new System.Drawing.Point(4, 301);
+            this.lbl0ScoutName.Location = new System.Drawing.Point(-1, 361);
             this.lbl0ScoutName.Name = "lbl0ScoutName";
             this.lbl0ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl0ScoutName.Size = new System.Drawing.Size(158, 27);
@@ -921,7 +921,7 @@
             this.lbl0ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl0ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl0ModeValue.Name = "lbl0ModeValue";
-            this.lbl0ModeValue.Size = new System.Drawing.Size(67, 29);
+            this.lbl0ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl0ModeValue.TabIndex = 2;
             this.lbl0ModeValue.Text = "Auto:";
             // 
@@ -931,7 +931,7 @@
             this.panel3.Controls.Add(this.label28);
             this.panel3.Location = new System.Drawing.Point(6, 120);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(330, 11);
+            this.panel3.Size = new System.Drawing.Size(378, 11);
             this.panel3.TabIndex = 278;
             // 
             // label28
@@ -942,7 +942,7 @@
             this.label28.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label28.Location = new System.Drawing.Point(418, 214);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(38, 26);
+            this.label28.Size = new System.Drawing.Size(46, 31);
             this.label28.TabIndex = 277;
             this.label28.Text = "00";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -953,11 +953,12 @@
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.team1);
             this.panel1.Controls.Add(this.lbl0Position6Value2);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.team1);
             this.panel1.Location = new System.Drawing.Point(2, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1016, 339);
+            this.panel1.Size = new System.Drawing.Size(1196, 400);
             this.panel1.TabIndex = 246;
             // 
             // panel9
@@ -994,9 +995,9 @@
             this.panel9.Controls.Add(this.lbl2TeamName);
             this.panel9.Controls.Add(this.lbl2ScoutName);
             this.panel9.Controls.Add(this.lbl2ModeValue);
-            this.panel9.Location = new System.Drawing.Point(676, 2);
+            this.panel9.Location = new System.Drawing.Point(791, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(330, 333);
+            this.panel9.Size = new System.Drawing.Size(393, 394);
             this.panel9.TabIndex = 347;
             // 
             // panel22
@@ -1005,7 +1006,7 @@
             this.panel22.Controls.Add(this.label30);
             this.panel22.Location = new System.Drawing.Point(0, 114);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(330, 11);
+            this.panel22.Size = new System.Drawing.Size(390, 11);
             this.panel22.TabIndex = 279;
             // 
             // label30
@@ -1016,7 +1017,7 @@
             this.label30.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label30.Location = new System.Drawing.Point(418, 214);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(38, 26);
+            this.label30.Size = new System.Drawing.Size(46, 31);
             this.label30.TabIndex = 277;
             this.label30.Text = "00";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1027,9 +1028,9 @@
             this.lbl2Position6Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position6Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl2Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position6Value.Location = new System.Drawing.Point(263, 159);
+            this.lbl2Position6Value.Location = new System.Drawing.Point(295, 185);
             this.lbl2Position6Value.Name = "lbl2Position6Value";
-            this.lbl2Position6Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl2Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl2Position6Value.TabIndex = 345;
             this.lbl2Position6Value.Text = "$$";
             this.lbl2Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1040,9 +1041,9 @@
             this.lbl2Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position10Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl2Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position10Value.Location = new System.Drawing.Point(246, 211);
+            this.lbl2Position10Value.Location = new System.Drawing.Point(278, 280);
             this.lbl2Position10Value.Name = "lbl2Position10Value";
-            this.lbl2Position10Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl2Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position10Value.TabIndex = 344;
             this.lbl2Position10Value.Text = "0";
             this.lbl2Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1052,9 +1053,9 @@
             this.lbl2Position10.AutoSize = true;
             this.lbl2Position10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position10.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position10.Location = new System.Drawing.Point(202, 210);
+            this.lbl2Position10.Location = new System.Drawing.Point(234, 279);
             this.lbl2Position10.Name = "lbl2Position10";
-            this.lbl2Position10.Size = new System.Drawing.Size(52, 24);
+            this.lbl2Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl2Position10.TabIndex = 343;
             this.lbl2Position10.Text = "Avo:";
             // 
@@ -1065,9 +1066,9 @@
             this.lbl2Position7Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position7Value.ForeColor = System.Drawing.Color.Red;
             this.lbl2Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position7Value.Location = new System.Drawing.Point(97, 184);
+            this.lbl2Position7Value.Location = new System.Drawing.Point(97, 237);
             this.lbl2Position7Value.Name = "lbl2Position7Value";
-            this.lbl2Position7Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl2Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position7Value.TabIndex = 342;
             this.lbl2Position7Value.Text = ".";
             this.lbl2Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1078,9 +1079,9 @@
             this.lbl2Position9Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position9Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl2Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position9Value.Location = new System.Drawing.Point(68, 213);
+            this.lbl2Position9Value.Location = new System.Drawing.Point(68, 279);
             this.lbl2Position9Value.Name = "lbl2Position9Value";
-            this.lbl2Position9Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl2Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position9Value.TabIndex = 341;
             this.lbl2Position9Value.Text = "#";
             this.lbl2Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1090,9 +1091,9 @@
             this.lbl2Position9.AutoSize = true;
             this.lbl2Position9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position9.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position9.Location = new System.Drawing.Point(3, 213);
+            this.lbl2Position9.Location = new System.Drawing.Point(3, 279);
             this.lbl2Position9.Name = "lbl2Position9";
-            this.lbl2Position9.Size = new System.Drawing.Size(59, 24);
+            this.lbl2Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl2Position9.TabIndex = 340;
             this.lbl2Position9.Text = "Mics:";
             // 
@@ -1101,9 +1102,9 @@
             this.lbl2Position7.AutoSize = true;
             this.lbl2Position7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position7.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position7.Location = new System.Drawing.Point(2, 184);
+            this.lbl2Position7.Location = new System.Drawing.Point(2, 237);
             this.lbl2Position7.Name = "lbl2Position7";
-            this.lbl2Position7.Size = new System.Drawing.Size(73, 24);
+            this.lbl2Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl2Position7.TabIndex = 339;
             this.lbl2Position7.Text = "Spotlit:";
             // 
@@ -1114,7 +1115,7 @@
             this.lbl2Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl2Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl2Position2Flag.Name = "lbl2Position2Flag";
-            this.lbl2Position2Flag.Size = new System.Drawing.Size(27, 24);
+            this.lbl2Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl2Position2Flag.TabIndex = 338;
             this.lbl2Position2Flag.Text = "M";
             // 
@@ -1125,7 +1126,7 @@
             this.lbl2Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl2Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl2Position0Flag.Name = "lbl2Position0Flag";
-            this.lbl2Position0Flag.Size = new System.Drawing.Size(24, 24);
+            this.lbl2Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl2Position0Flag.TabIndex = 337;
             this.lbl2Position0Flag.Text = "D";
             // 
@@ -1136,9 +1137,9 @@
             this.lbl2Position4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position4Value.ForeColor = System.Drawing.Color.Red;
             this.lbl2Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position4Value.Location = new System.Drawing.Point(274, 130);
+            this.lbl2Position4Value.Location = new System.Drawing.Point(306, 128);
             this.lbl2Position4Value.Name = "lbl2Position4Value";
-            this.lbl2Position4Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl2Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position4Value.TabIndex = 336;
             this.lbl2Position4Value.Text = ".";
             this.lbl2Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1150,9 +1151,9 @@
             this.lbl2Position5Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position5Value.ForeColor = System.Drawing.Color.Red;
             this.lbl2Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position5Value.Location = new System.Drawing.Point(97, 157);
+            this.lbl2Position5Value.Location = new System.Drawing.Point(97, 185);
             this.lbl2Position5Value.Name = "lbl2Position5Value";
-            this.lbl2Position5Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl2Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl2Position5Value.TabIndex = 334;
             this.lbl2Position5Value.Text = ".";
             this.lbl2Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1162,9 +1163,9 @@
             this.lbl2Position6.AutoSize = true;
             this.lbl2Position6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position6.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position6.Location = new System.Drawing.Point(202, 158);
+            this.lbl2Position6.Location = new System.Drawing.Point(234, 184);
             this.lbl2Position6.Name = "lbl2Position6";
-            this.lbl2Position6.Size = new System.Drawing.Size(57, 24);
+            this.lbl2Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl2Position6.TabIndex = 331;
             this.lbl2Position6.Text = "Strat:";
             // 
@@ -1176,7 +1177,7 @@
             this.lbl2Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl2Position2Value.Name = "lbl2Position2Value";
-            this.lbl2Position2Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl2Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl2Position2Value.TabIndex = 330;
             this.lbl2Position2Value.Text = "$$";
             this.lbl2Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1187,9 +1188,9 @@
             this.lbl2Position1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position1Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl2Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position1Value.Location = new System.Drawing.Point(243, 50);
+            this.lbl2Position1Value.Location = new System.Drawing.Point(292, 50);
             this.lbl2Position1Value.Name = "lbl2Position1Value";
-            this.lbl2Position1Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl2Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl2Position1Value.TabIndex = 329;
             this.lbl2Position1Value.Text = "$$";
             this.lbl2Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1200,7 +1201,7 @@
             this.panel10.Controls.Add(this.label49);
             this.panel10.Location = new System.Drawing.Point(0, 34);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(330, 13);
+            this.panel10.Size = new System.Drawing.Size(390, 13);
             this.panel10.TabIndex = 279;
             // 
             // label49
@@ -1211,7 +1212,7 @@
             this.label49.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label49.Location = new System.Drawing.Point(418, 214);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(38, 26);
+            this.label49.Size = new System.Drawing.Size(46, 31);
             this.label49.TabIndex = 277;
             this.label49.Text = "00";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1220,9 +1221,9 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.Red;
             this.panel11.Controls.Add(this.label50);
-            this.panel11.Location = new System.Drawing.Point(0, 246);
+            this.panel11.Location = new System.Drawing.Point(3, 314);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(330, 11);
+            this.panel11.Size = new System.Drawing.Size(390, 11);
             this.panel11.TabIndex = 279;
             // 
             // label50
@@ -1233,7 +1234,7 @@
             this.label50.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label50.Location = new System.Drawing.Point(418, 214);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(38, 26);
+            this.label50.Size = new System.Drawing.Size(46, 31);
             this.label50.TabIndex = 277;
             this.label50.Text = "00";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1243,9 +1244,9 @@
             this.lbl2Position5.AutoSize = true;
             this.lbl2Position5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position5.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position5.Location = new System.Drawing.Point(2, 158);
+            this.lbl2Position5.Location = new System.Drawing.Point(2, 186);
             this.lbl2Position5.Name = "lbl2Position5";
-            this.lbl2Position5.Size = new System.Drawing.Size(99, 24);
+            this.lbl2Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl2Position5.TabIndex = 328;
             this.lbl2Position5.Text = "HP Amp: ";
             // 
@@ -1254,9 +1255,9 @@
             this.lbl2Position4.AutoSize = true;
             this.lbl2Position4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position4.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position4.Location = new System.Drawing.Point(202, 130);
+            this.lbl2Position4.Location = new System.Drawing.Point(234, 128);
             this.lbl2Position4.Name = "lbl2Position4";
-            this.lbl2Position4.Size = new System.Drawing.Size(72, 24);
+            this.lbl2Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl2Position4.TabIndex = 322;
             this.lbl2Position4.Text = "Leave:";
             // 
@@ -1266,9 +1267,9 @@
             this.lbl2Position8Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl2Position8Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl2Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2Position8Value.Location = new System.Drawing.Point(246, 185);
+            this.lbl2Position8Value.Location = new System.Drawing.Point(278, 236);
             this.lbl2Position8Value.Name = "lbl2Position8Value";
-            this.lbl2Position8Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl2Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position8Value.TabIndex = 324;
             this.lbl2Position8Value.Text = "0";
             this.lbl2Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1280,7 +1281,7 @@
             this.lbl2Position0.ForeColor = System.Drawing.Color.White;
             this.lbl2Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl2Position0.Name = "lbl2Position0";
-            this.lbl2Position0.Size = new System.Drawing.Size(53, 24);
+            this.lbl2Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl2Position0.TabIndex = 322;
             this.lbl2Position0.Text = "Acq:";
             // 
@@ -1292,7 +1293,7 @@
             this.lbl2Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl2Position3Value.Name = "lbl2Position3Value";
-            this.lbl2Position3Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl2Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl2Position3Value.TabIndex = 317;
             this.lbl2Position3Value.Text = "#";
             this.lbl2Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1304,7 +1305,7 @@
             this.lbl2Position3.ForeColor = System.Drawing.Color.White;
             this.lbl2Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl2Position3.Name = "lbl2Position3";
-            this.lbl2Position3.Size = new System.Drawing.Size(70, 24);
+            this.lbl2Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl2Position3.TabIndex = 321;
             this.lbl2Position3.Text = "Setup:";
             // 
@@ -1313,9 +1314,9 @@
             this.lbl2Position8.AutoSize = true;
             this.lbl2Position8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position8.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position8.Location = new System.Drawing.Point(202, 184);
+            this.lbl2Position8.Location = new System.Drawing.Point(234, 235);
             this.lbl2Position8.Name = "lbl2Position8";
-            this.lbl2Position8.Size = new System.Drawing.Size(47, 24);
+            this.lbl2Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl2Position8.TabIndex = 266;
             this.lbl2Position8.Text = "Def:";
             // 
@@ -1324,9 +1325,9 @@
             this.lbl2Position1.AutoSize = true;
             this.lbl2Position1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position1.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position1.Location = new System.Drawing.Point(188, 50);
+            this.lbl2Position1.Location = new System.Drawing.Point(237, 50);
             this.lbl2Position1.Name = "lbl2Position1";
-            this.lbl2Position1.Size = new System.Drawing.Size(56, 24);
+            this.lbl2Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl2Position1.TabIndex = 327;
             this.lbl2Position1.Text = "Orig:";
             // 
@@ -1337,7 +1338,7 @@
             this.lbl2Position2.ForeColor = System.Drawing.Color.White;
             this.lbl2Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl2Position2.Name = "lbl2Position2";
-            this.lbl2Position2.Size = new System.Drawing.Size(47, 24);
+            this.lbl2Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl2Position2.TabIndex = 318;
             this.lbl2Position2.Text = "Del:";
             // 
@@ -1346,9 +1347,9 @@
             this.lbl2Position11.AutoSize = true;
             this.lbl2Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl2Position11.Location = new System.Drawing.Point(3, 261);
+            this.lbl2Position11.Location = new System.Drawing.Point(6, 328);
             this.lbl2Position11.Name = "lbl2Position11";
-            this.lbl2Position11.Size = new System.Drawing.Size(125, 24);
+            this.lbl2Position11.Size = new System.Drawing.Size(154, 29);
             this.lbl2Position11.TabIndex = 291;
             this.lbl2Position11.Text = "Match Event";
             // 
@@ -1360,7 +1361,7 @@
             this.lbl2Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl2Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl2Position0Value.Name = "lbl2Position0Value";
-            this.lbl2Position0Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl2Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl2Position0Value.TabIndex = 274;
             this.lbl2Position0Value.Text = "$$";
             this.lbl2Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1371,7 +1372,7 @@
             this.lbl2TeamName.BackColor = System.Drawing.Color.Black;
             this.lbl2TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl2TeamName.Location = new System.Drawing.Point(168, 291);
+            this.lbl2TeamName.Location = new System.Drawing.Point(234, 351);
             this.lbl2TeamName.Name = "lbl2TeamName";
             this.lbl2TeamName.Size = new System.Drawing.Size(159, 37);
             this.lbl2TeamName.TabIndex = 248;
@@ -1384,7 +1385,7 @@
             this.lbl2ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
             this.lbl2ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2ScoutName.Location = new System.Drawing.Point(4, 301);
+            this.lbl2ScoutName.Location = new System.Drawing.Point(2, 361);
             this.lbl2ScoutName.Name = "lbl2ScoutName";
             this.lbl2ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl2ScoutName.Size = new System.Drawing.Size(158, 27);
@@ -1400,7 +1401,7 @@
             this.lbl2ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl2ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl2ModeValue.Name = "lbl2ModeValue";
-            this.lbl2ModeValue.Size = new System.Drawing.Size(67, 29);
+            this.lbl2ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl2ModeValue.TabIndex = 2;
             this.lbl2ModeValue.Text = "Auto:";
             // 
@@ -1438,9 +1439,9 @@
             this.panel6.Controls.Add(this.lbl1TeamName);
             this.panel6.Controls.Add(this.lbl1ScoutName);
             this.panel6.Controls.Add(this.lbl1ModeValue);
-            this.panel6.Location = new System.Drawing.Point(343, 3);
+            this.panel6.Location = new System.Drawing.Point(390, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(330, 333);
+            this.panel6.Size = new System.Drawing.Size(395, 394);
             this.panel6.TabIndex = 280;
             // 
             // panel21
@@ -1449,7 +1450,7 @@
             this.panel21.Controls.Add(this.label23);
             this.panel21.Location = new System.Drawing.Point(0, 116);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(330, 11);
+            this.panel21.Size = new System.Drawing.Size(392, 11);
             this.panel21.TabIndex = 279;
             // 
             // label23
@@ -1460,7 +1461,7 @@
             this.label23.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label23.Location = new System.Drawing.Point(418, 214);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(38, 26);
+            this.label23.Size = new System.Drawing.Size(46, 31);
             this.label23.TabIndex = 277;
             this.label23.Text = "00";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1471,9 +1472,9 @@
             this.lbl1Position6Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position6Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl1Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position6Value.Location = new System.Drawing.Point(263, 159);
+            this.lbl1Position6Value.Location = new System.Drawing.Point(305, 182);
             this.lbl1Position6Value.Name = "lbl1Position6Value";
-            this.lbl1Position6Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl1Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl1Position6Value.TabIndex = 345;
             this.lbl1Position6Value.Text = "$$";
             this.lbl1Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1484,9 +1485,9 @@
             this.lbl1Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position10Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl1Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position10Value.Location = new System.Drawing.Point(246, 211);
+            this.lbl1Position10Value.Location = new System.Drawing.Point(287, 280);
             this.lbl1Position10Value.Name = "lbl1Position10Value";
-            this.lbl1Position10Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl1Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position10Value.TabIndex = 344;
             this.lbl1Position10Value.Text = "0";
             this.lbl1Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1496,9 +1497,9 @@
             this.lbl1Position10.AutoSize = true;
             this.lbl1Position10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position10.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position10.Location = new System.Drawing.Point(202, 210);
+            this.lbl1Position10.Location = new System.Drawing.Point(243, 279);
             this.lbl1Position10.Name = "lbl1Position10";
-            this.lbl1Position10.Size = new System.Drawing.Size(52, 24);
+            this.lbl1Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl1Position10.TabIndex = 343;
             this.lbl1Position10.Text = "Avo:";
             // 
@@ -1509,9 +1510,9 @@
             this.lbl1Position7Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position7Value.ForeColor = System.Drawing.Color.Red;
             this.lbl1Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position7Value.Location = new System.Drawing.Point(97, 184);
+            this.lbl1Position7Value.Location = new System.Drawing.Point(98, 237);
             this.lbl1Position7Value.Name = "lbl1Position7Value";
-            this.lbl1Position7Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl1Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position7Value.TabIndex = 342;
             this.lbl1Position7Value.Text = ".";
             this.lbl1Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1522,9 +1523,9 @@
             this.lbl1Position9Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position9Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl1Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position9Value.Location = new System.Drawing.Point(68, 213);
+            this.lbl1Position9Value.Location = new System.Drawing.Point(71, 282);
             this.lbl1Position9Value.Name = "lbl1Position9Value";
-            this.lbl1Position9Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl1Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position9Value.TabIndex = 341;
             this.lbl1Position9Value.Text = "#";
             this.lbl1Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1534,9 +1535,9 @@
             this.lbl1Position9.AutoSize = true;
             this.lbl1Position9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position9.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position9.Location = new System.Drawing.Point(3, 213);
+            this.lbl1Position9.Location = new System.Drawing.Point(6, 282);
             this.lbl1Position9.Name = "lbl1Position9";
-            this.lbl1Position9.Size = new System.Drawing.Size(59, 24);
+            this.lbl1Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl1Position9.TabIndex = 340;
             this.lbl1Position9.Text = "Mics:";
             // 
@@ -1545,9 +1546,9 @@
             this.lbl1Position7.AutoSize = true;
             this.lbl1Position7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position7.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position7.Location = new System.Drawing.Point(2, 184);
+            this.lbl1Position7.Location = new System.Drawing.Point(3, 237);
             this.lbl1Position7.Name = "lbl1Position7";
-            this.lbl1Position7.Size = new System.Drawing.Size(73, 24);
+            this.lbl1Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl1Position7.TabIndex = 339;
             this.lbl1Position7.Text = "Spotlit:";
             // 
@@ -1558,7 +1559,7 @@
             this.lbl1Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl1Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl1Position2Flag.Name = "lbl1Position2Flag";
-            this.lbl1Position2Flag.Size = new System.Drawing.Size(27, 24);
+            this.lbl1Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl1Position2Flag.TabIndex = 338;
             this.lbl1Position2Flag.Text = "M";
             // 
@@ -1569,7 +1570,7 @@
             this.lbl1Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl1Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl1Position0Flag.Name = "lbl1Position0Flag";
-            this.lbl1Position0Flag.Size = new System.Drawing.Size(24, 24);
+            this.lbl1Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl1Position0Flag.TabIndex = 337;
             this.lbl1Position0Flag.Text = "D";
             // 
@@ -1580,9 +1581,9 @@
             this.lbl1Position4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position4Value.ForeColor = System.Drawing.Color.Red;
             this.lbl1Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position4Value.Location = new System.Drawing.Point(274, 130);
+            this.lbl1Position4Value.Location = new System.Drawing.Point(315, 130);
             this.lbl1Position4Value.Name = "lbl1Position4Value";
-            this.lbl1Position4Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl1Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position4Value.TabIndex = 336;
             this.lbl1Position4Value.Text = ".";
             this.lbl1Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1594,9 +1595,9 @@
             this.lbl1Position5Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position5Value.ForeColor = System.Drawing.Color.Red;
             this.lbl1Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position5Value.Location = new System.Drawing.Point(97, 157);
+            this.lbl1Position5Value.Location = new System.Drawing.Point(98, 181);
             this.lbl1Position5Value.Name = "lbl1Position5Value";
-            this.lbl1Position5Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl1Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl1Position5Value.TabIndex = 334;
             this.lbl1Position5Value.Text = ".";
             this.lbl1Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1606,9 +1607,9 @@
             this.lbl1Position6.AutoSize = true;
             this.lbl1Position6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position6.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position6.Location = new System.Drawing.Point(202, 158);
+            this.lbl1Position6.Location = new System.Drawing.Point(244, 181);
             this.lbl1Position6.Name = "lbl1Position6";
-            this.lbl1Position6.Size = new System.Drawing.Size(57, 24);
+            this.lbl1Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl1Position6.TabIndex = 331;
             this.lbl1Position6.Text = "Strat:";
             // 
@@ -1620,7 +1621,7 @@
             this.lbl1Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl1Position2Value.Name = "lbl1Position2Value";
-            this.lbl1Position2Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl1Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl1Position2Value.TabIndex = 330;
             this.lbl1Position2Value.Text = "$$";
             this.lbl1Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1631,9 +1632,9 @@
             this.lbl1Position1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position1Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl1Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position1Value.Location = new System.Drawing.Point(243, 50);
+            this.lbl1Position1Value.Location = new System.Drawing.Point(299, 50);
             this.lbl1Position1Value.Name = "lbl1Position1Value";
-            this.lbl1Position1Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl1Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl1Position1Value.TabIndex = 329;
             this.lbl1Position1Value.Text = "$$";
             this.lbl1Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1644,7 +1645,7 @@
             this.panel7.Controls.Add(this.label18);
             this.panel7.Location = new System.Drawing.Point(0, 34);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(330, 13);
+            this.panel7.Size = new System.Drawing.Size(392, 13);
             this.panel7.TabIndex = 279;
             // 
             // label18
@@ -1655,7 +1656,7 @@
             this.label18.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label18.Location = new System.Drawing.Point(418, 214);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 26);
+            this.label18.Size = new System.Drawing.Size(46, 31);
             this.label18.TabIndex = 277;
             this.label18.Text = "00";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1664,9 +1665,9 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.Red;
             this.panel8.Controls.Add(this.label19);
-            this.panel8.Location = new System.Drawing.Point(0, 246);
+            this.panel8.Location = new System.Drawing.Point(0, 314);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(330, 11);
+            this.panel8.Size = new System.Drawing.Size(392, 11);
             this.panel8.TabIndex = 279;
             // 
             // label19
@@ -1677,7 +1678,7 @@
             this.label19.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label19.Location = new System.Drawing.Point(418, 214);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(38, 26);
+            this.label19.Size = new System.Drawing.Size(46, 31);
             this.label19.TabIndex = 277;
             this.label19.Text = "00";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1687,9 +1688,9 @@
             this.lbl1Position5.AutoSize = true;
             this.lbl1Position5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position5.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position5.Location = new System.Drawing.Point(2, 158);
+            this.lbl1Position5.Location = new System.Drawing.Point(3, 182);
             this.lbl1Position5.Name = "lbl1Position5";
-            this.lbl1Position5.Size = new System.Drawing.Size(99, 24);
+            this.lbl1Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl1Position5.TabIndex = 328;
             this.lbl1Position5.Text = "HP Amp: ";
             // 
@@ -1698,9 +1699,9 @@
             this.lbl1Position4.AutoSize = true;
             this.lbl1Position4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position4.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position4.Location = new System.Drawing.Point(202, 130);
+            this.lbl1Position4.Location = new System.Drawing.Point(243, 130);
             this.lbl1Position4.Name = "lbl1Position4";
-            this.lbl1Position4.Size = new System.Drawing.Size(72, 24);
+            this.lbl1Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl1Position4.TabIndex = 322;
             this.lbl1Position4.Text = "Leave:";
             // 
@@ -1710,9 +1711,9 @@
             this.lbl1Position8Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl1Position8Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl1Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1Position8Value.Location = new System.Drawing.Point(246, 185);
+            this.lbl1Position8Value.Location = new System.Drawing.Point(288, 238);
             this.lbl1Position8Value.Name = "lbl1Position8Value";
-            this.lbl1Position8Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl1Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position8Value.TabIndex = 324;
             this.lbl1Position8Value.Text = "0";
             this.lbl1Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1724,7 +1725,7 @@
             this.lbl1Position0.ForeColor = System.Drawing.Color.White;
             this.lbl1Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl1Position0.Name = "lbl1Position0";
-            this.lbl1Position0.Size = new System.Drawing.Size(53, 24);
+            this.lbl1Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl1Position0.TabIndex = 322;
             this.lbl1Position0.Text = "Acq:";
             // 
@@ -1736,7 +1737,7 @@
             this.lbl1Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl1Position3Value.Name = "lbl1Position3Value";
-            this.lbl1Position3Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl1Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl1Position3Value.TabIndex = 317;
             this.lbl1Position3Value.Text = "#";
             this.lbl1Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1748,7 +1749,7 @@
             this.lbl1Position3.ForeColor = System.Drawing.Color.White;
             this.lbl1Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl1Position3.Name = "lbl1Position3";
-            this.lbl1Position3.Size = new System.Drawing.Size(70, 24);
+            this.lbl1Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl1Position3.TabIndex = 321;
             this.lbl1Position3.Text = "Setup:";
             // 
@@ -1757,9 +1758,9 @@
             this.lbl1Position8.AutoSize = true;
             this.lbl1Position8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position8.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position8.Location = new System.Drawing.Point(202, 184);
+            this.lbl1Position8.Location = new System.Drawing.Point(244, 237);
             this.lbl1Position8.Name = "lbl1Position8";
-            this.lbl1Position8.Size = new System.Drawing.Size(47, 24);
+            this.lbl1Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl1Position8.TabIndex = 266;
             this.lbl1Position8.Text = "Def:";
             // 
@@ -1768,9 +1769,9 @@
             this.lbl1Position1.AutoSize = true;
             this.lbl1Position1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position1.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position1.Location = new System.Drawing.Point(188, 50);
+            this.lbl1Position1.Location = new System.Drawing.Point(244, 50);
             this.lbl1Position1.Name = "lbl1Position1";
-            this.lbl1Position1.Size = new System.Drawing.Size(56, 24);
+            this.lbl1Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl1Position1.TabIndex = 327;
             this.lbl1Position1.Text = "Orig:";
             // 
@@ -1781,7 +1782,7 @@
             this.lbl1Position2.ForeColor = System.Drawing.Color.White;
             this.lbl1Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl1Position2.Name = "lbl1Position2";
-            this.lbl1Position2.Size = new System.Drawing.Size(47, 24);
+            this.lbl1Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl1Position2.TabIndex = 318;
             this.lbl1Position2.Text = "Del:";
             // 
@@ -1790,9 +1791,9 @@
             this.lbl1Position11.AutoSize = true;
             this.lbl1Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl1Position11.Location = new System.Drawing.Point(3, 261);
+            this.lbl1Position11.Location = new System.Drawing.Point(2, 328);
             this.lbl1Position11.Name = "lbl1Position11";
-            this.lbl1Position11.Size = new System.Drawing.Size(125, 24);
+            this.lbl1Position11.Size = new System.Drawing.Size(154, 29);
             this.lbl1Position11.TabIndex = 291;
             this.lbl1Position11.Text = "Match Event";
             // 
@@ -1804,7 +1805,7 @@
             this.lbl1Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl1Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl1Position0Value.Name = "lbl1Position0Value";
-            this.lbl1Position0Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl1Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl1Position0Value.TabIndex = 274;
             this.lbl1Position0Value.Text = "$$";
             this.lbl1Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1815,7 +1816,7 @@
             this.lbl1TeamName.BackColor = System.Drawing.Color.Black;
             this.lbl1TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl1TeamName.Location = new System.Drawing.Point(168, 291);
+            this.lbl1TeamName.Location = new System.Drawing.Point(233, 351);
             this.lbl1TeamName.Name = "lbl1TeamName";
             this.lbl1TeamName.Size = new System.Drawing.Size(159, 37);
             this.lbl1TeamName.TabIndex = 248;
@@ -1828,7 +1829,7 @@
             this.lbl1ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
             this.lbl1ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1ScoutName.Location = new System.Drawing.Point(4, 301);
+            this.lbl1ScoutName.Location = new System.Drawing.Point(2, 361);
             this.lbl1ScoutName.Name = "lbl1ScoutName";
             this.lbl1ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl1ScoutName.Size = new System.Drawing.Size(158, 27);
@@ -1844,7 +1845,7 @@
             this.lbl1ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl1ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl1ModeValue.Name = "lbl1ModeValue";
-            this.lbl1ModeValue.Size = new System.Drawing.Size(67, 29);
+            this.lbl1ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl1ModeValue.TabIndex = 2;
             this.lbl1ModeValue.Text = "Auto:";
             this.lbl1ModeValue.Click += new System.EventHandler(this.lbl1ModeValue_Click);
@@ -1855,9 +1856,9 @@
             this.panel2.Controls.Add(this.panel18);
             this.panel2.Controls.Add(this.panel15);
             this.panel2.Controls.Add(this.panel12);
-            this.panel2.Location = new System.Drawing.Point(1, 379);
+            this.panel2.Location = new System.Drawing.Point(1, 440);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1017, 343);
+            this.panel2.Size = new System.Drawing.Size(1197, 399);
             this.panel2.TabIndex = 260;
             // 
             // panel18
@@ -1894,9 +1895,9 @@
             this.panel18.Controls.Add(this.lbl5TeamName);
             this.panel18.Controls.Add(this.lbl5ScoutName);
             this.panel18.Controls.Add(this.lbl5ModeValue);
-            this.panel18.Location = new System.Drawing.Point(679, 3);
+            this.panel18.Location = new System.Drawing.Point(792, 5);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(330, 333);
+            this.panel18.Size = new System.Drawing.Size(393, 391);
             this.panel18.TabIndex = 349;
             // 
             // panel27
@@ -1905,7 +1906,7 @@
             this.panel27.Controls.Add(this.label34);
             this.panel27.Location = new System.Drawing.Point(0, 110);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(330, 11);
+            this.panel27.Size = new System.Drawing.Size(390, 11);
             this.panel27.TabIndex = 281;
             // 
             // label34
@@ -1916,7 +1917,7 @@
             this.label34.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label34.Location = new System.Drawing.Point(418, 214);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(38, 26);
+            this.label34.Size = new System.Drawing.Size(46, 31);
             this.label34.TabIndex = 277;
             this.label34.Text = "00";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1927,9 +1928,9 @@
             this.lbl5Position6Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position6Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl5Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position6Value.Location = new System.Drawing.Point(263, 159);
+            this.lbl5Position6Value.Location = new System.Drawing.Point(290, 177);
             this.lbl5Position6Value.Name = "lbl5Position6Value";
-            this.lbl5Position6Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl5Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position6Value.TabIndex = 345;
             this.lbl5Position6Value.Text = "$$";
             this.lbl5Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1940,9 +1941,9 @@
             this.lbl5Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position10Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl5Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position10Value.Location = new System.Drawing.Point(246, 211);
+            this.lbl5Position10Value.Location = new System.Drawing.Point(273, 268);
             this.lbl5Position10Value.Name = "lbl5Position10Value";
-            this.lbl5Position10Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl5Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position10Value.TabIndex = 344;
             this.lbl5Position10Value.Text = "0";
             this.lbl5Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1952,9 +1953,9 @@
             this.lbl5Position10.AutoSize = true;
             this.lbl5Position10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position10.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position10.Location = new System.Drawing.Point(202, 210);
+            this.lbl5Position10.Location = new System.Drawing.Point(229, 267);
             this.lbl5Position10.Name = "lbl5Position10";
-            this.lbl5Position10.Size = new System.Drawing.Size(52, 24);
+            this.lbl5Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl5Position10.TabIndex = 343;
             this.lbl5Position10.Text = "Avo:";
             // 
@@ -1965,9 +1966,9 @@
             this.lbl5Position7Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position7Value.ForeColor = System.Drawing.Color.Red;
             this.lbl5Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position7Value.Location = new System.Drawing.Point(97, 184);
+            this.lbl5Position7Value.Location = new System.Drawing.Point(97, 232);
             this.lbl5Position7Value.Name = "lbl5Position7Value";
-            this.lbl5Position7Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl5Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position7Value.TabIndex = 342;
             this.lbl5Position7Value.Text = ".";
             this.lbl5Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1978,9 +1979,9 @@
             this.lbl5Position9Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position9Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl5Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position9Value.Location = new System.Drawing.Point(68, 213);
+            this.lbl5Position9Value.Location = new System.Drawing.Point(68, 276);
             this.lbl5Position9Value.Name = "lbl5Position9Value";
-            this.lbl5Position9Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl5Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position9Value.TabIndex = 341;
             this.lbl5Position9Value.Text = "#";
             this.lbl5Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1990,9 +1991,9 @@
             this.lbl5Position9.AutoSize = true;
             this.lbl5Position9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position9.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position9.Location = new System.Drawing.Point(3, 213);
+            this.lbl5Position9.Location = new System.Drawing.Point(3, 276);
             this.lbl5Position9.Name = "lbl5Position9";
-            this.lbl5Position9.Size = new System.Drawing.Size(59, 24);
+            this.lbl5Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl5Position9.TabIndex = 340;
             this.lbl5Position9.Text = "Mics:";
             // 
@@ -2001,9 +2002,9 @@
             this.lbl5Position7.AutoSize = true;
             this.lbl5Position7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position7.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position7.Location = new System.Drawing.Point(2, 184);
+            this.lbl5Position7.Location = new System.Drawing.Point(2, 232);
             this.lbl5Position7.Name = "lbl5Position7";
-            this.lbl5Position7.Size = new System.Drawing.Size(73, 24);
+            this.lbl5Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl5Position7.TabIndex = 339;
             this.lbl5Position7.Text = "Spotlit:";
             // 
@@ -2014,7 +2015,7 @@
             this.lbl5Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl5Position2Flag.Name = "lbl5Position2Flag";
-            this.lbl5Position2Flag.Size = new System.Drawing.Size(27, 24);
+            this.lbl5Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl5Position2Flag.TabIndex = 338;
             this.lbl5Position2Flag.Text = "M";
             // 
@@ -2025,7 +2026,7 @@
             this.lbl5Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl5Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl5Position0Flag.Name = "lbl5Position0Flag";
-            this.lbl5Position0Flag.Size = new System.Drawing.Size(24, 24);
+            this.lbl5Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl5Position0Flag.TabIndex = 337;
             this.lbl5Position0Flag.Text = "D";
             // 
@@ -2036,9 +2037,9 @@
             this.lbl5Position4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position4Value.ForeColor = System.Drawing.Color.Red;
             this.lbl5Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position4Value.Location = new System.Drawing.Point(274, 130);
+            this.lbl5Position4Value.Location = new System.Drawing.Point(301, 124);
             this.lbl5Position4Value.Name = "lbl5Position4Value";
-            this.lbl5Position4Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl5Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position4Value.TabIndex = 336;
             this.lbl5Position4Value.Text = ".";
             this.lbl5Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2050,9 +2051,9 @@
             this.lbl5Position5Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position5Value.ForeColor = System.Drawing.Color.Red;
             this.lbl5Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position5Value.Location = new System.Drawing.Point(97, 157);
+            this.lbl5Position5Value.Location = new System.Drawing.Point(97, 181);
             this.lbl5Position5Value.Name = "lbl5Position5Value";
-            this.lbl5Position5Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl5Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl5Position5Value.TabIndex = 334;
             this.lbl5Position5Value.Text = ".";
             this.lbl5Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2062,9 +2063,9 @@
             this.lbl5Position6.AutoSize = true;
             this.lbl5Position6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position6.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position6.Location = new System.Drawing.Point(202, 158);
+            this.lbl5Position6.Location = new System.Drawing.Point(229, 176);
             this.lbl5Position6.Name = "lbl5Position6";
-            this.lbl5Position6.Size = new System.Drawing.Size(57, 24);
+            this.lbl5Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl5Position6.TabIndex = 331;
             this.lbl5Position6.Text = "Strat:";
             // 
@@ -2076,7 +2077,7 @@
             this.lbl5Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl5Position2Value.Name = "lbl5Position2Value";
-            this.lbl5Position2Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl5Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position2Value.TabIndex = 330;
             this.lbl5Position2Value.Text = "$$";
             this.lbl5Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2087,9 +2088,9 @@
             this.lbl5Position1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position1Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl5Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position1Value.Location = new System.Drawing.Point(243, 50);
+            this.lbl5Position1Value.Location = new System.Drawing.Point(284, 50);
             this.lbl5Position1Value.Name = "lbl5Position1Value";
-            this.lbl5Position1Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl5Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position1Value.TabIndex = 329;
             this.lbl5Position1Value.Text = "$$";
             this.lbl5Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2100,7 +2101,7 @@
             this.panel19.Controls.Add(this.label139);
             this.panel19.Location = new System.Drawing.Point(0, 34);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(330, 13);
+            this.panel19.Size = new System.Drawing.Size(390, 13);
             this.panel19.TabIndex = 279;
             // 
             // label139
@@ -2111,7 +2112,7 @@
             this.label139.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label139.Location = new System.Drawing.Point(418, 214);
             this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(38, 26);
+            this.label139.Size = new System.Drawing.Size(46, 31);
             this.label139.TabIndex = 277;
             this.label139.Text = "00";
             this.label139.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2120,9 +2121,9 @@
             // 
             this.panel20.BackColor = System.Drawing.Color.DarkBlue;
             this.panel20.Controls.Add(this.label140);
-            this.panel20.Location = new System.Drawing.Point(0, 246);
+            this.panel20.Location = new System.Drawing.Point(2, 310);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(330, 11);
+            this.panel20.Size = new System.Drawing.Size(390, 11);
             this.panel20.TabIndex = 279;
             // 
             // label140
@@ -2133,7 +2134,7 @@
             this.label140.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label140.Location = new System.Drawing.Point(418, 214);
             this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(38, 26);
+            this.label140.Size = new System.Drawing.Size(46, 31);
             this.label140.TabIndex = 277;
             this.label140.Text = "00";
             this.label140.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2143,9 +2144,9 @@
             this.lbl5Position5.AutoSize = true;
             this.lbl5Position5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position5.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position5.Location = new System.Drawing.Point(2, 158);
+            this.lbl5Position5.Location = new System.Drawing.Point(2, 182);
             this.lbl5Position5.Name = "lbl5Position5";
-            this.lbl5Position5.Size = new System.Drawing.Size(99, 24);
+            this.lbl5Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl5Position5.TabIndex = 328;
             this.lbl5Position5.Text = "HP Amp: ";
             // 
@@ -2154,9 +2155,9 @@
             this.lbl5Position4.AutoSize = true;
             this.lbl5Position4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position4.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position4.Location = new System.Drawing.Point(202, 130);
+            this.lbl5Position4.Location = new System.Drawing.Point(229, 124);
             this.lbl5Position4.Name = "lbl5Position4";
-            this.lbl5Position4.Size = new System.Drawing.Size(72, 24);
+            this.lbl5Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl5Position4.TabIndex = 322;
             this.lbl5Position4.Text = "Leave:";
             // 
@@ -2166,9 +2167,9 @@
             this.lbl5Position8Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl5Position8Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl5Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5Position8Value.Location = new System.Drawing.Point(246, 185);
+            this.lbl5Position8Value.Location = new System.Drawing.Point(273, 227);
             this.lbl5Position8Value.Name = "lbl5Position8Value";
-            this.lbl5Position8Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl5Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position8Value.TabIndex = 324;
             this.lbl5Position8Value.Text = "0";
             this.lbl5Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2180,7 +2181,7 @@
             this.lbl5Position0.ForeColor = System.Drawing.Color.White;
             this.lbl5Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl5Position0.Name = "lbl5Position0";
-            this.lbl5Position0.Size = new System.Drawing.Size(53, 24);
+            this.lbl5Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl5Position0.TabIndex = 322;
             this.lbl5Position0.Text = "Acq:";
             // 
@@ -2192,7 +2193,7 @@
             this.lbl5Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl5Position3Value.Name = "lbl5Position3Value";
-            this.lbl5Position3Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl5Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl5Position3Value.TabIndex = 317;
             this.lbl5Position3Value.Text = "#";
             this.lbl5Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2204,7 +2205,7 @@
             this.lbl5Position3.ForeColor = System.Drawing.Color.White;
             this.lbl5Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl5Position3.Name = "lbl5Position3";
-            this.lbl5Position3.Size = new System.Drawing.Size(70, 24);
+            this.lbl5Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl5Position3.TabIndex = 321;
             this.lbl5Position3.Text = "Setup:";
             // 
@@ -2213,9 +2214,9 @@
             this.lbl5Position8.AutoSize = true;
             this.lbl5Position8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position8.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position8.Location = new System.Drawing.Point(202, 184);
+            this.lbl5Position8.Location = new System.Drawing.Point(229, 226);
             this.lbl5Position8.Name = "lbl5Position8";
-            this.lbl5Position8.Size = new System.Drawing.Size(47, 24);
+            this.lbl5Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl5Position8.TabIndex = 266;
             this.lbl5Position8.Text = "Def:";
             // 
@@ -2224,9 +2225,9 @@
             this.lbl5Position1.AutoSize = true;
             this.lbl5Position1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position1.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position1.Location = new System.Drawing.Point(188, 50);
+            this.lbl5Position1.Location = new System.Drawing.Point(229, 50);
             this.lbl5Position1.Name = "lbl5Position1";
-            this.lbl5Position1.Size = new System.Drawing.Size(56, 24);
+            this.lbl5Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl5Position1.TabIndex = 327;
             this.lbl5Position1.Text = "Orig:";
             // 
@@ -2237,7 +2238,7 @@
             this.lbl5Position2.ForeColor = System.Drawing.Color.White;
             this.lbl5Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl5Position2.Name = "lbl5Position2";
-            this.lbl5Position2.Size = new System.Drawing.Size(47, 24);
+            this.lbl5Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl5Position2.TabIndex = 318;
             this.lbl5Position2.Text = "Del:";
             // 
@@ -2246,9 +2247,9 @@
             this.lbl5Position11.AutoSize = true;
             this.lbl5Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl5Position11.Location = new System.Drawing.Point(3, 261);
+            this.lbl5Position11.Location = new System.Drawing.Point(6, 324);
             this.lbl5Position11.Name = "lbl5Position11";
-            this.lbl5Position11.Size = new System.Drawing.Size(125, 24);
+            this.lbl5Position11.Size = new System.Drawing.Size(154, 29);
             this.lbl5Position11.TabIndex = 291;
             this.lbl5Position11.Text = "Match Event";
             // 
@@ -2260,7 +2261,7 @@
             this.lbl5Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl5Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl5Position0Value.Name = "lbl5Position0Value";
-            this.lbl5Position0Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl5Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl5Position0Value.TabIndex = 274;
             this.lbl5Position0Value.Text = "$$";
             this.lbl5Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2271,7 +2272,7 @@
             this.lbl5TeamName.BackColor = System.Drawing.Color.Black;
             this.lbl5TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl5TeamName.Location = new System.Drawing.Point(168, 291);
+            this.lbl5TeamName.Location = new System.Drawing.Point(231, 348);
             this.lbl5TeamName.Name = "lbl5TeamName";
             this.lbl5TeamName.Size = new System.Drawing.Size(159, 37);
             this.lbl5TeamName.TabIndex = 248;
@@ -2284,7 +2285,7 @@
             this.lbl5ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl5ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
             this.lbl5ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl5ScoutName.Location = new System.Drawing.Point(4, 301);
+            this.lbl5ScoutName.Location = new System.Drawing.Point(6, 359);
             this.lbl5ScoutName.Name = "lbl5ScoutName";
             this.lbl5ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl5ScoutName.Size = new System.Drawing.Size(158, 27);
@@ -2300,7 +2301,7 @@
             this.lbl5ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl5ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl5ModeValue.Name = "lbl5ModeValue";
-            this.lbl5ModeValue.Size = new System.Drawing.Size(67, 29);
+            this.lbl5ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl5ModeValue.TabIndex = 2;
             this.lbl5ModeValue.Text = "Auto:";
             // 
@@ -2338,9 +2339,9 @@
             this.panel15.Controls.Add(this.lbl4TeamName);
             this.panel15.Controls.Add(this.lbl4ScoutName);
             this.panel15.Controls.Add(this.lbl4ModeValue);
-            this.panel15.Location = new System.Drawing.Point(343, 5);
+            this.panel15.Location = new System.Drawing.Point(391, 8);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(330, 333);
+            this.panel15.Size = new System.Drawing.Size(397, 388);
             this.panel15.TabIndex = 348;
             // 
             // panel26
@@ -2349,7 +2350,7 @@
             this.panel26.Controls.Add(this.label33);
             this.panel26.Location = new System.Drawing.Point(0, 111);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(330, 11);
+            this.panel26.Size = new System.Drawing.Size(394, 11);
             this.panel26.TabIndex = 281;
             // 
             // label33
@@ -2360,7 +2361,7 @@
             this.label33.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label33.Location = new System.Drawing.Point(418, 214);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(38, 26);
+            this.label33.Size = new System.Drawing.Size(46, 31);
             this.label33.TabIndex = 277;
             this.label33.Text = "00";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2371,9 +2372,9 @@
             this.lbl4Position6Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position6Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl4Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position6Value.Location = new System.Drawing.Point(263, 159);
+            this.lbl4Position6Value.Location = new System.Drawing.Point(304, 180);
             this.lbl4Position6Value.Name = "lbl4Position6Value";
-            this.lbl4Position6Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl4Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position6Value.TabIndex = 345;
             this.lbl4Position6Value.Text = "$$";
             this.lbl4Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2384,9 +2385,9 @@
             this.lbl4Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position10Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl4Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position10Value.Location = new System.Drawing.Point(246, 211);
+            this.lbl4Position10Value.Location = new System.Drawing.Point(287, 274);
             this.lbl4Position10Value.Name = "lbl4Position10Value";
-            this.lbl4Position10Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl4Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position10Value.TabIndex = 344;
             this.lbl4Position10Value.Text = "0";
             this.lbl4Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2396,9 +2397,9 @@
             this.lbl4Position10.AutoSize = true;
             this.lbl4Position10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position10.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position10.Location = new System.Drawing.Point(202, 210);
+            this.lbl4Position10.Location = new System.Drawing.Point(243, 273);
             this.lbl4Position10.Name = "lbl4Position10";
-            this.lbl4Position10.Size = new System.Drawing.Size(52, 24);
+            this.lbl4Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl4Position10.TabIndex = 343;
             this.lbl4Position10.Text = "Avo:";
             // 
@@ -2409,9 +2410,9 @@
             this.lbl4Position7Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position7Value.ForeColor = System.Drawing.Color.Red;
             this.lbl4Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position7Value.Location = new System.Drawing.Point(97, 184);
+            this.lbl4Position7Value.Location = new System.Drawing.Point(101, 230);
             this.lbl4Position7Value.Name = "lbl4Position7Value";
-            this.lbl4Position7Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl4Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position7Value.TabIndex = 342;
             this.lbl4Position7Value.Text = ".";
             this.lbl4Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2422,9 +2423,9 @@
             this.lbl4Position9Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position9Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl4Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position9Value.Location = new System.Drawing.Point(68, 213);
+            this.lbl4Position9Value.Location = new System.Drawing.Point(68, 275);
             this.lbl4Position9Value.Name = "lbl4Position9Value";
-            this.lbl4Position9Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl4Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position9Value.TabIndex = 341;
             this.lbl4Position9Value.Text = "#";
             this.lbl4Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2434,9 +2435,9 @@
             this.lbl4Position9.AutoSize = true;
             this.lbl4Position9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position9.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position9.Location = new System.Drawing.Point(3, 213);
+            this.lbl4Position9.Location = new System.Drawing.Point(3, 275);
             this.lbl4Position9.Name = "lbl4Position9";
-            this.lbl4Position9.Size = new System.Drawing.Size(59, 24);
+            this.lbl4Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl4Position9.TabIndex = 340;
             this.lbl4Position9.Text = "Mics:";
             // 
@@ -2445,9 +2446,9 @@
             this.lbl4Position7.AutoSize = true;
             this.lbl4Position7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position7.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position7.Location = new System.Drawing.Point(2, 184);
+            this.lbl4Position7.Location = new System.Drawing.Point(6, 230);
             this.lbl4Position7.Name = "lbl4Position7";
-            this.lbl4Position7.Size = new System.Drawing.Size(73, 24);
+            this.lbl4Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl4Position7.TabIndex = 339;
             this.lbl4Position7.Text = "Spotlit:";
             // 
@@ -2458,7 +2459,7 @@
             this.lbl4Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl4Position2Flag.Name = "lbl4Position2Flag";
-            this.lbl4Position2Flag.Size = new System.Drawing.Size(27, 24);
+            this.lbl4Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl4Position2Flag.TabIndex = 338;
             this.lbl4Position2Flag.Text = "M";
             // 
@@ -2469,7 +2470,7 @@
             this.lbl4Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl4Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl4Position0Flag.Name = "lbl4Position0Flag";
-            this.lbl4Position0Flag.Size = new System.Drawing.Size(24, 24);
+            this.lbl4Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl4Position0Flag.TabIndex = 337;
             this.lbl4Position0Flag.Text = "D";
             // 
@@ -2480,9 +2481,9 @@
             this.lbl4Position4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position4Value.ForeColor = System.Drawing.Color.Red;
             this.lbl4Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position4Value.Location = new System.Drawing.Point(274, 130);
+            this.lbl4Position4Value.Location = new System.Drawing.Point(315, 131);
             this.lbl4Position4Value.Name = "lbl4Position4Value";
-            this.lbl4Position4Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl4Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position4Value.TabIndex = 336;
             this.lbl4Position4Value.Text = ".";
             this.lbl4Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2494,9 +2495,9 @@
             this.lbl4Position5Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position5Value.ForeColor = System.Drawing.Color.Red;
             this.lbl4Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position5Value.Location = new System.Drawing.Point(97, 157);
+            this.lbl4Position5Value.Location = new System.Drawing.Point(101, 179);
             this.lbl4Position5Value.Name = "lbl4Position5Value";
-            this.lbl4Position5Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl4Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl4Position5Value.TabIndex = 334;
             this.lbl4Position5Value.Text = ".";
             this.lbl4Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2506,9 +2507,9 @@
             this.lbl4Position6.AutoSize = true;
             this.lbl4Position6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position6.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position6.Location = new System.Drawing.Point(202, 158);
+            this.lbl4Position6.Location = new System.Drawing.Point(243, 179);
             this.lbl4Position6.Name = "lbl4Position6";
-            this.lbl4Position6.Size = new System.Drawing.Size(57, 24);
+            this.lbl4Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl4Position6.TabIndex = 331;
             this.lbl4Position6.Text = "Strat:";
             // 
@@ -2520,7 +2521,7 @@
             this.lbl4Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl4Position2Value.Name = "lbl4Position2Value";
-            this.lbl4Position2Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl4Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position2Value.TabIndex = 330;
             this.lbl4Position2Value.Text = "$$";
             this.lbl4Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2531,9 +2532,9 @@
             this.lbl4Position1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position1Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl4Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position1Value.Location = new System.Drawing.Point(243, 50);
+            this.lbl4Position1Value.Location = new System.Drawing.Point(298, 49);
             this.lbl4Position1Value.Name = "lbl4Position1Value";
-            this.lbl4Position1Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl4Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position1Value.TabIndex = 329;
             this.lbl4Position1Value.Text = "$$";
             this.lbl4Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2544,7 +2545,7 @@
             this.panel16.Controls.Add(this.label109);
             this.panel16.Location = new System.Drawing.Point(0, 34);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(330, 13);
+            this.panel16.Size = new System.Drawing.Size(392, 13);
             this.panel16.TabIndex = 279;
             // 
             // label109
@@ -2555,7 +2556,7 @@
             this.label109.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label109.Location = new System.Drawing.Point(418, 214);
             this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(38, 26);
+            this.label109.Size = new System.Drawing.Size(46, 31);
             this.label109.TabIndex = 277;
             this.label109.Text = "00";
             this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2564,9 +2565,9 @@
             // 
             this.panel17.BackColor = System.Drawing.Color.DarkBlue;
             this.panel17.Controls.Add(this.label110);
-            this.panel17.Location = new System.Drawing.Point(0, 246);
+            this.panel17.Location = new System.Drawing.Point(2, 307);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(330, 11);
+            this.panel17.Size = new System.Drawing.Size(392, 11);
             this.panel17.TabIndex = 279;
             // 
             // label110
@@ -2577,7 +2578,7 @@
             this.label110.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label110.Location = new System.Drawing.Point(418, 214);
             this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(38, 26);
+            this.label110.Size = new System.Drawing.Size(46, 31);
             this.label110.TabIndex = 277;
             this.label110.Text = "00";
             this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2587,9 +2588,9 @@
             this.lbl4Position5.AutoSize = true;
             this.lbl4Position5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position5.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position5.Location = new System.Drawing.Point(2, 158);
+            this.lbl4Position5.Location = new System.Drawing.Point(6, 180);
             this.lbl4Position5.Name = "lbl4Position5";
-            this.lbl4Position5.Size = new System.Drawing.Size(99, 24);
+            this.lbl4Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl4Position5.TabIndex = 328;
             this.lbl4Position5.Text = "HP Amp: ";
             // 
@@ -2598,9 +2599,9 @@
             this.lbl4Position4.AutoSize = true;
             this.lbl4Position4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position4.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position4.Location = new System.Drawing.Point(202, 130);
+            this.lbl4Position4.Location = new System.Drawing.Point(243, 131);
             this.lbl4Position4.Name = "lbl4Position4";
-            this.lbl4Position4.Size = new System.Drawing.Size(72, 24);
+            this.lbl4Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl4Position4.TabIndex = 322;
             this.lbl4Position4.Text = "Leave:";
             // 
@@ -2610,9 +2611,9 @@
             this.lbl4Position8Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl4Position8Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl4Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4Position8Value.Location = new System.Drawing.Point(246, 185);
+            this.lbl4Position8Value.Location = new System.Drawing.Point(287, 231);
             this.lbl4Position8Value.Name = "lbl4Position8Value";
-            this.lbl4Position8Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl4Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position8Value.TabIndex = 324;
             this.lbl4Position8Value.Text = "0";
             this.lbl4Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2624,7 +2625,7 @@
             this.lbl4Position0.ForeColor = System.Drawing.Color.White;
             this.lbl4Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl4Position0.Name = "lbl4Position0";
-            this.lbl4Position0.Size = new System.Drawing.Size(53, 24);
+            this.lbl4Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl4Position0.TabIndex = 322;
             this.lbl4Position0.Text = "Acq:";
             // 
@@ -2636,7 +2637,7 @@
             this.lbl4Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl4Position3Value.Name = "lbl4Position3Value";
-            this.lbl4Position3Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl4Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl4Position3Value.TabIndex = 317;
             this.lbl4Position3Value.Text = "#";
             this.lbl4Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2648,7 +2649,7 @@
             this.lbl4Position3.ForeColor = System.Drawing.Color.White;
             this.lbl4Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl4Position3.Name = "lbl4Position3";
-            this.lbl4Position3.Size = new System.Drawing.Size(70, 24);
+            this.lbl4Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl4Position3.TabIndex = 321;
             this.lbl4Position3.Text = "Setup:";
             // 
@@ -2657,9 +2658,9 @@
             this.lbl4Position8.AutoSize = true;
             this.lbl4Position8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position8.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position8.Location = new System.Drawing.Point(202, 184);
+            this.lbl4Position8.Location = new System.Drawing.Point(243, 230);
             this.lbl4Position8.Name = "lbl4Position8";
-            this.lbl4Position8.Size = new System.Drawing.Size(47, 24);
+            this.lbl4Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl4Position8.TabIndex = 266;
             this.lbl4Position8.Text = "Def:";
             // 
@@ -2668,9 +2669,9 @@
             this.lbl4Position1.AutoSize = true;
             this.lbl4Position1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position1.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position1.Location = new System.Drawing.Point(188, 50);
+            this.lbl4Position1.Location = new System.Drawing.Point(243, 49);
             this.lbl4Position1.Name = "lbl4Position1";
-            this.lbl4Position1.Size = new System.Drawing.Size(56, 24);
+            this.lbl4Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl4Position1.TabIndex = 327;
             this.lbl4Position1.Text = "Orig:";
             // 
@@ -2681,7 +2682,7 @@
             this.lbl4Position2.ForeColor = System.Drawing.Color.White;
             this.lbl4Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl4Position2.Name = "lbl4Position2";
-            this.lbl4Position2.Size = new System.Drawing.Size(47, 24);
+            this.lbl4Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl4Position2.TabIndex = 318;
             this.lbl4Position2.Text = "Del:";
             // 
@@ -2690,9 +2691,9 @@
             this.lbl4Position11.AutoSize = true;
             this.lbl4Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl4Position11.Location = new System.Drawing.Point(3, 261);
+            this.lbl4Position11.Location = new System.Drawing.Point(6, 327);
             this.lbl4Position11.Name = "lbl4Position11";
-            this.lbl4Position11.Size = new System.Drawing.Size(125, 24);
+            this.lbl4Position11.Size = new System.Drawing.Size(154, 29);
             this.lbl4Position11.TabIndex = 291;
             this.lbl4Position11.Text = "Match Event";
             // 
@@ -2704,7 +2705,7 @@
             this.lbl4Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl4Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl4Position0Value.Name = "lbl4Position0Value";
-            this.lbl4Position0Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl4Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl4Position0Value.TabIndex = 274;
             this.lbl4Position0Value.Text = "$$";
             this.lbl4Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2715,7 +2716,7 @@
             this.lbl4TeamName.BackColor = System.Drawing.Color.Black;
             this.lbl4TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl4TeamName.Location = new System.Drawing.Point(168, 291);
+            this.lbl4TeamName.Location = new System.Drawing.Point(236, 345);
             this.lbl4TeamName.Name = "lbl4TeamName";
             this.lbl4TeamName.Size = new System.Drawing.Size(159, 37);
             this.lbl4TeamName.TabIndex = 248;
@@ -2728,7 +2729,7 @@
             this.lbl4ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
             this.lbl4ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl4ScoutName.Location = new System.Drawing.Point(4, 301);
+            this.lbl4ScoutName.Location = new System.Drawing.Point(6, 355);
             this.lbl4ScoutName.Name = "lbl4ScoutName";
             this.lbl4ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl4ScoutName.Size = new System.Drawing.Size(158, 27);
@@ -2744,7 +2745,7 @@
             this.lbl4ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl4ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl4ModeValue.Name = "lbl4ModeValue";
-            this.lbl4ModeValue.Size = new System.Drawing.Size(67, 29);
+            this.lbl4ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl4ModeValue.TabIndex = 2;
             this.lbl4ModeValue.Text = "Auto:";
             // 
@@ -2786,7 +2787,7 @@
             this.panel12.Controls.Add(this.lbl3ModeValue);
             this.panel12.Location = new System.Drawing.Point(7, 7);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(330, 333);
+            this.panel12.Size = new System.Drawing.Size(380, 389);
             this.panel12.TabIndex = 347;
             // 
             // panel23
@@ -2795,7 +2796,7 @@
             this.panel23.Controls.Add(this.label11);
             this.panel23.Location = new System.Drawing.Point(0, 111);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(330, 11);
+            this.panel23.Size = new System.Drawing.Size(375, 11);
             this.panel23.TabIndex = 280;
             // 
             // label11
@@ -2806,7 +2807,7 @@
             this.label11.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label11.Location = new System.Drawing.Point(418, 214);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 26);
+            this.label11.Size = new System.Drawing.Size(46, 31);
             this.label11.TabIndex = 277;
             this.label11.Text = "00";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2828,7 +2829,7 @@
             this.label31.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label31.Location = new System.Drawing.Point(418, 214);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(38, 26);
+            this.label31.Size = new System.Drawing.Size(46, 31);
             this.label31.TabIndex = 277;
             this.label31.Text = "00";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2839,9 +2840,9 @@
             this.lbl3Position6Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position6Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl3Position6Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position6Value.Location = new System.Drawing.Point(263, 159);
+            this.lbl3Position6Value.Location = new System.Drawing.Point(304, 182);
             this.lbl3Position6Value.Name = "lbl3Position6Value";
-            this.lbl3Position6Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl3Position6Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position6Value.TabIndex = 345;
             this.lbl3Position6Value.Text = "$$";
             this.lbl3Position6Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2863,7 +2864,7 @@
             this.label32.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label32.Location = new System.Drawing.Point(418, 214);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(38, 26);
+            this.label32.Size = new System.Drawing.Size(46, 31);
             this.label32.TabIndex = 277;
             this.label32.Text = "00";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2874,9 +2875,9 @@
             this.lbl3Position10Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position10Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl3Position10Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position10Value.Location = new System.Drawing.Point(246, 211);
+            this.lbl3Position10Value.Location = new System.Drawing.Point(288, 277);
             this.lbl3Position10Value.Name = "lbl3Position10Value";
-            this.lbl3Position10Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl3Position10Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position10Value.TabIndex = 344;
             this.lbl3Position10Value.Text = "0";
             this.lbl3Position10Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2886,9 +2887,9 @@
             this.lbl3Position10.AutoSize = true;
             this.lbl3Position10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position10.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position10.Location = new System.Drawing.Point(202, 210);
+            this.lbl3Position10.Location = new System.Drawing.Point(244, 276);
             this.lbl3Position10.Name = "lbl3Position10";
-            this.lbl3Position10.Size = new System.Drawing.Size(52, 24);
+            this.lbl3Position10.Size = new System.Drawing.Size(63, 29);
             this.lbl3Position10.TabIndex = 343;
             this.lbl3Position10.Text = "Avo:";
             // 
@@ -2899,9 +2900,9 @@
             this.lbl3Position7Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position7Value.ForeColor = System.Drawing.Color.Red;
             this.lbl3Position7Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position7Value.Location = new System.Drawing.Point(97, 184);
+            this.lbl3Position7Value.Location = new System.Drawing.Point(99, 231);
             this.lbl3Position7Value.Name = "lbl3Position7Value";
-            this.lbl3Position7Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl3Position7Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position7Value.TabIndex = 342;
             this.lbl3Position7Value.Text = ".";
             this.lbl3Position7Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2912,9 +2913,9 @@
             this.lbl3Position9Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position9Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl3Position9Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position9Value.Location = new System.Drawing.Point(68, 213);
+            this.lbl3Position9Value.Location = new System.Drawing.Point(69, 276);
             this.lbl3Position9Value.Name = "lbl3Position9Value";
-            this.lbl3Position9Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl3Position9Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position9Value.TabIndex = 341;
             this.lbl3Position9Value.Text = "#";
             this.lbl3Position9Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2924,9 +2925,9 @@
             this.lbl3Position9.AutoSize = true;
             this.lbl3Position9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position9.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position9.Location = new System.Drawing.Point(3, 213);
+            this.lbl3Position9.Location = new System.Drawing.Point(4, 276);
             this.lbl3Position9.Name = "lbl3Position9";
-            this.lbl3Position9.Size = new System.Drawing.Size(59, 24);
+            this.lbl3Position9.Size = new System.Drawing.Size(74, 29);
             this.lbl3Position9.TabIndex = 340;
             this.lbl3Position9.Text = "Mics:";
             // 
@@ -2935,9 +2936,9 @@
             this.lbl3Position7.AutoSize = true;
             this.lbl3Position7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position7.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position7.Location = new System.Drawing.Point(2, 184);
+            this.lbl3Position7.Location = new System.Drawing.Point(4, 231);
             this.lbl3Position7.Name = "lbl3Position7";
-            this.lbl3Position7.Size = new System.Drawing.Size(73, 24);
+            this.lbl3Position7.Size = new System.Drawing.Size(95, 29);
             this.lbl3Position7.TabIndex = 339;
             this.lbl3Position7.Text = "Spotlit:";
             // 
@@ -2948,7 +2949,7 @@
             this.lbl3Position2Flag.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2Flag.Location = new System.Drawing.Point(154, 87);
             this.lbl3Position2Flag.Name = "lbl3Position2Flag";
-            this.lbl3Position2Flag.Size = new System.Drawing.Size(27, 24);
+            this.lbl3Position2Flag.Size = new System.Drawing.Size(34, 29);
             this.lbl3Position2Flag.TabIndex = 338;
             this.lbl3Position2Flag.Text = "M";
             // 
@@ -2959,7 +2960,7 @@
             this.lbl3Position0Flag.ForeColor = System.Drawing.Color.White;
             this.lbl3Position0Flag.Location = new System.Drawing.Point(154, 50);
             this.lbl3Position0Flag.Name = "lbl3Position0Flag";
-            this.lbl3Position0Flag.Size = new System.Drawing.Size(24, 24);
+            this.lbl3Position0Flag.Size = new System.Drawing.Size(31, 29);
             this.lbl3Position0Flag.TabIndex = 337;
             this.lbl3Position0Flag.Text = "D";
             // 
@@ -2970,9 +2971,9 @@
             this.lbl3Position4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position4Value.ForeColor = System.Drawing.Color.Red;
             this.lbl3Position4Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position4Value.Location = new System.Drawing.Point(274, 130);
+            this.lbl3Position4Value.Location = new System.Drawing.Point(313, 130);
             this.lbl3Position4Value.Name = "lbl3Position4Value";
-            this.lbl3Position4Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl3Position4Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position4Value.TabIndex = 336;
             this.lbl3Position4Value.Text = ".";
             this.lbl3Position4Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2984,9 +2985,9 @@
             this.lbl3Position5Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position5Value.ForeColor = System.Drawing.Color.Red;
             this.lbl3Position5Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position5Value.Location = new System.Drawing.Point(97, 157);
+            this.lbl3Position5Value.Location = new System.Drawing.Point(98, 181);
             this.lbl3Position5Value.Name = "lbl3Position5Value";
-            this.lbl3Position5Value.Size = new System.Drawing.Size(16, 24);
+            this.lbl3Position5Value.Size = new System.Drawing.Size(20, 29);
             this.lbl3Position5Value.TabIndex = 334;
             this.lbl3Position5Value.Text = ".";
             this.lbl3Position5Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2996,9 +2997,9 @@
             this.lbl3Position6.AutoSize = true;
             this.lbl3Position6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position6.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position6.Location = new System.Drawing.Point(202, 158);
+            this.lbl3Position6.Location = new System.Drawing.Point(243, 181);
             this.lbl3Position6.Name = "lbl3Position6";
-            this.lbl3Position6.Size = new System.Drawing.Size(57, 24);
+            this.lbl3Position6.Size = new System.Drawing.Size(74, 29);
             this.lbl3Position6.TabIndex = 331;
             this.lbl3Position6.Text = "Strat:";
             // 
@@ -3010,7 +3011,7 @@
             this.lbl3Position2Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position2Value.Location = new System.Drawing.Point(54, 87);
             this.lbl3Position2Value.Name = "lbl3Position2Value";
-            this.lbl3Position2Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl3Position2Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position2Value.TabIndex = 330;
             this.lbl3Position2Value.Text = "$$";
             this.lbl3Position2Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3021,9 +3022,9 @@
             this.lbl3Position1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position1Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl3Position1Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position1Value.Location = new System.Drawing.Point(243, 50);
+            this.lbl3Position1Value.Location = new System.Drawing.Point(296, 50);
             this.lbl3Position1Value.Name = "lbl3Position1Value";
-            this.lbl3Position1Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl3Position1Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position1Value.TabIndex = 329;
             this.lbl3Position1Value.Text = "$$";
             this.lbl3Position1Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3034,7 +3035,7 @@
             this.panel13.Controls.Add(this.label79);
             this.panel13.Location = new System.Drawing.Point(0, 34);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(330, 13);
+            this.panel13.Size = new System.Drawing.Size(375, 13);
             this.panel13.TabIndex = 279;
             // 
             // label79
@@ -3045,7 +3046,7 @@
             this.label79.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label79.Location = new System.Drawing.Point(418, 214);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(38, 26);
+            this.label79.Size = new System.Drawing.Size(46, 31);
             this.label79.TabIndex = 277;
             this.label79.Text = "00";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3054,9 +3055,9 @@
             // 
             this.panel14.BackColor = System.Drawing.Color.DarkBlue;
             this.panel14.Controls.Add(this.label80);
-            this.panel14.Location = new System.Drawing.Point(0, 246);
+            this.panel14.Location = new System.Drawing.Point(2, 308);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(330, 11);
+            this.panel14.Size = new System.Drawing.Size(375, 11);
             this.panel14.TabIndex = 279;
             // 
             // label80
@@ -3067,7 +3068,7 @@
             this.label80.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label80.Location = new System.Drawing.Point(418, 214);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(38, 26);
+            this.label80.Size = new System.Drawing.Size(46, 31);
             this.label80.TabIndex = 277;
             this.label80.Text = "00";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3077,9 +3078,9 @@
             this.lbl3Position5.AutoSize = true;
             this.lbl3Position5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position5.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position5.Location = new System.Drawing.Point(2, 158);
+            this.lbl3Position5.Location = new System.Drawing.Point(3, 182);
             this.lbl3Position5.Name = "lbl3Position5";
-            this.lbl3Position5.Size = new System.Drawing.Size(99, 24);
+            this.lbl3Position5.Size = new System.Drawing.Size(121, 29);
             this.lbl3Position5.TabIndex = 328;
             this.lbl3Position5.Text = "HP Amp: ";
             // 
@@ -3088,9 +3089,9 @@
             this.lbl3Position4.AutoSize = true;
             this.lbl3Position4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position4.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position4.Location = new System.Drawing.Point(202, 130);
+            this.lbl3Position4.Location = new System.Drawing.Point(241, 130);
             this.lbl3Position4.Name = "lbl3Position4";
-            this.lbl3Position4.Size = new System.Drawing.Size(72, 24);
+            this.lbl3Position4.Size = new System.Drawing.Size(90, 29);
             this.lbl3Position4.TabIndex = 322;
             this.lbl3Position4.Text = "Leave:";
             // 
@@ -3100,9 +3101,9 @@
             this.lbl3Position8Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbl3Position8Value.ForeColor = System.Drawing.Color.Yellow;
             this.lbl3Position8Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3Position8Value.Location = new System.Drawing.Point(246, 185);
+            this.lbl3Position8Value.Location = new System.Drawing.Point(288, 231);
             this.lbl3Position8Value.Name = "lbl3Position8Value";
-            this.lbl3Position8Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl3Position8Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position8Value.TabIndex = 324;
             this.lbl3Position8Value.Text = "0";
             this.lbl3Position8Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3114,7 +3115,7 @@
             this.lbl3Position0.ForeColor = System.Drawing.Color.White;
             this.lbl3Position0.Location = new System.Drawing.Point(2, 50);
             this.lbl3Position0.Name = "lbl3Position0";
-            this.lbl3Position0.Size = new System.Drawing.Size(53, 24);
+            this.lbl3Position0.Size = new System.Drawing.Size(64, 29);
             this.lbl3Position0.TabIndex = 322;
             this.lbl3Position0.Text = "Acq:";
             // 
@@ -3126,7 +3127,7 @@
             this.lbl3Position3Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position3Value.Location = new System.Drawing.Point(78, 131);
             this.lbl3Position3Value.Name = "lbl3Position3Value";
-            this.lbl3Position3Value.Size = new System.Drawing.Size(21, 24);
+            this.lbl3Position3Value.Size = new System.Drawing.Size(27, 29);
             this.lbl3Position3Value.TabIndex = 317;
             this.lbl3Position3Value.Text = "#";
             this.lbl3Position3Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3138,7 +3139,7 @@
             this.lbl3Position3.ForeColor = System.Drawing.Color.White;
             this.lbl3Position3.Location = new System.Drawing.Point(2, 130);
             this.lbl3Position3.Name = "lbl3Position3";
-            this.lbl3Position3.Size = new System.Drawing.Size(70, 24);
+            this.lbl3Position3.Size = new System.Drawing.Size(88, 29);
             this.lbl3Position3.TabIndex = 321;
             this.lbl3Position3.Text = "Setup:";
             // 
@@ -3147,9 +3148,9 @@
             this.lbl3Position8.AutoSize = true;
             this.lbl3Position8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position8.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position8.Location = new System.Drawing.Point(202, 184);
+            this.lbl3Position8.Location = new System.Drawing.Point(244, 230);
             this.lbl3Position8.Name = "lbl3Position8";
-            this.lbl3Position8.Size = new System.Drawing.Size(47, 24);
+            this.lbl3Position8.Size = new System.Drawing.Size(60, 29);
             this.lbl3Position8.TabIndex = 266;
             this.lbl3Position8.Text = "Def:";
             // 
@@ -3158,9 +3159,9 @@
             this.lbl3Position1.AutoSize = true;
             this.lbl3Position1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position1.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position1.Location = new System.Drawing.Point(188, 50);
+            this.lbl3Position1.Location = new System.Drawing.Point(241, 50);
             this.lbl3Position1.Name = "lbl3Position1";
-            this.lbl3Position1.Size = new System.Drawing.Size(56, 24);
+            this.lbl3Position1.Size = new System.Drawing.Size(71, 29);
             this.lbl3Position1.TabIndex = 327;
             this.lbl3Position1.Text = "Orig:";
             // 
@@ -3171,7 +3172,7 @@
             this.lbl3Position2.ForeColor = System.Drawing.Color.White;
             this.lbl3Position2.Location = new System.Drawing.Point(2, 87);
             this.lbl3Position2.Name = "lbl3Position2";
-            this.lbl3Position2.Size = new System.Drawing.Size(47, 24);
+            this.lbl3Position2.Size = new System.Drawing.Size(60, 29);
             this.lbl3Position2.TabIndex = 318;
             this.lbl3Position2.Text = "Del:";
             // 
@@ -3180,9 +3181,9 @@
             this.lbl3Position11.AutoSize = true;
             this.lbl3Position11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3Position11.ForeColor = System.Drawing.Color.White;
-            this.lbl3Position11.Location = new System.Drawing.Point(3, 261);
+            this.lbl3Position11.Location = new System.Drawing.Point(4, 324);
             this.lbl3Position11.Name = "lbl3Position11";
-            this.lbl3Position11.Size = new System.Drawing.Size(125, 24);
+            this.lbl3Position11.Size = new System.Drawing.Size(154, 29);
             this.lbl3Position11.TabIndex = 291;
             this.lbl3Position11.Text = "Match Event";
             // 
@@ -3194,7 +3195,7 @@
             this.lbl3Position0Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lbl3Position0Value.Location = new System.Drawing.Point(54, 50);
             this.lbl3Position0Value.Name = "lbl3Position0Value";
-            this.lbl3Position0Value.Size = new System.Drawing.Size(32, 24);
+            this.lbl3Position0Value.Size = new System.Drawing.Size(41, 29);
             this.lbl3Position0Value.TabIndex = 274;
             this.lbl3Position0Value.Text = "$$";
             this.lbl3Position0Value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3205,7 +3206,7 @@
             this.lbl3TeamName.BackColor = System.Drawing.Color.Black;
             this.lbl3TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3TeamName.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lbl3TeamName.Location = new System.Drawing.Point(168, 291);
+            this.lbl3TeamName.Location = new System.Drawing.Point(216, 346);
             this.lbl3TeamName.Name = "lbl3TeamName";
             this.lbl3TeamName.Size = new System.Drawing.Size(159, 37);
             this.lbl3TeamName.TabIndex = 248;
@@ -3218,7 +3219,7 @@
             this.lbl3ScoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3ScoutName.ForeColor = System.Drawing.Color.Goldenrod;
             this.lbl3ScoutName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl3ScoutName.Location = new System.Drawing.Point(4, 301);
+            this.lbl3ScoutName.Location = new System.Drawing.Point(4, 356);
             this.lbl3ScoutName.Name = "lbl3ScoutName";
             this.lbl3ScoutName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl3ScoutName.Size = new System.Drawing.Size(158, 27);
@@ -3234,7 +3235,7 @@
             this.lbl3ModeValue.ForeColor = System.Drawing.Color.LimeGreen;
             this.lbl3ModeValue.Location = new System.Drawing.Point(1, 3);
             this.lbl3ModeValue.Name = "lbl3ModeValue";
-            this.lbl3ModeValue.Size = new System.Drawing.Size(67, 29);
+            this.lbl3ModeValue.Size = new System.Drawing.Size(86, 36);
             this.lbl3ModeValue.TabIndex = 2;
             this.lbl3ModeValue.Text = "Auto:";
             // 
@@ -3243,7 +3244,7 @@
             this.SwapScouters.BackColor = System.Drawing.Color.Transparent;
             this.SwapScouters.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SwapScouters.ForeColor = System.Drawing.Color.DarkBlue;
-            this.SwapScouters.Location = new System.Drawing.Point(820, 6);
+            this.SwapScouters.Location = new System.Drawing.Point(919, 8);
             this.SwapScouters.Name = "SwapScouters";
             this.SwapScouters.Size = new System.Drawing.Size(113, 23);
             this.SwapScouters.TabIndex = 283;
@@ -3256,7 +3257,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1376, 787);
+            this.ClientSize = new System.Drawing.Size(1537, 873);
             this.Controls.Add(this.SwapScouters);
             this.Controls.Add(this.btnUpdateDB);
             this.Controls.Add(this.panel2);

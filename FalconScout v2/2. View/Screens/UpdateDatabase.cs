@@ -92,56 +92,28 @@ namespace T250DynoScout_v2024
                         txtAcqDis.Text = result.AcqDis.ToString();
                         txtAcqDrp.Text = result.AcqDrp.ToString();
 
-                        //txtSub1.Text = result.AcqSub1.ToString();
-                        //txtSub2.Text = result.AcqSub2.ToString();
-                        //txtComm.Text = result.AcqFComm.ToString();
-                        //txtLoad.Text = result.AcqFLoad.ToString();
-                        //txtOpps.Text = result.AcqFOpps.ToString();
-                        //txtOther.Text = result.AcqFOther.ToString();
-                        //txtTop.Text = result.DelTop.ToString();
-                        //txtMid.Text = result.DelMid.ToString();
-                        //txtHyb.Text = result.DelBot.ToString();
-                        //txtOut.Text = result.DelOut.ToString();
-                        //txtCoop.Text = result.DelCoop.ToString();
-                        //txtFloor.Text = result.DelFloor.ToString();
-                        //txtDrop.Text = result.DelDrop.ToString();
-                        //txtCone.Text = result.Cone.ToString();
-                        //txtCube.Text = result.Cube.ToString();
-                        //string Pa = result.Parked.ToString();
-                        //string Do = result.Docked.ToString();
-                        //string En = result.Engaged.ToString();
-                        //string TAF = result.Tried_And_Failed.ToString();
-                        //string NA = result.No_Attempt.ToString();
-                        //if (Pa == "1")
-                        //{
-                        //    comboCSStatus.Text = "P";
-                        //}
-                        //else if (Do == "1")
-                        //{
-                        //    comboCSStatus.Text = "D";
-                        //}
-                        //else if (En == "1")
-                        //{
-                        //    comboCSStatus.Text = "E";
-                        //}
-                        //else if (TAF == "1")
-                        //{
-                        //    comboCSStatus.Text = "T";
-                        //}
-                        //else if (NA == "1")
-                        //{
-                        //    comboCSStatus.Text = "N";
-                        //}
-                        //txtPartners.Text = result.ChargePart.ToString();
-                        //comboFailReason.Text = result.EngageFail.ToString();
-                        //txtTime.Text = result.EngageT.ToString();
+                        comboDelDest.Text = result.DelDest.ToString();
+                        comboDelOrg.Text = result.DelOrig.ToString();
+                        txtDelMiss.Text = result.DelMiss.ToString();
+                        txtAZTime.Text = result.AZTime.ToString();
+                        txtNZTime.Text = result.NZTime.ToString();
+                        txtOZTime.Text = result.OZTime.ToString();
+
+                        comboStageStat.Text = result.StageStat.ToString();
+                        comboStageAtt.Text = result.StageAtt.ToString();
+                        comboStageLoc.Text = result.StageLoc.ToString();
+                        txtHarm.Text = result.Harmony.ToString();
+                        txtLit.Text = result.Spotlit.ToString();
+                        txtMics.Text = result.Mics.ToString();
+                        txtClimbTime.Text = result.ClimbT.ToString();
+
+                        txtHPAmp.Text = result.HPAmp.ToString();
+                        txtRobotSetup.Text = result.RobotSta.ToString();
+                        txtLeave.Text = result.Leave.ToString();
+                       
                         comboMode.Text = result.Mode.ToString();
                         comboMatchEvent.Text = result.match_event.ToString();
-                        //txtMobility.Text = result.Mobility.ToString();
-                        //txtSetup.Text = result.Setup.ToString();
-                        //txtAutoPts.Text = result.AutoPts.ToString();
-                        //txtGridPts.Text = result.GridPts.ToString();
-                        //txtChargePts.Text = result.ChargePts.ToString();
+                        
                         txtDefense.Text = result.Defense.ToString();
                         txtAvoidance.Text = result.Avoidance.ToString();
                         comboStrategy.Text = result.Strategy.ToString();
@@ -182,141 +154,59 @@ namespace T250DynoScout_v2024
                         query = "UPDATE Activities SET AcqDrp = '" + txtAcqDrp.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET AcqSub1 = '" + txtSub1.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET DelDest = '" + comboDelDest.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET AcqSub2 = '" + txtSub2.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET DelOrig = '" + comboDelOrg.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET AcqFComm = '" + txtComm.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET DelMiss = '" + txtDelMiss.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET AcqFLoad = '" + txtLoad.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET AZTime = '" + txtAZTime.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET AcqFOpps = '" + txtOpps.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET NZTime = '" + txtNZTime.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET AcqFOther = '" + txtOther.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET OZTime = '" + txtOZTime.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET DelTop = '" + txtTop.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET StageAtt = '" + comboStageAtt.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET DelMid = '" + txtMid.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET StageLoc = '" + comboStageLoc.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET DelBot = '" + txtHyb.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET StageStat = '" + comboStageStat.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET DelOut = '" + txtOut.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET Harmony = '" + txtHarm.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET DelCoop = '" + txtCoop.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET Spotlit = '" + txtLit.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET DelFloor = '" + txtFloor.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET Mics = '" + txtMics.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET DelDrop = '" + txtDrop.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET ClimbT = '" + txtClimbTime.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET Cone = '" + txtCone.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET HPAmp = '" + txtHPAmp.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        //query = "UPDATE Activities SET Cube = '" + txtCube.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
+                        query = "UPDATE Activities SET RobotSta = '" + txtRobotSetup.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
 
-                        int Pa = 0;
-                        int Do = 0;
-                        int En = 0;
-                        int TAF = 0;
-                        int NA = 0;
-                        //if (comboCSStatus.Text == "P")
-                        //{
-                        //    Pa = 1;
-                        //    Do = 0;
-                        //    En = 0;
-                        //    TAF = 0;
-                        //    NA = 0;
-                        //}
-                        //else if (comboCSStatus.Text == "D")
-                        //{
-                        //    Pa = 0;
-                        //    Do = 1;
-                        //    En = 0;
-                        //    TAF = 0;
-                        //    NA = 0;
-                        //}
-                        //else if (comboCSStatus.Text == "E")
-                        //{
-                        //    Pa = 0;
-                        //    Do = 0;
-                        //    En = 1;
-                        //    TAF = 0;
-                        //    NA = 0;
-                        //}
-                        //else if (comboCSStatus.Text == "T")
-                        //{
-                        //    Pa = 0;
-                        //    Do = 0;
-                        //    En = 0;
-                        //    TAF = 1;
-                        //    NA = 0;
-                        //}
-                        //else if (comboCSStatus.Text == "N")
-                        //{
-                        //    Pa = 0;
-                        //    Do = 0;
-                        //    En = 0;
-                        //    TAF = 0;
-                        //    NA = 1;
-                        //}
-
-                        //query = "UPDATE Activities SET Parked = '" + Pa + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET Docked = '" + Do + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET Engaged = '" + En + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET Tried_And_Failed = '" + TAF + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET No_Attempt = '" + NA + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET ChargePart = '" + txtPartners.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET EngageFail = '" + comboFailReason.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET EngageT = '" + txtTime.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
+                        query = "UPDATE Activities SET Leave = '" + txtLeave.Text + "' WHERE Id = '" + result.Id + "';";
+                        seasonframework.Database.ExecuteSqlCommand(query);
+                        
                         query = "UPDATE Activities SET Mode = '" + comboMode.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
 
                         query = "UPDATE Activities SET match_event = '" + comboMatchEvent.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET Mobility = '" + txtMobility.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET Setup = '" + txtSetup.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET AutoPts = '" + txtAutoPts.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET GridPts = '" + txtGridPts.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
-
-                        //query = "UPDATE Activities SET ChargePts = '" + txtChargePts.Text + "' WHERE Id = '" + result.Id + "';";
-                        //seasonframework.Database.ExecuteSqlCommand(query);
 
                         query = "UPDATE Activities SET Defense = '" + txtDefense.Text + "' WHERE Id = '" + result.Id + "';";
                         seasonframework.Database.ExecuteSqlCommand(query);
@@ -333,16 +223,6 @@ namespace T250DynoScout_v2024
                     MessageBox.Show("Please enter a number for the ID");
                 }
             }
-        }
-
-        private void comboAcqLoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboAcqCenter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

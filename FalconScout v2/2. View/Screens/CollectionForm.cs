@@ -309,25 +309,23 @@ namespace T250DynoScout_v2024
                             activity_record.Spotlit = 0;
                         }
 
-                        if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere)
+                        if (Robots[i].Stage_Stat == RobotState.STAGE_STAT.Onstage ||
+                            ((Robots[i].Stage_Stat == RobotState.STAGE_STAT.Park || Robots[i].Stage_Stat == RobotState.STAGE_STAT.Elsewhere) && 
+                            Robots[i].Stage_Att == RobotState.STAGE_ATT.Y))
                         {
-                            activity_record.ClimbT = 0;
-                            activity_record.OZTime = 0;
-                            activity_record.AZTime = 0;
-                            activity_record.NZTime = 0;
+                            Robots[i].ClimbTDouble = Robots[i].ClimbT_StopWatch.Elapsed.TotalSeconds;
+                            activity_record.ClimbT = Robots[i].ClimbTDouble;
                         }
                         else
                         {
-                            Robots[i].ClimbTDouble = Robots[i].ClimbT_StopWatch.Elapsed.TotalSeconds;
-                            Robots[i].AllyTDouble = Robots[i].AllyT_StopWatch.Elapsed.TotalSeconds;
-                            Robots[i].OpptTDouble = Robots[i].OpptT_StopWatch.Elapsed.TotalSeconds;
-                            Robots[i].NeutTDouble = Robots[i].NeutT_StopWatch.Elapsed.TotalSeconds;
-                            activity_record.ClimbT = Robots[i].ClimbTDouble;
-                            activity_record.OZTime = Robots[i].OpptTDouble;
-                            activity_record.AZTime = Robots[i].AllyTDouble;
-                            activity_record.NZTime = Robots[i].NeutTDouble;
+                            activity_record.ClimbT = 0;
                         }
-
+                        Robots[i].AllyTDouble = Robots[i].AllyT_StopWatch.Elapsed.TotalSeconds;
+                        Robots[i].OpptTDouble = Robots[i].OpptT_StopWatch.Elapsed.TotalSeconds;
+                        Robots[i].NeutTDouble = Robots[i].NeutT_StopWatch.Elapsed.TotalSeconds;
+                        activity_record.OZTime = Robots[i].OpptTDouble;
+                        activity_record.AZTime = Robots[i].AllyTDouble;
+                        activity_record.NZTime = Robots[i].NeutTDouble;
                         activity_record.Mics = Robots[i].Mic;
                         if (Robots[i].HP_Amp == RobotState.HP_AMP.N)
                         {
@@ -477,12 +475,16 @@ namespace T250DynoScout_v2024
                     Robots[i].Mic = 10;
                     Robots[i].Current_Loc = RobotState.CURRENT_LOC.Select;
                 }
+                currentmatch++;
 
-                if (currentmatch == InMemoryMatchList.Count)
+                if (currentmatch == InMemoryMatchList.Count) 
+                { 
                     MessageBox.Show("You are at the last match.");
-                else
+                    currentmatch--;
+
+                }
+                else if (currentmatch != InMemoryMatchList.Count)
                 {
-                    currentmatch++;
                     //#Session0
                     this.lbl0TeamName.Text = Robots[0].TeamName = InMemoryMatchList[currentmatch].redteam1;
                     this.lbl1TeamName.Text = Robots[1].TeamName = InMemoryMatchList[currentmatch].redteam2;
@@ -771,12 +773,15 @@ namespace T250DynoScout_v2024
 
                                 for (int i = 0; i < JSONmatches.Count; i++)
                                 {
+                                  
+
                                     // #Playoffs to download playoff matches and alliances
                                     //if (obj[i].comp_level == "qf")
                                     dynamic PostTimeDynamic = obj[i].post_result_time;
                                     string PostTime = PostTimeDynamic;
                                     if (obj[i].comp_level == "qm")
-                                    {
+                                    {   
+                                        
                                         MatchCount++;
                                         MatchNumbers.Add(MatchCount);
 
@@ -832,6 +837,7 @@ namespace T250DynoScout_v2024
                                         seasonframework.SaveChanges();
 
                                     }
+                                    
                                 }
 
                                 DialogResult dialogResult = MessageBox.Show("Do you want to start at match 1", "Please Confirm", MessageBoxButtons.YesNo);
