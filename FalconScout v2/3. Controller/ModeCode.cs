@@ -298,6 +298,10 @@ namespace T250DynoScout_v2024
                 ((Label)this.Controls.Find("lbl" + Controller_Number + "Position2Flag", true)[0]).Visible = false;
             }
 
+            //Robots[Controller_Number].OpptTDouble = Robots[Controller_Number].OpptT_StopWatch.Elapsed.TotalSeconds;
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position3Value", true)[0]).Text = Robots[Controller_Number].OpptTDouble.ToString("0.#");
+            //((Label)this.Controls.Find("lbl" + Controller_Number + "Position3Value", true)[0]).Visible = true;
+
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position3", true)[0]).Visible = false;
             ((Label)this.Controls.Find("lbl" + Controller_Number + "Position3Value", true)[0]).Visible = false;
 

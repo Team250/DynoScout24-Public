@@ -15,13 +15,11 @@ Our task is to break down the game each year and provide our team with how we th
 ## Setup
 To use the software, you need at least one Xbox Controller plugged into the laptop running the software, a maximum of 6 controllers. Need SQL server installed onto the laptop for the code to connect to and Excel getting the data from the database.
 
-To get the data from The Blue Alliance you will need to create a Read Me API Key from https://www.thebluealliance.com/account. After that, in the 1.Model folder create a file called HiddenVariable.cs. Then add the code below and add your api key between the quotes
-![Visual Studio](https://i.imgur.com/XcaBxDC.png)
+To get the data from The Blue Alliance you will need to create a Read Me API Key from https://www.thebluealliance.com/account. After that, in the 1.Model folder create a file called HiddenVariable.cs. Then add the code below and add your api key between the quotes. The public enum SCOUTER_NAME is the variable for the names of the Scouters. Just put them in between the {} with a comma between each name. If you want to keep using the list in RobotState then replace HiddenVariable.SCOUTERNAME with RobotState.SCOUTERNAME. 
+![Visual Studio](https://i.imgur.com/evVejtC.png)
 
 ## Usage
 ![UI](https://i.imgur.com/prbS71r.png)
-
-Currently, all 3 modes work and you can input the correct controls. All the data should be recorded in the database correctly and should reset the variables at the proper points. The databse is logic should be mostly correct. There are probably some errors that we will hopefully catch before Week 1. Our next step is to create the update database form to help fix errors during use. The text below is what will happen when the code is complete. 
 
 When the code starts up, the interface will be prompted.
 The user will need to load the events through the **Load** button at the top. This connects to The Blue Alliance API. After the code gets the events, the user will need to find the name of the event in the list of events, sorted by event code. 
@@ -33,6 +31,6 @@ At the end of the match, when every scouter is ready to go to the next match. Th
 In case of code exiting during an event, just re-open the code, load the event and matches, then just click the right arrow without checking the End Match box until you get to the next match.
 
 ## Controls
-![Auto Mode Controls](https://i.imgur.com/aaHGLxW.png)
+![Auto Mode Controls](https://i.imgur.com/aaHGLxW.png?1)
 ![Teleop Mode Controls](https://i.imgur.com/SaYmYmg.png)
 ![Endgame Mode Controls](https://i.imgur.com/8mVOZt8.png)

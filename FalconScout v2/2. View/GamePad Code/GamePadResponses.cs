@@ -1311,6 +1311,7 @@ namespace T250DynoScout_v2024
                             rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp = "Neutral";
                             rs[controllerNumberMap[controllerNumber]].ScouterError = rs[controllerNumberMap[controllerNumber]].ScouterError + 1000;
                         }
+
                         activity_record.AcqLoc = rs[controllerNumberMap[controllerNumber]].Acq_Loc_Temp.ToString();
                         activity_record.AcqCenter = rs[controllerNumberMap[controllerNumber]].Acq_Center_Temp;
                         activity_record.Time = rs[controllerNumberMap[controllerNumber]].CenteNoteTimeTemp;
